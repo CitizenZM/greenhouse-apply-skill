@@ -1,0 +1,14 @@
+{
+  "firstName": "input[name='first_name']",
+  "lastName": "input[name='last_name']",
+  "email": "input[name='email']",
+  "phone": "input[name='phone']",
+  "location": "input[name='location']",
+  "education": "select[name='education']",
+  "website": "input[name='website']",
+  "authorization": "input[name='authorized'][value='yes']",
+  "sponsorship": "input[name='sponsorship'][value='no']",
+  "relocation": "input[name='relocate'][value='yes']",
+  "gender": "select[name='gender']",
+  "race": "select[name='race']"
+}

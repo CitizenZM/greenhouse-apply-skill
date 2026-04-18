@@ -1,0 +1,2066 @@
+{
+  "generated": "2026-04-17",
+  "search": "14 keywords + salary:$160k+",
+  "total": 217,
+  "jobs": [
+    {
+      "title": "AI Engineer, Marketing",
+      "company": "Planet",
+      "location": "San Francisco, CA",
+      "salary": "$112,900 - $160,500",
+      "jobId": "7782580",
+      "url": "https://job-boards.greenhouse.io/planetlabs/jobs/7782580?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "AI/Engineering role, not marketing"
+    },
+    {
+      "title": "AI Engineer, Marketing",
+      "company": "Planet",
+      "location": "Washington, DC",
+      "salary": "$112,900 - $160,500",
+      "jobId": "7782587",
+      "url": "https://job-boards.greenhouse.io/planetlabs/jobs/7782587?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "AI/Engineering role, not marketing"
+    },
+    {
+      "title": "Director, Marketing Operations",
+      "company": "Klaviyo",
+      "location": "San Francisco Bay Area, CA",
+      "salary": "$188,000 - $282,000",
+      "jobId": "7700798003",
+      "url": "https://www.klaviyo.com/careers/jobs?gh_jid=7700798003&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "User requested skip Klaviyo"
+    },
+    {
+      "title": "VP - Marketing Analytics",
+      "company": "Careers at KKR",
+      "location": "Boston, MA",
+      "salary": "$140,000 - $185,000",
+      "jobId": "5972567004",
+      "url": "https://www.kkr.com/careers/career-opportunities/post?gh_jid=5972567004&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director, Marketing Operations",
+      "company": "WorldStrides",
+      "location": "Charlottesville, VA",
+      "salary": "$150,000 - $200,000",
+      "jobId": "5179347008",
+      "url": "https://job-boards.greenhouse.io/world4822stri986des/jobs/5179347008?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Partner Marketing Manager",
+      "company": "Harness",
+      "location": "Boston, MA",
+      "salary": "$150,000 - $165,000",
+      "jobId": "5108260007",
+      "url": "https://www.harness.io/company/jobs/apply?gh_jid=5108260007&gh_jid=5108260007&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director, Marketing Operations",
+      "company": "Klaviyo",
+      "location": "Boston, MA",
+      "salary": "$188,000 - $282,000",
+      "jobId": "7700412003",
+      "url": "https://www.klaviyo.com/careers/jobs?gh_jid=7700412003&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "User requested skip Klaviyo"
+    },
+    {
+      "title": "Growth Marketing Manager",
+      "company": "Checkr",
+      "location": "San Francisco, CA",
+      "salary": "$158,000 - $186,000",
+      "jobId": "7809095",
+      "url": "https://job-boards.greenhouse.io/checkr/jobs/7809095?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Salary below $160K threshold ($158K)"
+    },
+    {
+      "title": "Manager, Brand Marketing",
+      "company": "SharkNinja",
+      "location": "Needham, MA",
+      "salary": "$78,800 - $161,000",
+      "jobId": "4671421006",
+      "url": "https://job-boards.greenhouse.io/sharkninjaoperatingllc/jobs/4671421006?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Salary below $160K threshold ($78.8K-$161K)"
+    },
+    {
+      "title": "Marketing Manager/Director",
+      "company": "C3 AI",
+      "location": "Redwood City, CA",
+      "salary": "$125,000 - $175,000",
+      "jobId": "8504660002",
+      "url": "https://c3.ai/job-description/8504660002?gh_jid=8504660002&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Corporate Counsel (Marketing)",
+      "company": "Duolingo",
+      "location": "New York City, NY",
+      "salary": "$153,000 - $207,000",
+      "jobId": "8504563002",
+      "url": "https://careers.duolingo.com/jobs/8504563002?gh_jid=8504563002&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Corporate Counsel - legal role, not marketing"
+    },
+    {
+      "title": "Senior Growth Marketing Manager",
+      "company": "Commvault",
+      "location": "Tinton Falls, NJ",
+      "salary": "$123,250 - $207,000",
+      "jobId": "5186314008",
+      "url": "https://job-boards.greenhouse.io/commvault/jobs/5186314008?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director, Access Strategy Marketing NSCLC",
+      "company": "Revolution Medicines",
+      "location": "Redwood City, CA",
+      "salary": "$201,000 - $251,000",
+      "jobId": "7703635003",
+      "url": "https://www.revmed.com/careers-list/?gh_jid=7703635003&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Global Product Marketing Manager",
+      "company": "Unknown",
+      "location": "El Segundo, CA",
+      "salary": "$150,000 - $175,000",
+      "jobId": "4221233009",
+      "url": "https://job-boards.greenhouse.io/signalandstrand/jobs/4221233009?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Unknown company"
+    },
+    {
+      "title": "Senior Product Marketing Manager \u2013 Developer Portal",
+      "company": "Harness",
+      "location": "Mountain View, CA",
+      "salary": "$180,000 - $188,000",
+      "jobId": "5110436007",
+      "url": "https://www.harness.io/company/jobs/apply?gh_jid=5110436007&gh_jid=5110436007&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Sr. Tradeshow and Event Marketing Manager",
+      "company": "Verkada",
+      "location": "Phoenix, AZ",
+      "salary": "$150,000 - $185,000",
+      "jobId": "5111802007",
+      "url": "https://job-boards.greenhouse.io/verkada/jobs/5111802007?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Salary below $160K ($150K-$185K)"
+    },
+    {
+      "title": "Sr. Tradeshow and Event Marketing Manager",
+      "company": "Verkada",
+      "location": "Philadelphia, PA",
+      "salary": "$160,000 - $200,000",
+      "jobId": "5111804007",
+      "url": "https://job-boards.greenhouse.io/verkada/jobs/5111804007?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Duplicate Verkada tradeshow role (2 already submitted)"
+    },
+    {
+      "title": "Sr. Tradeshow and Event Marketing Manager",
+      "company": "Verkada",
+      "location": "Austin, TX",
+      "salary": "$160,000 - $200,000",
+      "jobId": "5111824007",
+      "url": "https://job-boards.greenhouse.io/verkada/jobs/5111824007?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Duplicate Verkada tradeshow role (2 already submitted)"
+    },
+    {
+      "title": "Sr. Tradeshow and Event Marketing Manager",
+      "company": "Verkada",
+      "location": "Tampa, FL",
+      "salary": "$160,000 - $200,000",
+      "jobId": "5111825007",
+      "url": "https://job-boards.greenhouse.io/verkada/jobs/5111825007?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Duplicate Verkada tradeshow role (2 already submitted)"
+    },
+    {
+      "title": "Sr. Tradeshow and Event Marketing Manager",
+      "company": "Verkada",
+      "location": "Salt Lake City, UT",
+      "salary": "$160,000 - $200,000",
+      "jobId": "5111808007",
+      "url": "https://job-boards.greenhouse.io/verkada/jobs/5111808007?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Duplicate Verkada tradeshow role (2 already submitted)"
+    },
+    {
+      "title": "Senior Manager, Technical Marketing, Custom SOC",
+      "company": "Samsung Semiconductor",
+      "location": "San Jose, CA",
+      "salary": "$176,000 - $280,000",
+      "jobId": "7701164003",
+      "url": "https://job-boards.greenhouse.io/samsungsemiconductor/jobs/7701164003?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Deep semiconductor/ASIC technical role - requires SoC engineering background"
+    },
+    {
+      "title": "Senior Manager, Solutions Marketing - Financial Services",
+      "company": "AlphaSense",
+      "location": "New York City, NY",
+      "salary": "$134,000 - $160,000",
+      "jobId": "8460450002",
+      "url": "https://job-boards.greenhouse.io/alphasense/jobs/8460450002?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Salary below $160K threshold ($134K-$160K)"
+    },
+    {
+      "title": "Partner Marketing Manager",
+      "company": "Wiz, Inc.",
+      "location": "New York City, NY",
+      "salary": "$120,000 - $165,000",
+      "jobId": "4671637006",
+      "url": "https://www.wiz.io/careers/job/4671637006/:title?gh_jid=4671637006&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Salary range starts well below K threshold"
+    },
+    {
+      "title": "Head of Performance Marketing, Agentic / AI-First",
+      "company": "ZoomInfo Technologies LLC",
+      "location": "Waltham, MA",
+      "salary": "$166,040 - $260,920",
+      "jobId": "8467073002",
+      "url": "https://www.zoominfo.com/careers?gh_jid=8467073002&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Lead Product Marketing Manager",
+      "company": "AppLovin",
+      "location": "Palo Alto, CA",
+      "salary": "$136,000 - $185,000",
+      "jobId": "4671540006",
+      "url": "https://boards.greenhouse.io/applovin/jobs/4671540006?gh_jid=4671540006&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Salary range starts well below K threshold"
+    },
+    {
+      "title": "Manager, Brand Marketing - Hard Floor",
+      "company": "SharkNinja",
+      "location": "Needham, MA",
+      "salary": "$78,800 - $161,000",
+      "jobId": "4671415006",
+      "url": "https://job-boards.greenhouse.io/sharkninjaoperatingllc/jobs/4671415006?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "SharkNinja brand marketing - low base ($78.8K)"
+    },
+    {
+      "title": "Product Marketing Manager",
+      "company": "Guidepoint",
+      "location": "New York City, NY",
+      "salary": "$140,000 - $160,000",
+      "jobId": "8465403002",
+      "url": "https://job-boards.greenhouse.io/guidepoint/jobs/8465403002?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Guidepoint PMM - max salary only $160K, borderline"
+    },
+    {
+      "title": "Staff Data Analyst, Marketing",
+      "company": "Fanatics Betting & Gaming",
+      "location": "New York City, NY",
+      "salary": "$160,000 - $190,000",
+      "jobId": "4208896009",
+      "url": "https://job-boards.greenhouse.io/fanaticsfbg/jobs/4208896009?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Data Analyst role, not marketing"
+    },
+    {
+      "title": "Associate Director, HCP Marketing",
+      "company": "Amylyx Pharmaceuticals",
+      "location": "Cambridge, MA",
+      "salary": "$193,000 - $217,000",
+      "jobId": "5843890004",
+      "url": "https://job-boards.greenhouse.io/amylyx/jobs/5843890004?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Product Marketing Manager - Public Sector (Columbia MD or Boston MA)",
+      "company": "Tenable, Inc.",
+      "location": "Columbia, MD",
+      "salary": "$130,000 - $173,333",
+      "jobId": "5192424008",
+      "url": "https://job-boards.greenhouse.io/tenableinc/jobs/5192424008?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Requires Columbia MD or Boston MA location"
+    },
+    {
+      "title": "Executive Director, Marketing Science",
+      "company": "Omnicom Media US H&S",
+      "location": "New York City, NY",
+      "salary": "$150,000 - $250,000",
+      "jobId": "5091303007",
+      "url": "https://omnicommedia.com/careers/us/hearts-science?gh_jid=5091303007&gh_src=my.greenhouse.search",
+      "status": "skipped"
+    },
+    {
+      "title": "Senior Director, Marketing Science",
+      "company": "Omnicom Media US H&S",
+      "location": "New York City, NY",
+      "salary": "$120,000 - $200,000",
+      "jobId": "5089997007",
+      "url": "https://omnicommedia.com/careers/us/hearts-science?gh_jid=5089997007&gh_src=my.greenhouse.search",
+      "status": "skipped"
+    },
+    {
+      "title": "Director, Integrated Marketing (Fanatics Casino)",
+      "company": "Fanatics Betting & Gaming",
+      "location": "",
+      "salary": "$185,000 - $225,000",
+      "jobId": "4206471009",
+      "url": "https://job-boards.greenhouse.io/fanaticsfbg/jobs/4206471009?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director Marketing, RVC and Marine",
+      "company": "Storable",
+      "location": "Austin, TX",
+      "salary": "$140,000 - $175,000",
+      "jobId": "5843934004",
+      "url": "https://www.storable.com/about-us/culture/careers/?gh_jid=5843934004&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Product Marketing Manager",
+      "company": "Wiz, Inc.",
+      "location": "New York City, NY",
+      "salary": "$133,000 - $182,500",
+      "jobId": "4665810006",
+      "url": "https://www.wiz.io/careers/job/4665810006/:title?gh_jid=4665810006&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Manager, Growth Marketing",
+      "company": "AlphaSense",
+      "location": "New York City, NY",
+      "salary": "$133,000 - $183,000",
+      "jobId": "8486916002",
+      "url": "https://job-boards.greenhouse.io/alphasense/jobs/8486916002?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Sr. Product Manager - AI & Data (Sales, Marketing, & GM Focus)",
+      "company": "Natera",
+      "location": "Austin, TX",
+      "salary": "$140,600 - $175,700",
+      "jobId": "5850672004",
+      "url": "https://job-boards.greenhouse.io/natera/jobs/5850672004?gh_src=my.greenhouse.search",
+      "status": "skipped"
+    },
+    {
+      "title": "Director, HCP Marketing",
+      "company": "Immunome, Inc.",
+      "location": "Bothell, WA",
+      "salary": "$198,000 - $252,000",
+      "jobId": "5170942008",
+      "url": "https://job-boards.greenhouse.io/immunomeinc/jobs/5170942008?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Associate Director / Director, Patient Marketing",
+      "company": "Immunome, Inc.",
+      "location": "Bothell, WA",
+      "salary": "$183,000 - $230,000",
+      "jobId": "5176461008",
+      "url": "https://job-boards.greenhouse.io/immunomeinc/jobs/5176461008?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director, HCP Professional Promotion Marketing",
+      "company": "Legend Biotech US",
+      "location": "Bridgewater, NJ",
+      "salary": "$216,186 - $283,745",
+      "jobId": "4681405005",
+      "url": "https://job-boards.greenhouse.io/legendcareers/jobs/4681405005?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Product Marketing Manager",
+      "company": "DistroKid",
+      "location": "New York City, NY",
+      "salary": "$150,000 - $180,000",
+      "jobId": "4193887009",
+      "url": "https://job-boards.greenhouse.io/distrokid/jobs/4193887009?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "VP - Marketing - LATAM",
+      "company": "SharkNinja",
+      "location": "Miami, FL",
+      "salary": "$247,000 - $300,000",
+      "jobId": "4666690006",
+      "url": "https://job-boards.greenhouse.io/sharkninjaoperatingllc/jobs/4666690006?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Marketing AI & Transformation Strategy Lead",
+      "company": "AlphaSense",
+      "location": "New York City, NY",
+      "salary": "$155,000 - $185,000",
+      "jobId": "8478732002",
+      "url": "https://job-boards.greenhouse.io/alphasense/jobs/8478732002?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Manager, Marketing Operations",
+      "company": "Remote",
+      "location": "London, ENG",
+      "salary": "$103,550 - $194,200",
+      "jobId": "7685951003",
+      "url": "https://job-boards.greenhouse.io/remotecom/jobs/7685951003?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Salary midpoint below 160K minimum"
+    },
+    {
+      "title": "Director, Content Marketing",
+      "company": "Unity Technologies",
+      "location": "New York City, NY",
+      "salary": "$198,000 - $297,000",
+      "jobId": "7765611",
+      "url": "https://unity.com/careers/positions/7765611?gh_jid=7765611&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Manager, Social Media and Integrated Marketing (Fixed-Term Contract)",
+      "company": "Compass Pathways",
+      "location": "New York City, NY",
+      "salary": "$130,000 - $190,000",
+      "jobId": "4834755101",
+      "url": "https://job-boards.eu.greenhouse.io/compasspathways/jobs/4834755101?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Manager, Marketing Operations",
+      "company": "Remote",
+      "location": "Chicago, IL",
+      "salary": "$103,550 - $194,200",
+      "jobId": "7675029003",
+      "url": "https://job-boards.greenhouse.io/remotecom/jobs/7675029003?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Salary midpoint below 160K"
+    },
+    {
+      "title": "Engineering Manager, Growth",
+      "company": "Fanatics Collectibles",
+      "location": "Los Angeles, CA",
+      "salary": "$162,720 - $225,000",
+      "jobId": "4215069009",
+      "url": "https://job-boards.greenhouse.io/fanaticscollectibles/jobs/4215069009?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Engineering role not marketing"
+    },
+    {
+      "title": "Stablecoin Growth Lead",
+      "company": "Payoneer",
+      "location": "New York City, NY",
+      "salary": "$130,000 - $200,000",
+      "jobId": "7811369",
+      "url": "https://www.payoneer.com/careers/position/7811369/?gh_jid=7811369&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director, Revenue Growth",
+      "company": "Unknown",
+      "location": "",
+      "salary": "$125,400 - $167,200",
+      "jobId": "4216792009",
+      "url": "https://job-boards.greenhouse.io/monsterenergy/jobs/4216792009?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Salary below 160K minimum"
+    },
+    {
+      "title": "Product-Led Growth Manager",
+      "company": "Remote",
+      "location": "New York City, NY",
+      "salary": "$130,000 - $160,000",
+      "jobId": "7703398003",
+      "url": "https://job-boards.greenhouse.io/remotecom/jobs/7703398003?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Remote PLG Manager - max salary at 160K border"
+    },
+    {
+      "title": "Product-Led Growth Manager",
+      "company": "Remote",
+      "location": "Barcelona, B",
+      "salary": "$130,000 - $160,000",
+      "jobId": "7703885003",
+      "url": "https://job-boards.greenhouse.io/remotecom/jobs/7703885003?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Duplicate Remote PLG Manager - max salary at 160K border"
+    },
+    {
+      "title": "Product-Led Growth Manager",
+      "company": "Remote",
+      "location": "Lisbon, 11",
+      "salary": "$130,000 - $160,000",
+      "jobId": "7703886003",
+      "url": "https://job-boards.greenhouse.io/remotecom/jobs/7703886003?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Duplicate Remote PLG Manager"
+    },
+    {
+      "title": "Product-Led Growth Manager",
+      "company": "Remote",
+      "location": "Dublin, IE",
+      "salary": "$130,000 - $160,000",
+      "jobId": "7703883003",
+      "url": "https://job-boards.greenhouse.io/remotecom/jobs/7703883003?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Duplicate Remote PLG Manager"
+    },
+    {
+      "title": "Staff Growth Technology Integration Engineer",
+      "company": "Fanatics Collectibles",
+      "location": "New York City, NY",
+      "salary": "$152,000 - $190,000",
+      "jobId": "4219107009",
+      "url": "https://job-boards.greenhouse.io/fanaticscollectibles/jobs/4219107009?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Engineering/technical role"
+    },
+    {
+      "title": "Director, Digital Commerce & Growth (Future Society)",
+      "company": "Arcaea",
+      "location": "Boston, MA",
+      "salary": "$150,000 - $185,000",
+      "jobId": "5063383007",
+      "url": "https://job-boards.greenhouse.io/arcaea/jobs/5063383007?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director of Data Science & Analytics, User Growth",
+      "company": "Duolingo",
+      "location": "Pittsburgh, PA",
+      "salary": "$244,000 - $366,000",
+      "jobId": "8508337002",
+      "url": "https://careers.duolingo.com/jobs/8508337002?gh_jid=8508337002&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Data Science role not marketing"
+    },
+    {
+      "title": "Director of Data Science & Analytics, User Growth",
+      "company": "Duolingo",
+      "location": "New York, NY",
+      "salary": "$244,000 - $366,000",
+      "jobId": "8508389002",
+      "url": "https://careers.duolingo.com/jobs/8508389002?gh_jid=8508389002&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Data Science role not marketing"
+    },
+    {
+      "title": "Director, Business Growth and Enablement",
+      "company": "Revolution Medicines",
+      "location": "Redwood City, CA",
+      "salary": "$211,000 - $264,000",
+      "jobId": "7693907003",
+      "url": "https://www.revmed.com/careers-list/?gh_jid=7693907003&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Sr. Manager, Feed & Catalog Growth",
+      "company": "Quince",
+      "location": "San Francisco, CA",
+      "salary": "$150,000 - $250,000",
+      "jobId": "5185243008",
+      "url": "https://job-boards.greenhouse.io/quince/jobs/5185243008?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Job posting expired/removed (404 redirect)"
+    },
+    {
+      "title": "Account Growth & Advisory Lead (Technology & Experience)",
+      "company": "West Monroe",
+      "location": "Chicago, IL",
+      "salary": "$280,000 - $308,000",
+      "jobId": "5873102004",
+      "url": "https://westmonroe.com/careers/job-details-experienced-professionals?gh_jid=5873102004&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Engineering Manager, Growth & Experimentation",
+      "company": "Checkr",
+      "location": "Denver, CO",
+      "salary": "$197,000 - $274,000",
+      "jobId": "7781949",
+      "url": "https://job-boards.greenhouse.io/checkr/jobs/7781949?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Engineering/technical role"
+    },
+    {
+      "title": "Senior Manager, Growth Cohort - Sportsbook",
+      "company": "Fanatics Betting & Gaming",
+      "location": "",
+      "salary": "$150,000 - $175,000",
+      "jobId": "4209828009",
+      "url": "https://job-boards.greenhouse.io/fanaticsfbg/jobs/4209828009?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director of Growth",
+      "company": "CodePath",
+      "location": "San Francisco Bay Area, CA",
+      "salary": "$180,000 - $230,000",
+      "jobId": "5097034007",
+      "url": "https://job-boards.greenhouse.io/codepath/jobs/5097034007?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Solutions Consultant - Growth",
+      "company": "Remote",
+      "location": "United, LA",
+      "salary": "$150,000 - $170,000",
+      "jobId": "7677870003",
+      "url": "https://job-boards.greenhouse.io/remotecom/jobs/7677870003?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Manager Data Science, Revenue & Growth",
+      "company": "Checkr",
+      "location": "San Francisco, CA",
+      "salary": "$268,000 - $315,000",
+      "jobId": "7773683",
+      "url": "https://job-boards.greenhouse.io/checkr/jobs/7773683?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Data Science role, not marketing"
+    },
+    {
+      "title": "Director, E-Commerce Growth and Marketplace Partnerships",
+      "company": "IPSY",
+      "location": "Santa Monica, CA",
+      "salary": "$130,000 - $190,000",
+      "jobId": "5153758008",
+      "url": "https://job-boards.greenhouse.io/personalizedbeautydiscoveryincdbaipsy/jobs/5153758008?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Consulting Director, Commercial Growth",
+      "company": "Triumvirate Environmental",
+      "location": "Raleigh, NC",
+      "salary": "$160,000 - $220,000",
+      "jobId": "4667590006",
+      "url": "https://job-boards.greenhouse.io/triumvirateenvironmental/jobs/4667590006?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Life sciences/EHS consulting role - requires deep domain expertise in pharmaceutical manufacturing, not marketing fit"
+    },
+    {
+      "title": "Senior Consulting Director, Commercial Growth",
+      "company": "Triumvirate Environmental",
+      "location": "Somerville, MA",
+      "salary": "$160,000 - $220,000",
+      "jobId": "4666709006",
+      "url": "https://job-boards.greenhouse.io/triumvirateenvironmental/jobs/4666709006?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Life sciences/EHS consulting role - requires deep domain expertise in pharmaceutical manufacturing, not marketing fit"
+    },
+    {
+      "title": "Senior Consulting Director, Commercial Growth",
+      "company": "Triumvirate Environmental",
+      "location": "Baltimore, MD",
+      "salary": "$160,000 - $220,000",
+      "jobId": "4667589006",
+      "url": "https://job-boards.greenhouse.io/triumvirateenvironmental/jobs/4667589006?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Life sciences/EHS consulting role - requires deep domain expertise in pharmaceutical manufacturing, not marketing fit"
+    },
+    {
+      "title": "Senior Consulting Director, Commercial Growth",
+      "company": "Triumvirate Environmental",
+      "location": "New York City, NY",
+      "salary": "$160,000 - $220,000",
+      "jobId": "4667588006",
+      "url": "https://job-boards.greenhouse.io/triumvirateenvironmental/jobs/4667588006?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Life sciences/EHS consulting role - requires deep domain expertise in pharmaceutical manufacturing, not marketing fit"
+    },
+    {
+      "title": "Strategic Growth, Senior Manager - MCM",
+      "company": "Moloco",
+      "location": "San Francisco, CA",
+      "salary": "$130,000 - $190,000",
+      "jobId": "7678765003",
+      "url": "https://job-boards.greenhouse.io/moloco/jobs/7678765003?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Growth Marketer, AI Platform",
+      "company": "Kizen",
+      "location": "New York City, NY",
+      "salary": "$120,000 - $175,000",
+      "jobId": "5162533008",
+      "url": "https://kizen.com/jobs?gh_jid=5162533008&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "NYC office 4x/week required, Barron in SF"
+    },
+    {
+      "title": "Solutions Engineer, Growth - West",
+      "company": "Wiz, Inc.",
+      "location": "Los Angeles, CA",
+      "salary": "$138,600 - $182,000",
+      "jobId": "4665622006",
+      "url": "https://www.wiz.io/careers/job/4665622006/:title?gh_jid=4665622006&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Engineering/technical role"
+    },
+    {
+      "title": "Director, Growth Partnerships",
+      "company": "DEPT\u00ae",
+      "location": "Chicago, IL",
+      "salary": "$130,000 - $210,000",
+      "jobId": "7739186",
+      "url": "https://job-boards.greenhouse.io/dept/jobs/7739186?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director, Brand Growth",
+      "company": "CookUnity",
+      "location": "Toronto, ON",
+      "salary": "$190,000 - $210,000",
+      "jobId": "7668069003",
+      "url": "https://careers.cookunity.com/open-roles?gh_jid=7668069003&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Toronto, Canada location - Barron in SF"
+    },
+    {
+      "title": "Strategic Partner Manager, Growth",
+      "company": "Wiz, Inc.",
+      "location": "San Francisco, CA",
+      "salary": "$209,300 - $234,500",
+      "jobId": "4663863006",
+      "url": "https://www.wiz.io/careers/job/4663863006/:title?gh_jid=4663863006&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Cloud security CSP alliance role - requires AWS/Azure/GCP partnership experience, not marketing"
+    },
+    {
+      "title": "Chief Growth Officer - CREO",
+      "company": "Omnicom Media US",
+      "location": "Chicago, IL",
+      "salary": "$250,000 - $350,000",
+      "jobId": "5072537007",
+      "url": "https://omnicommedia.com/careers/us/omnicom-media-network/?gh_jid=5072537007&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Growth Web Engineer",
+      "company": "New Relic",
+      "location": "New York City, NY",
+      "salary": "$146,000 - $182,000",
+      "jobId": "5153292008",
+      "url": "https://job-boards.greenhouse.io/newrelic/jobs/5153292008?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Engineering/technical role"
+    },
+    {
+      "title": "Senior Manager, Publisher Growth Solutions",
+      "company": "Unknown",
+      "location": "New York City, NY",
+      "salary": "$150,000 - $190,000",
+      "jobId": "5148826008",
+      "url": "https://pubmatic.com/job/?gh_jid=5148826008&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director of Growth",
+      "company": "DEPT\u00ae",
+      "location": "San Francisco, CA",
+      "salary": "$118,000 - $171,000",
+      "jobId": "7689116",
+      "url": "https://job-boards.greenhouse.io/dept/jobs/7689116?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Manager, Retail Media Strategy & Growth (Clubs)",
+      "company": "SharkNinja",
+      "location": "New York City, NY",
+      "salary": "$142,600 - $174,200",
+      "jobId": "4659577006",
+      "url": "https://job-boards.greenhouse.io/sharkninjaoperatingllc/jobs/4659577006?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Growth Engineer",
+      "company": "Pelago",
+      "location": "New York City, NY",
+      "salary": "$185,000 - $195,000",
+      "jobId": "5067571007",
+      "url": "https://job-boards.greenhouse.io/pelago/jobs/5067571007?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Engineering/technical role"
+    },
+    {
+      "title": "Head of Marketing Operations & Growth",
+      "company": "Legion Intelligence",
+      "location": "San Francisco, CA",
+      "salary": "$180,000 - $240,000",
+      "jobId": "5067998007",
+      "url": "https://job-boards.greenhouse.io/yurtsai/jobs/5067998007?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Chief Growth Officer",
+      "company": "24 Hour Home Care - Corporate Division",
+      "location": "El Segundo, CA",
+      "salary": "$248,000 - $325,000",
+      "jobId": "5134350008",
+      "url": "https://www.24hrcares.com/corporate-careers?gh_jid=5134350008&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Content & Social Growth Manager",
+      "company": "ID.me",
+      "location": "Mountain View, CA",
+      "salary": "$143,000 - $180,000",
+      "jobId": "7637180003",
+      "url": "https://job-boards.greenhouse.io/idme/jobs/7637180003?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Growth Marketing Manager, EMEA",
+      "company": "Wiz, Inc.",
+      "location": "New York City, NY",
+      "salary": "$150,000 - $206,500",
+      "jobId": "4653984006",
+      "url": "https://www.wiz.io/careers/job/4653984006/:title?gh_jid=4653984006&gh_src=my.greenhouse.search",
+      "status": "failed",
+      "reason": "Page not found (404)"
+    },
+    {
+      "title": "Sr. Product Marketing Manager - Growth (PLG)",
+      "company": "Klaviyo",
+      "location": "San Francisco, CA",
+      "salary": "$116,000 - $174,000",
+      "jobId": "7626723003",
+      "url": "https://www.klaviyo.com/careers/jobs?gh_jid=7626723003&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "User requested skip Klaviyo"
+    },
+    {
+      "title": "Sr. Product Marketing Manager - Growth (PLG)",
+      "company": "Klaviyo",
+      "location": "Boston, MA",
+      "salary": "$116,000 - $174,000",
+      "jobId": "7626356003",
+      "url": "https://www.klaviyo.com/careers/jobs?gh_jid=7626356003&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "User requested skip Klaviyo"
+    },
+    {
+      "title": "Growth Partnerships Manager",
+      "company": "AppLovin",
+      "location": "New York City, NY",
+      "salary": "$111,300 - $206,700",
+      "jobId": "4651300006",
+      "url": "https://boards.greenhouse.io/applovin/jobs/4651300006?gh_jid=4651300006&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Sr. Growth & Lifecycle Marketing Manager",
+      "company": "Checkr",
+      "location": "San Francisco, CA",
+      "salary": "$133,000 - $186,000",
+      "jobId": "7562056",
+      "url": "https://job-boards.greenhouse.io/checkr/jobs/7562056?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Product Marketing Manager",
+      "company": "New Relic",
+      "location": "Atlanta, GA",
+      "salary": "$146,000 - $182,000",
+      "jobId": "5168690008",
+      "url": "https://job-boards.greenhouse.io/newrelic/jobs/5168690008?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Product Marketing Manager",
+      "company": "Modern Health",
+      "location": "San Francisco, CA",
+      "salary": "$113,120 - $166,400",
+      "jobId": "8465250002",
+      "url": "https://job-boards.greenhouse.io/modernhealth/jobs/8465250002?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Salary below $160K threshold ($113K-$166K)"
+    },
+    {
+      "title": "Senior Product Marketing Manager",
+      "company": "Spark Advisors",
+      "location": "New York City, NY",
+      "salary": "$160,000 - $180,000",
+      "jobId": "5153228008",
+      "url": "https://job-boards.greenhouse.io/sparkadvisors/jobs/5153228008?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Program Manager - Product Marketing",
+      "company": "New Relic",
+      "location": "Atlanta, GA",
+      "salary": "$136,000 - $170,000",
+      "jobId": "5168696008",
+      "url": "https://job-boards.greenhouse.io/newrelic/jobs/5168696008?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Sr. Product Marketing Manager",
+      "company": "Rubrik Job Board",
+      "location": "Palo Alto, CA",
+      "salary": "$185,700 - $278,500",
+      "jobId": "7729782",
+      "url": "https://www.rubrik.com/company/careers/departments/job.7729782?gh_jid=7729782&gh_src=my.greenhouse.search",
+      "status": "failed",
+      "reason": "No Greenhouse form on company page, no Apply button found"
+    },
+    {
+      "title": "Sr. Product Marketing Manager, Identity",
+      "company": "Rubrik Job Board",
+      "location": "Palo Alto, CA",
+      "salary": "$185,700 - $278,500",
+      "jobId": "7763400",
+      "url": "https://www.rubrik.com/company/careers/departments/job.7763400?gh_jid=7763400&gh_src=my.greenhouse.search",
+      "status": "failed",
+      "reason": "Same Rubrik page issue - no Greenhouse form"
+    },
+    {
+      "title": "Head of Product Marketing",
+      "company": "Legion Intelligence",
+      "location": "San Francisco, CA",
+      "salary": "$180,000 - $240,000",
+      "jobId": "5068188007",
+      "url": "https://job-boards.greenhouse.io/yurtsai/jobs/5068188007?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director of Product Marketing, HBM & Graphics Memory (North America)",
+      "company": "Samsung Semiconductor",
+      "location": "San Jose, CA",
+      "salary": "$210,000 - $336,000",
+      "jobId": "7677439003",
+      "url": "https://job-boards.greenhouse.io/samsungsemiconductor/jobs/7677439003?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Deep semiconductor domain expertise required (HBM, graphics memory hardware)"
+    },
+    {
+      "title": "Director, Product Marketing Management",
+      "company": "Storable",
+      "location": "Austin, TX",
+      "salary": "$185,000 - $200,000",
+      "jobId": "5833597004",
+      "url": "https://www.storable.com/about-us/culture/careers/?gh_jid=5833597004&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Vice President, Product Marketing",
+      "company": "Unknown",
+      "location": "New York City, NY",
+      "salary": "$310,000 - $350,000",
+      "jobId": "5158776008",
+      "url": "https://pubmatic.com/job/?gh_jid=5158776008&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Principal Product Marketing Manager",
+      "company": "Calendly",
+      "location": "Atlanta, GA",
+      "salary": "$185,555 - $261,960",
+      "jobId": "8438605002",
+      "url": "https://job-boards.greenhouse.io/calendly/jobs/8438605002?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director, Product Marketing AI",
+      "company": "Unity Technologies",
+      "location": "New York City, NY",
+      "salary": "$198,000 - $278,000",
+      "jobId": "7728052",
+      "url": "https://unity.com/careers/positions/7728052?gh_jid=7728052&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Product Manager , AI Platforms Kroger Precision Marketing (P4005)",
+      "company": "84.51\u00b0",
+      "location": "Chicago, IL",
+      "salary": "$98,000 - $169,050",
+      "jobId": "8474578002",
+      "url": "https://job-boards.greenhouse.io/8451/jobs/8474578002?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Salary below 160K (98K-169K, PM role not marketing)"
+    },
+    {
+      "title": "Director, Product Marketing AI",
+      "company": "Unity Technologies",
+      "location": "San Francisco, CA",
+      "salary": "$198,000 - $278,000",
+      "jobId": "7728427",
+      "url": "https://unity.com/careers/positions/7728427?gh_jid=7728427&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Duplicate Unity Dir AI Marketing role"
+    },
+    {
+      "title": "Product Marketing Director, CTV",
+      "company": "Moloco",
+      "location": "San Francisco, CA",
+      "salary": "$224,000 - $305,000",
+      "jobId": "7667681003",
+      "url": "https://job-boards.greenhouse.io/moloco/jobs/7667681003?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Sr. Director, Product Marketing",
+      "company": "Cockroach Labs",
+      "location": "New York City, NY",
+      "salary": "$300,000 - $330,000",
+      "jobId": "7663314",
+      "url": "https://www.cockroachlabs.com/careers/job/?gh_jid=7663314&gh_src=my.greenhouse.search",
+      "status": "failed",
+      "reason": "Job page redirects to general careers page - listing removed"
+    },
+    {
+      "title": "Senior Product Marketing Manager - Verticals",
+      "company": "Klaviyo",
+      "location": "Boston, MA",
+      "salary": "$116,000 - $174,000",
+      "jobId": "7664280003",
+      "url": "https://www.klaviyo.com/careers/jobs?gh_jid=7664280003&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "User requested skip Klaviyo"
+    },
+    {
+      "title": "Senior Product Marketing Manager - Verticals",
+      "company": "Klaviyo",
+      "location": "San Francisco, CA",
+      "salary": "$116,000 - $174,000",
+      "jobId": "7664279003",
+      "url": "https://www.klaviyo.com/careers/jobs?gh_jid=7664279003&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "User requested skip Klaviyo"
+    },
+    {
+      "title": "Head of Product and Distribution Marketing",
+      "company": "Unknown",
+      "location": "Addison, TX",
+      "salary": "$187,500 - $275,000",
+      "jobId": "4181111009",
+      "url": "https://job-boards.greenhouse.io/nationallifeinsurancecompany/jobs/4181111009?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Requires 10+ yrs Life & Annuity insurance experience - domain mismatch"
+    },
+    {
+      "title": "Product Marketing Leader",
+      "company": "Hubble Network",
+      "location": "Seattle, WA",
+      "salary": "$145,000 - $220,000",
+      "jobId": "5100358008",
+      "url": "https://hubble.com/careers?gh_jid=5100358008&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Salary 145K-220K, hardware/IoT satellite company - domain mismatch"
+    },
+    {
+      "title": "Senior Product Marketing Manager, Developer Platform",
+      "company": "Box",
+      "location": "Redwood City, CA",
+      "salary": "$165,000 - $206,500",
+      "jobId": "7673419",
+      "url": "https://job-boards.greenhouse.io/boxinc/jobs/7673419?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Product Marketing Lead - Launches",
+      "company": "Klaviyo",
+      "location": "San Francisco, CA",
+      "salary": "$140,000 - $210,000",
+      "jobId": "7626837003",
+      "url": "https://www.klaviyo.com/careers/jobs?gh_jid=7626837003&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "User requested skip Klaviyo"
+    },
+    {
+      "title": "Senior Product Marketing Manager- AI (Columbia MD or Boston MA)",
+      "company": "Tenable, Inc.",
+      "location": "Columbia, MD",
+      "salary": "$130,000 - $173,333",
+      "jobId": "5145475008",
+      "url": "https://job-boards.greenhouse.io/tenableinc/jobs/5145475008?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Salary below 160K (130K-173K)"
+    },
+    {
+      "title": "Sr. Director, Product Marketing",
+      "company": "Smartsheet",
+      "location": "Bellevue, WA",
+      "salary": "$263,750 - $306,250",
+      "jobId": "7642923",
+      "url": "https://job-boards.greenhouse.io/smartsheet/jobs/7642923?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Product Marketing Manager",
+      "company": "Veza Technologies, Inc.",
+      "location": "Redwood City, CA",
+      "salary": "$145,000 - $250,000",
+      "jobId": "5617924004",
+      "url": "https://job-boards.greenhouse.io/veza/jobs/5617924004?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director, Product Marketing (AI & Intelligent GTM)",
+      "company": "TripleLift",
+      "location": "New York, NY",
+      "salary": "$160,000 - $200,000",
+      "jobId": "7647875",
+      "url": "https://triplelift.com/careers-posts/?gh_jid=7647875&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Product Marketing Manager",
+      "company": "MasterClass",
+      "location": "San Francisco, CA",
+      "salary": "$140,000 - $170,000",
+      "jobId": "7575409",
+      "url": "https://job-boards.greenhouse.io/masterclass/jobs/7575409?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Salary below $160K threshold ($140K-$170K)"
+    },
+    {
+      "title": "Director of Product Marketing - MetaMask",
+      "company": "Consensys",
+      "location": "New York City, NY",
+      "salary": "$146,000 - $215,000",
+      "jobId": "7612237",
+      "url": "https://consensys.io/open-roles/7612237?gh_jid=7612237&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Principal Product Marketing Manager - Compliance",
+      "company": "Obsidian Security",
+      "location": "Palo Alto, CA",
+      "salary": "$213,000 - $231,000",
+      "jobId": "5109309008",
+      "url": "https://job-boards.greenhouse.io/obsidiansecurity/jobs/5109309008?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Product Marketing Manager",
+      "company": "CodePath",
+      "location": "San Francisco Bay Area, CA",
+      "salary": "$168,000 - $196,000",
+      "jobId": "5020236007",
+      "url": "https://job-boards.greenhouse.io/codepath/jobs/5020236007?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Product Marketing Manager, Duolingo Math",
+      "company": "Duolingo",
+      "location": "New York City, NY",
+      "salary": "$116,500 - $189,800",
+      "jobId": "8400553002",
+      "url": "https://careers.duolingo.com/jobs/8400553002?gh_jid=8400553002&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Sr. Product Marketing Manager/Product Marketing Manager, Solutions",
+      "company": "Verkada",
+      "location": "San Mateo, CA",
+      "salary": "$135,000 - $180,000",
+      "jobId": "5037062007",
+      "url": "https://job-boards.greenhouse.io/verkada/jobs/5037062007?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Product Marketing Manager - AI Platform",
+      "company": "Harness",
+      "location": "Mountain View, CA",
+      "salary": "$190,000 - $205,000",
+      "jobId": "5039573007",
+      "url": "https://www.harness.io/company/jobs/apply?gh_jid=5039573007&gh_jid=5039573007&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Manager, Product Marketing",
+      "company": "Collective Health",
+      "location": "Lehi, UT",
+      "salary": "$138,000 - $189,750",
+      "jobId": "7572355",
+      "url": "https://jobs.collectivehealth.com/apply/?gh_jid=7572355&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Lead Product Marketing Manager",
+      "company": "LettrLabs",
+      "location": "Los Angeles, CA",
+      "salary": "$150,000 - $190,000",
+      "jobId": "4091432009",
+      "url": "https://job-boards.greenhouse.io/lettrlabs/jobs/4091432009?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Product Marketing Manager, GovTech",
+      "company": "Verkada",
+      "location": "San Mateo, CA",
+      "salary": "$135,000 - $160,000",
+      "jobId": "5031132007",
+      "url": "https://job-boards.greenhouse.io/verkada/jobs/5031132007?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Technical Product Marketing- AST Tools",
+      "company": "Black Duck Software, Inc.",
+      "location": "Burlington, MA",
+      "salary": "$106,900 - $160,400",
+      "jobId": "5053496008",
+      "url": "https://job-boards.greenhouse.io/blackduck/jobs/5053496008?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Product Marketing Manager",
+      "company": "Veza Technologies, Inc.",
+      "location": "San Francisco, CA",
+      "salary": "$154,000 - $210,000",
+      "jobId": "5740692004",
+      "url": "https://job-boards.greenhouse.io/veza/jobs/5740692004?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Product Marketing Manager",
+      "company": "Unknown",
+      "location": "New York City, NY",
+      "salary": "$140,000 - $160,000",
+      "jobId": "4781868007",
+      "url": "https://www.chronograph.pe/jobs/?gh_jid=4781868007&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director, Demand Generation",
+      "company": "Syndigo",
+      "location": "Chicago, IL",
+      "salary": "$144,000 - $180,000",
+      "jobId": "5808939004",
+      "url": "https://syndigo.com/open-positions/?gh_jid=5808939004&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Content Marketing Lead, Campaigns, Demand Generation & Thought Leadership",
+      "company": "Klaviyo",
+      "location": "Denver, CO",
+      "salary": "$112,000 - $168,000",
+      "jobId": "7676176003",
+      "url": "https://www.klaviyo.com/careers/jobs?gh_jid=7676176003&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "User requested skip Klaviyo"
+    },
+    {
+      "title": "Content Marketing Lead, Campaigns, Demand Generation & Thought Leadership",
+      "company": "Klaviyo",
+      "location": "Boston, MA",
+      "salary": "$112,000 - $168,000",
+      "jobId": "7672786003",
+      "url": "https://www.klaviyo.com/careers/jobs?gh_jid=7672786003&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "User requested skip Klaviyo"
+    },
+    {
+      "title": "Content Marketing Lead, Campaigns, Demand Generation & Thought Leadership",
+      "company": "Klaviyo",
+      "location": "San Francisco, CA",
+      "salary": "$112,000 - $168,000",
+      "jobId": "7676177003",
+      "url": "https://www.klaviyo.com/careers/jobs?gh_jid=7676177003&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "User requested skip Klaviyo"
+    },
+    {
+      "title": "Senior Demand Generation Manager (Lifecycle Marketing)",
+      "company": "Diligent Corporation",
+      "location": "New York City, NY",
+      "salary": "$131,000 - $164,000",
+      "jobId": "5789854004",
+      "url": "https://job-boards.greenhouse.io/diligentcorporation/jobs/5789854004?gh_src=my.greenhouse.search",
+      "status": "failed",
+      "reason": "Job posting closed/removed - redirected to error page"
+    },
+    {
+      "title": "Demand Generation Lead",
+      "company": "NexHealth",
+      "location": "San Francisco, CA",
+      "salary": "$124,000 - $195,000",
+      "jobId": "5709065004",
+      "url": "https://www.nexhealth.com/careers/open-positions?gh_jid=5709065004&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Demand Generation & Growth Marketing Manager, Channel Technical Programs",
+      "company": "Verkada",
+      "location": "San Mateo, CA",
+      "salary": "$135,000 - $180,000",
+      "jobId": "4970811007",
+      "url": "https://job-boards.greenhouse.io/verkada/jobs/4970811007?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Sr. Performance Marketing Manager",
+      "company": "Parloa",
+      "location": "New York City, NY",
+      "salary": "$130,000 - $170,000",
+      "jobId": "4788625101",
+      "url": "https://job-boards.eu.greenhouse.io/parloa/jobs/4788625101?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "People Partner",
+      "company": "Verkada",
+      "location": "New York City, NY",
+      "salary": "$160,000 - $200,000",
+      "jobId": "5108024007",
+      "url": "https://job-boards.greenhouse.io/verkada/jobs/5108024007?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "HR/People role, not marketing"
+    },
+    {
+      "title": "Senior Channel Partnerships Manager",
+      "company": "Parloa",
+      "location": "Chicago, IL",
+      "salary": "$140,000 - $160,000",
+      "jobId": "4836055101",
+      "url": "https://job-boards.eu.greenhouse.io/parloa/jobs/4836055101?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Salary below $160K minimum"
+    },
+    {
+      "title": "Manager, Enterprise Partnerships - Credit Card",
+      "company": "Fanatics Inc.",
+      "location": "New York City, NY",
+      "salary": "$138,000 - $168,000",
+      "jobId": "4207920009",
+      "url": "https://job-boards.greenhouse.io/fanaticsinc/jobs/4207920009?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Credit card partnerships, not marketing fit"
+    },
+    {
+      "title": "Sr Manager, Partnerships - Licensing & Collectibles",
+      "company": "SharkNinja",
+      "location": "Needham, MA",
+      "salary": "$124,500 - $190,900",
+      "jobId": "4669390006",
+      "url": "https://job-boards.greenhouse.io/sharkninjaoperatingllc/jobs/4669390006?gh_src=my.greenhouse.search",
+      "status": "failed",
+      "reason": "Job posting closed/removed - page not found"
+    },
+    {
+      "title": "Senior Director, Podcast Partnerships (B2B & Consumer Technology)",
+      "company": "Vox Media, LLC",
+      "location": "New York City, NY",
+      "salary": "$150,000 - $180,000",
+      "jobId": "7776369",
+      "url": "http://boards.greenhouse.io/voxmedia/jobs/7776369?gh_jid=7776369&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "SVP, Client Partnership",
+      "company": "HugeInc",
+      "location": "San Francisco, CA",
+      "salary": "$215,000 - $255,000",
+      "jobId": "7776519",
+      "url": "https://job-boards.greenhouse.io/hugeinc/jobs/7776519?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director of Partnerships",
+      "company": "Pagaya",
+      "location": "New York City, NY",
+      "salary": "$200,000 - $240,000",
+      "jobId": "7672344003",
+      "url": "https://job-boards.greenhouse.io/pagaya/jobs/7672344003?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director, Strategic Partnerships",
+      "company": "Guidepoint",
+      "location": "New York City, NY",
+      "salary": "$180,000 - $200,000",
+      "jobId": "8470569002",
+      "url": "https://job-boards.greenhouse.io/guidepoint/jobs/8470569002?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director, Reseller Partnerships AMERS",
+      "company": "Diligent Corporation",
+      "location": "New York City, NY",
+      "salary": "$174,000 - $217,400",
+      "jobId": "5814381004",
+      "url": "https://job-boards.greenhouse.io/diligentcorporation/jobs/5814381004?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Requires fluent Spanish (mandatory)"
+    },
+    {
+      "title": "Head of Partnerships",
+      "company": "Augment Code",
+      "location": "Palo Alto, CA",
+      "salary": "$250,000 - $300,000",
+      "jobId": "5010066008",
+      "url": "https://job-boards.greenhouse.io/augmentcomputing/jobs/5010066008?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Editorial Partnerships & Digital PR Manager",
+      "company": "Next Insurance",
+      "location": "Waltham, MA",
+      "salary": "$127,000 - $192,000",
+      "jobId": "7664234003",
+      "url": "https://job-boards.greenhouse.io/nextinsurance66/jobs/7664234003?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Editorial/Digital PR role, not marketing leadership fit"
+    },
+    {
+      "title": "Senior Director, Client Partnerships (M&E)",
+      "company": "Vox Media, LLC",
+      "location": "Los Angeles, CA",
+      "salary": "$150,000 - $170,000",
+      "jobId": "7735711",
+      "url": "http://boards.greenhouse.io/voxmedia/jobs/7735711?gh_jid=7735711&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Salary max $170K below $160K+ threshold for Sr Dir level"
+    },
+    {
+      "title": "Manager / Senior Manager, Strategic Partnerships",
+      "company": "C3 AI",
+      "location": "Redwood City, CA",
+      "salary": "$131,000 - $210,000",
+      "jobId": "8467001002",
+      "url": "https://c3.ai/job-description/8467001002?gh_jid=8467001002&gh_src=my.greenhouse.search",
+      "status": "failed",
+      "reason": "Page not found (404)"
+    },
+    {
+      "title": "Group Director, Client Partnership (Media)",
+      "company": "DEPT\u00ae",
+      "location": "Los Angeles, CA",
+      "salary": "$180,000 - $215,000",
+      "jobId": "7776660",
+      "url": "https://job-boards.greenhouse.io/dept/jobs/7776660?gh_src=my.greenhouse.search",
+      "status": "failed",
+      "reason": "Page not found (404)"
+    },
+    {
+      "title": "Senior Partnerships Manager",
+      "company": "ZoomInfo Technologies LLC",
+      "location": "Vancouver, WA",
+      "salary": "$117,600 - $161,700",
+      "jobId": "8457480002",
+      "url": "https://www.zoominfo.com/careers?gh_jid=8457480002&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Salary max $161K below threshold"
+    },
+    {
+      "title": "Senior Partnerships Manager",
+      "company": "ZoomInfo Technologies LLC",
+      "location": "Waltham, MA",
+      "salary": "$117,600 - $161,700",
+      "jobId": "8433562002",
+      "url": "https://www.zoominfo.com/careers?gh_jid=8433562002&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Salary max $161K below threshold"
+    },
+    {
+      "title": "Senior Partnership Alliance Manager - SI",
+      "company": "West Monroe",
+      "location": "Chicago, IL",
+      "salary": "$163,200 - $220,800",
+      "jobId": "5834929004",
+      "url": "https://westmonroe.com/careers/job-details-experienced-professionals?gh_jid=5834929004&gh_src=my.greenhouse.search",
+      "status": "failed",
+      "reason": "Page not found (404)"
+    },
+    {
+      "title": "VP, Corporate Partnerships",
+      "company": "Play\ufb02y Sports",
+      "location": "New York City, NY",
+      "salary": "$220,000 - $226,000",
+      "jobId": "4146628009",
+      "url": "https://www.playfly.com/careers?gh_jid=4146628009&gh_src=my.greenhouse.search",
+      "status": "failed",
+      "reason": "404 - no direct greenhouse board"
+    },
+    {
+      "title": "Sr. Strategic Partnerships Director",
+      "company": "LogicMonitor",
+      "location": "San Francisco, CA",
+      "salary": "$192,170 - $240,240",
+      "jobId": "7647997",
+      "url": "https://www.logicmonitor.com/career/?gh_jid=7647997&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Partnerships Manager, Strategic",
+      "company": "Checkr",
+      "location": "San Francisco, CA",
+      "salary": "$258,000 - $304,000",
+      "jobId": "7617395",
+      "url": "https://job-boards.greenhouse.io/checkr/jobs/7617395?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director of Business Development, Biopharma Partnerships",
+      "company": "GeneDx",
+      "location": "Boston, MA",
+      "salary": "$175,000 - $195,000",
+      "jobId": "4663579005",
+      "url": "https://genedx.com/careers/openings?gh_jid=4663579005&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "GSI Partnerships Manager - (Conversational AI & Agentic AI)",
+      "company": "Parloa",
+      "location": "New York, NY",
+      "salary": "$180,000 - $250,000",
+      "jobId": "4784741101",
+      "url": "https://job-boards.eu.greenhouse.io/parloa/jobs/4784741101?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "VP, DSP Partnerships",
+      "company": "TripleLift",
+      "location": "New York City, NY",
+      "salary": "$250,000 - $325,000",
+      "jobId": "7545381",
+      "url": "https://triplelift.com/careers-posts/?gh_jid=7545381&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Director, Client Partnership",
+      "company": "HugeInc",
+      "location": "New York City, NY",
+      "salary": "$135,000 - $180,000",
+      "jobId": "7567798",
+      "url": "https://job-boards.greenhouse.io/hugeinc/jobs/7567798?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Already applied to HugeInc SVP role, salary borderline"
+    },
+    {
+      "title": "VP, Corporate Partnerships (Playfly Access)",
+      "company": "Play\ufb02y Sports",
+      "location": "Los Angeles, CA",
+      "salary": "$200,000 - $230,000",
+      "jobId": "4113976009",
+      "url": "https://www.playfly.com/careers?gh_jid=4113976009&gh_src=my.greenhouse.search",
+      "status": "failed",
+      "reason": "404 - no direct greenhouse board"
+    },
+    {
+      "title": "Strategic Partnerships Success Director",
+      "company": "SentinelOne",
+      "location": "Washington, DC",
+      "salary": "$214,000 - $262,000",
+      "jobId": "7599852003",
+      "url": "https://www.sentinelone.com/jobs/7599852003?gh_jid=7599852003&gh_src=my.greenhouse.search",
+      "status": "failed",
+      "reason": "404 - no greenhouse board found"
+    },
+    {
+      "title": "Senior Director, Strategic Travel Partnerships",
+      "company": "Engine",
+      "location": "Denver, CO",
+      "salary": "$191,500 - $265,000",
+      "jobId": "7597129003",
+      "url": "https://job-boards.greenhouse.io/engine/jobs/7597129003?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Group Director, Paid Media (Client Partnership) - Remote",
+      "company": "DEPT\u00ae",
+      "location": "San Francisco, CA",
+      "salary": "$165,000 - $205,000",
+      "jobId": "7599964",
+      "url": "https://job-boards.greenhouse.io/dept/jobs/7599964?gh_src=my.greenhouse.search",
+      "status": "failed",
+      "reason": "404 page not found"
+    },
+    {
+      "title": "People Partner",
+      "company": "Verkada",
+      "location": "San Mateo, CA",
+      "salary": "$160,000 - $200,000",
+      "jobId": "4997650007",
+      "url": "https://job-boards.greenhouse.io/verkada/jobs/4997650007?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "HR/People Partner role, not marketing"
+    },
+    {
+      "title": "Principal Solutions Engineer, Product Partnerships",
+      "company": "Engine",
+      "location": "Denver, CO",
+      "salary": "$137,300 - $190,000",
+      "jobId": "7592004003",
+      "url": "https://job-boards.greenhouse.io/engine/jobs/7592004003?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Engineering/technical role"
+    },
+    {
+      "title": "Senior Director, Strategic Distribution & Mobility Partnerships",
+      "company": "Engine",
+      "location": "Denver, CO",
+      "salary": "$191,500 - $265,000",
+      "jobId": "7595389003",
+      "url": "https://job-boards.greenhouse.io/engine/jobs/7595389003?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director, Strategic Cloud Partnerships",
+      "company": "New Relic",
+      "location": "San Francisco, CA",
+      "salary": "$202,000 - $272,000",
+      "jobId": "5065498008",
+      "url": "https://job-boards.greenhouse.io/newrelic/jobs/5065498008?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director Technology Partnerships",
+      "company": "Chainguard",
+      "location": "New York City, NY",
+      "salary": "$190,000 - $215,000",
+      "jobId": "4639159006",
+      "url": "https://job-boards.greenhouse.io/chainguard/jobs/4639159006?gh_src=my.greenhouse.search",
+      "status": "pending_verification",
+      "reason": "Email verification code required - sent to xz429@cornell.edu. Form filled, files uploaded, needs 8-char code to submit."
+    },
+    {
+      "title": "Senior Strategic Partnerships Manager",
+      "company": "LogicMonitor",
+      "location": "Austin, TX",
+      "salary": "$124,950 - $179,960",
+      "jobId": "7511938",
+      "url": "https://www.logicmonitor.com/career/?gh_jid=7511938&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Senior Strategic Partnerships Manager",
+      "company": "LogicMonitor",
+      "location": "San Francisco, CA",
+      "salary": "$130,900 - $179,960",
+      "jobId": "7511940",
+      "url": "https://www.logicmonitor.com/career/?gh_jid=7511940&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Global Card Issuing & Partnership Leader",
+      "company": "Motive",
+      "location": "San Francisco, CA",
+      "salary": "$143,000 - $197,000",
+      "jobId": "7914499002",
+      "url": "https://job-boards.greenhouse.io/gomotive/jobs/7914499002?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Director, HR Business Partnership (Brand & Product)",
+      "company": "Stanley 1913",
+      "location": "Seattle, WA",
+      "salary": "$180,000 - $210,000",
+      "jobId": "5070774008",
+      "url": "https://job-boards.greenhouse.io/stanley1913-us/jobs/5070774008?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Role mismatch"
+    },
+    {
+      "title": "Senior Vice President, Sales (Partnerships)",
+      "company": "Komodo Health",
+      "location": "New York City, NY",
+      "salary": "$190,000 - $210,000",
+      "jobId": "8347862002",
+      "url": "https://job-boards.greenhouse.io/komodohealth/jobs/8347862002?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Partnership Alliances Manager",
+      "company": "West Monroe",
+      "location": "Chicago, IL",
+      "salary": "$137,300 - $185,700",
+      "jobId": "5741699004",
+      "url": "https://westmonroe.com/careers/job-details-experienced-professionals?gh_jid=5741699004&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Partnership Alliances Manager",
+      "company": "West Monroe",
+      "location": "New York City, NY",
+      "salary": "$137,300 - $185,700",
+      "jobId": "5741898004",
+      "url": "https://westmonroe.com/careers/job-details-experienced-professionals?gh_jid=5741898004&gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Manager Strategic Partnerships (P2289)",
+      "company": "84.51\u00b0",
+      "location": "Chicago, IL",
+      "salary": "$121,000 - $201,250",
+      "jobId": "8296989002",
+      "url": "https://job-boards.greenhouse.io/8451/jobs/8296989002?gh_src=my.greenhouse.search",
+      "status": "pending_verification",
+      "notes": "Email verification code required."
+    },
+    {
+      "title": "Area Vice President, Government Partnerships",
+      "company": "Komodo Health",
+      "location": "Washington, DC",
+      "salary": "$150,000 - $180,000",
+      "jobId": "8229760002",
+      "url": "https://job-boards.greenhouse.io/komodohealth/jobs/8229760002?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "notes": "Government-specific sales role (GSA/FedRAMP) - poor fit"
+    },
+    {
+      "title": "Head of Partnerships",
+      "company": "Airtable",
+      "location": "San Francisco, CA",
+      "salary": "$270,000 - $425,000",
+      "jobId": "8068841002",
+      "url": "https://job-boards.greenhouse.io/airtable/jobs/8068841002?gh_src=my.greenhouse.search",
+      "status": "submitted",
+      "job_id": "8068841002"
+    },
+    {
+      "title": "Senior Designer, Marketing Brand and Creative",
+      "company": "Northbeam",
+      "location": "San Francisco, CA",
+      "salary": "$155,000 - $180,000",
+      "jobId": "4623149006",
+      "url": "https://job-boards.greenhouse.io/northbeam/jobs/4623149006?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Role mismatch"
+    },
+    {
+      "title": "Manager/Senior Manager, Digital Marketing",
+      "company": "BridgeBio Pharma",
+      "location": "San Francisco, CA",
+      "salary": "$143,700 - $191,500",
+      "jobId": "5075221007",
+      "url": "https://job-boards.greenhouse.io/bridgebio/jobs/5075221007?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "notes": "Pharma digital marketing (HCP/patient media) - poor fit, salary below min"
+    },
+    {
+      "title": "Sr. Digital Marketing Specialist",
+      "company": "Rubrik Job Board",
+      "location": "Tampa, FL",
+      "salary": "$106,500 - $177,500",
+      "jobId": "7676417",
+      "url": "https://www.rubrik.com/company/careers/departments/job.7676417?gh_jid=7676417&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Role mismatch"
+    },
+    {
+      "title": "Go-To-Market Engineer II, Mid-Market",
+      "company": "Apollo.io",
+      "location": "United, LA",
+      "salary": "$150,000 - $175,000",
+      "jobId": "5918855004",
+      "url": "https://job-boards.greenhouse.io/apolloio/jobs/5918855004?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Engineering/technical role"
+    },
+    {
+      "title": "Go-To-Market Engineer I, SMB",
+      "company": "Apollo.io",
+      "location": "Remote, OR",
+      "salary": "$130,000 - $165,000",
+      "jobId": "5778017004",
+      "url": "https://job-boards.greenhouse.io/apolloio/jobs/5778017004?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "skip_reason": "Engineering/technical role"
+    },
+    {
+      "title": "Senior Director, Head of Marketing",
+      "company": "Unknown",
+      "location": "Washington, DC",
+      "salary": "$216,000 - $240,000",
+      "jobId": "4205771009",
+      "url": "https://careers.axoniusfed.com/?gh_jid=4205771009&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "notes": "Federal cybersecurity marketing - 15+ yr req, poor fit"
+    },
+    {
+      "title": "Director, Marketing Operations Business Partner",
+      "company": "Hootsuite",
+      "location": "Toronto, ON",
+      "salary": "$153,800 - $215,400",
+      "jobId": "7770101",
+      "url": "https://careers.hootsuite.com/job/?gh_jid=7770101&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "notes": "Marketing Ops/RevOps role - not partnerships"
+    },
+    {
+      "title": "VP of Marketing",
+      "company": "Agero",
+      "location": "Medford, MA",
+      "salary": "$200,000 - $220,000",
+      "jobId": "8446716002",
+      "url": "https://www.agero.com/available-jobs?gh_jid=8446716002&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "notes": "Iframe form - React selects not persisting values"
+    },
+    {
+      "title": "Head of Marketing",
+      "company": "Unknown",
+      "location": "Bethesda, MD",
+      "salary": "$120,000 - $200,000",
+      "jobId": "7661725",
+      "url": "https://www.employeenavigator.com/careers/7661725?gh_jid=7661725&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "notes": "Small unknown company, generic marketing"
+    },
+    {
+      "title": "VP, Global Marketing (Indoor Cooking)",
+      "company": "SharkNinja",
+      "location": "New York City, NY",
+      "salary": "$202,500 - $340,000",
+      "jobId": "4614616006",
+      "url": "https://job-boards.greenhouse.io/sharkninjaoperatingllc/jobs/4614616006?gh_src=my.greenhouse.search",
+      "status": "submitted",
+      "job_id": "4614616006"
+    },
+    {
+      "title": "VP/Sr. Director, Global Marketing",
+      "company": "Twist Bioscience",
+      "location": "Carlsbad, CA",
+      "salary": "$275,000 - $375,000",
+      "jobId": "6236520",
+      "url": "https://job-boards.greenhouse.io/twistbioscience/jobs/6236520?gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "notes": "Biotech/life sciences marketing - deep domain mismatch"
+    },
+    {
+      "title": "SVP of Marketing",
+      "company": "Hyperproof",
+      "location": "Boston, MA",
+      "salary": "$250,000 - $275,000",
+      "jobId": "4643753005",
+      "url": "https://hyperproof.io/job-listings/?gh_jid=4643753005&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "notes": "Small cybersecurity SaaS - company-hosted iframe likely problematic"
+    },
+    {
+      "title": "Chief Marketing Officer - Hybrid - up to $450,000 + Bonus",
+      "company": "Unknown",
+      "location": "Los Angeles, CA",
+      "salary": "$300,000 - $450,000",
+      "jobId": "4115441009",
+      "url": "https://job-boards.greenhouse.io/signalandstrand/jobs/4115441009?gh_src=my.greenhouse.search",
+      "status": "submitted"
+    },
+    {
+      "title": "Vice President, Product Marketing",
+      "company": "C3 AI",
+      "location": "Redwood City, CA",
+      "salary": "$250,000 - $350,000",
+      "jobId": "8318750002",
+      "url": "https://c3.ai/job-description/8318750002?gh_jid=8318750002&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "Browser crashed on company-hosted iframe page"
+    },
+    {
+      "title": "Director of Marketing",
+      "company": "Logiwa",
+      "location": "Chicago, IL",
+      "salary": "$140,000 - $160,000",
+      "jobId": "5837179004",
+      "url": "https://job-boards.greenhouse.io/logiwacareers/jobs/5837179004?gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Manager, Marketing",
+      "company": "SharkNinja",
+      "location": "Needham, MA",
+      "salary": "$78,800 - $161,000",
+      "jobId": "4662300006",
+      "url": "https://job-boards.greenhouse.io/sharkninjaoperatingllc/jobs/4662300006?gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Director, Marketing",
+      "company": "IMVT Corporation",
+      "location": "New York City, NY",
+      "salary": "$210,000 - $250,000",
+      "jobId": "5829722004",
+      "url": "https://job-boards.greenhouse.io/imvtcorporation/jobs/5829722004?gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Marketing Operations Manager",
+      "company": "Wiz, Inc.",
+      "location": "New York City, NY",
+      "salary": "$118,000 - $163,000",
+      "jobId": "4659899006",
+      "url": "https://www.wiz.io/careers/job/4659899006/:title?gh_jid=4659899006&gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Sr. Director Marketing",
+      "company": "Genetix Biotherapeutics",
+      "location": "Boston, MA",
+      "salary": "$253,000 - $310,000",
+      "jobId": "7701014",
+      "url": "https://job-boards.greenhouse.io/genetixbiotherapeutics/jobs/7701014?gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Senior Marketing Data Analyst",
+      "company": "Abnormal",
+      "location": "Austin, TX",
+      "salary": "$122,400 - $176,000",
+      "jobId": "7660669003",
+      "url": "https://abnormal.ai/careers/jobs/7660669003?gh_jid=7660669003&gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Director, Marketing Operations",
+      "company": "Unknown",
+      "location": "Princeton, NJ",
+      "salary": "$190,000 - $237,000",
+      "jobId": "4174590009",
+      "url": "https://job-boards.greenhouse.io/summittherapeutics/jobs/4174590009?gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Director, Marketing Analytics",
+      "company": "Remote",
+      "location": "London, ENG",
+      "salary": "$76,500 - $215,200",
+      "jobId": "7655019003",
+      "url": "https://job-boards.greenhouse.io/remotecom/jobs/7655019003?gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Director, Marketing Analytics",
+      "company": "Remote",
+      "location": "Chicago, IL",
+      "salary": "$76,500 - $215,200",
+      "jobId": "7645494003",
+      "url": "https://job-boards.greenhouse.io/remotecom/jobs/7645494003?gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Creative Director, Marketing",
+      "company": "Duolingo",
+      "location": "New York City, NY",
+      "salary": "$228,000 - $342,000",
+      "jobId": "8442932002",
+      "url": "https://careers.duolingo.com/jobs/8442932002?gh_jid=8442932002&gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Marketing Operations Senior Manager",
+      "company": "Unknown",
+      "location": "Framingham, MA",
+      "salary": "$140,000 - $160,000",
+      "jobId": "5136193008",
+      "url": "https://job-boards.greenhouse.io/kalvistapharmaceuticals/jobs/5136193008?gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Senior Marketing Manager",
+      "company": "Unknown",
+      "location": "San Jose, CA",
+      "salary": "$136,000 - $183,600",
+      "jobId": "8416981002",
+      "url": "https://job-boards.greenhouse.io/outsetmedical/jobs/8416981002?gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Product Marketing Lead - Launches",
+      "company": "Klaviyo",
+      "location": "Boston, MA",
+      "salary": "$140,000 - $210,000",
+      "jobId": "7626354003",
+      "url": "https://www.klaviyo.com/careers/jobs?gh_jid=7626354003&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "User requested skip Klaviyo"
+    },
+    {
+      "title": "Marketing Operations Lead",
+      "company": "Klaviyo",
+      "location": "Boston, MA",
+      "salary": "$132,000 - $198,000",
+      "jobId": "7608379003",
+      "url": "https://www.klaviyo.com/careers/jobs?gh_jid=7608379003&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "User requested skip Klaviyo"
+    },
+    {
+      "title": "Marketing Operations Lead",
+      "company": "Klaviyo",
+      "location": "San Francisco, CA",
+      "salary": "$132,000 - $198,000",
+      "jobId": "7617363003",
+      "url": "https://www.klaviyo.com/careers/jobs?gh_jid=7617363003&gh_src=my.greenhouse.search",
+      "status": "skipped",
+      "reason": "User requested skip Klaviyo"
+    },
+    {
+      "title": "Head of Marketing Operations",
+      "company": "Verkada",
+      "location": "San Mateo, CA",
+      "salary": "$205,000 - $275,000",
+      "jobId": "5018852007",
+      "url": "https://job-boards.greenhouse.io/verkada/jobs/5018852007?gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Manager of Marketing Analytics",
+      "company": "Beyond Finance",
+      "location": "Chicago, IL",
+      "salary": "$113,000 - $164,887",
+      "jobId": "6129669",
+      "url": "https://job-boards.greenhouse.io/beyondfinance/jobs/6129669?gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Senior Product Marketing Manager",
+      "company": "Reltio",
+      "location": "San Francisco, CA",
+      "salary": "$117,000 - $245,000",
+      "jobId": "5717938004",
+      "url": "https://job-boards.greenhouse.io/reltio/jobs/5717938004?gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Senior Manager, Product Marketing",
+      "company": "Unknown",
+      "location": "New York City, NY",
+      "salary": "$180,000 - $220,000",
+      "jobId": "4939580008",
+      "url": "https://pubmatic.com/job/?gh_jid=4939580008&gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Head of Brand & Communications",
+      "company": "Global Relay",
+      "location": "New York City, NY",
+      "salary": "$160,000 - $200,000",
+      "jobId": "5633303004",
+      "url": "https://www.globalrelay.com/careers/jobs?gh_jid=5633303004&gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Director of Marketing & Communications",
+      "company": "Unknown",
+      "location": "Denver, CO",
+      "salary": "$130,000 - $165,000",
+      "jobId": "4002494009",
+      "url": "https://job-boards.greenhouse.io/urbansky/jobs/4002494009?gh_src=my.greenhouse.search",
+      "status": "queued"
+    },
+    {
+      "title": "Marketing Operations Manager",
+      "company": "Verkada",
+      "location": "San Mateo, CA",
+      "salary": "$140,000 - $200,000",
+      "jobId": "4714156007",
+      "url": "https://job-boards.greenhouse.io/verkada/jobs/4714156007?gh_src=my.greenhouse.search",
+      "status": "queued"
+    }
+  ]
+}
