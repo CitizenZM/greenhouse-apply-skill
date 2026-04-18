@@ -270,6 +270,7 @@ Read before applying. Append after each submission.
 2. **Salary gate**: Only apply to jobs with $160,000+ salary
 3. **Dedup**: Never apply to same job twice — check ledger
 4. **Resume quality**: Every bullet must have quantified impact and mirror JD keywords
+5. **Max 2 applications per company**: Count existing submissions for the same company in the ledger. If already 2+ submitted for that company, SKIP the job. Pick the highest-level/highest-salary roles first. This prevents over-applying to one company and spreading applications across more employers.
 
 ## Token Rules (Optimized April 18, 2026)
 
@@ -291,8 +292,10 @@ Read before applying. Append after each submission.
 **Target: 6-8 tool calls per job (down from 12-15)**
 
 ```
-1. CHECK + DEDUP (Sonnet — 1 Bash call)
-   - python3 one-liner: read queue.json → find next "queued" job → check ledger for dedup → return job details
+1. CHECK + DEDUP + COMPANY CAP (Sonnet — 1 Bash call)
+   - python3 one-liner: read queue.json → find next "queued" job → check ledger for:
+     a. Job ID dedup (skip if already applied)
+     b. Company cap: count submissions for same company in ledger. If >= 2, SKIP and mark reason "company_cap_reached"
    - If none remain → "Queue empty"
 
 2. NAVIGATE + EXTRACT JD + DISCOVER FIELDS (Sonnet — 2 calls)
