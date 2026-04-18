@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenhouse Apply Skill — Claude Code</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    h1 { font-size: 2rem; color: #fff; margin-bottom: 8px; }
+    .subtitle { color: #888; font-size: 1rem; margin-bottom: 32px; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 40px; }
+    .stat { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 20px; }
+    .stat-value { font-size: 2rem; font-weight: 700; color: #4ade80; }
+    .stat-label { color: #888; font-size: 0.85rem; margin-top: 4px; }
+    h2 { font-size: 1.3rem; color: #fff; margin: 32px 0 16px; border-bottom: 1px solid #333; padding-bottom: 8px; }
+    .arch { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 24px; margin-bottom: 24px; }
+    .arch-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .model-tag { padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
+    .opus { background: #7c3aed33; color: #a78bfa; border: 1px solid #7c3aed55; }
+    .sonnet { background: #2563eb33; color: #60a5fa; border: 1px solid #2563eb55; }
+    .haiku { background: #059669; color: #6ee7b7; border: 1px solid #05966955; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #222; }
+    th { color: #888; font-size: 0.8rem; text-transform: uppercase; }
+    td { font-size: 0.9rem; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 0.85rem; color: #4ade80; }
+    .footer { margin-top: 48px; color: #555; font-size: 0.8rem; text-align: center; }
+    a { color: #60a5fa; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Greenhouse Apply Skill</h1>
+    <p class="subtitle">Claude Code automation for Greenhouse.io job applications — fully autonomous, model-tiered</p>
+
+    <div class="stats">
+      <div class="stat"><div class="stat-value">135</div><div class="stat-label">Applications Submitted</div></div>
+      <div class="stat"><div class="stat-value">61</div><div class="stat-label">Unique Companies</div></div>
+      <div class="stat"><div class="stat-value">6-8</div><div class="stat-label">Tool Calls / Job</div></div>
+      <div class="stat"><div class="stat-value">~2 min</div><div class="stat-label">Per Application</div></div>
+    </div>
+
+    <h2>Model Architecture</h2>
+    <div class="arch">
+      <div class="arch-row"><span class="model-tag sonnet">Sonnet</span> Navigate, extract JD, discover fields, fill forms, upload files, submit, record</div>
+      <div class="arch-row"><span class="model-tag opus">Opus</span> JD analysis + tailored resume/CL content generation (1 step per job)</div>
+      <div class="arch-row"><span class="model-tag haiku">Haiku</span> Setup (login, search, queue build) + report generation</div>
+    </div>
+
+    <h2>Optimization Results</h2>
+    <table>
+      <tr><th>Metric</th><th>Before</th><th>After</th></tr>
+      <tr><td>Token cost / job</td><td>~20-30K</td><td>~8-12K</td></tr>
+      <tr><td>Tool calls / job</td><td>12-15</td><td>6-8</td></tr>
+      <tr><td>Batch size</td><td>3 jobs</td><td>5 jobs</td></tr>
+      <tr><td>Permission prompts</td><td>Frequent</td><td>Zero</td></tr>
+      <tr><td>JD extraction cap</td><td>8K chars</td><td>5K chars</td></tr>
+    </table>
+
+    <h2>Commands</h2>
+    <table>
+      <tr><td><code>/greenhouse-setup</code></td><td>Login, search jobs, build queue (run once)</td></tr>
+      <tr><td><code>/greenhouse-apply</code></td><td>Process 5 jobs per batch, auto-refresh context</td></tr>
+      <tr><td><code>/greenhouse-report</code></td><td>Generate Obsidian report from ledger</td></tr>
+    </table>
+
+    <h2>Per-Job Workflow (8 Steps)</h2>
+    <table>
+      <tr><td>1</td><td>Queue check + dedup</td><td><span class="model-tag sonnet">Sonnet</span></td></tr>
+      <tr><td>2</td><td>Navigate + extract JD + discover fields</td><td><span class="model-tag sonnet">Sonnet</span></td></tr>
+      <tr><td>3</td><td>Fit check (analyze JD)</td><td><span class="model-tag sonnet">Sonnet</span></td></tr>
+      <tr><td>4</td><td>Fill all text fields (1 call)</td><td><span class="model-tag sonnet">Sonnet</span></td></tr>
+      <tr><td>5</td><td>Fill all select fields (1 call)</td><td><span class="model-tag sonnet">Sonnet</span></td></tr>
+      <tr><td>6</td><td>Generate resume + CL content</td><td><span class="model-tag opus">Opus</span></td></tr>
+      <tr><td>7</td><td>Upload + submit (1 call)</td><td><span class="model-tag sonnet">Sonnet</span></td></tr>
+      <tr><td>8</td><td>Record to queue + ledger + Obsidian</td><td><span class="model-tag sonnet">Sonnet</span></td></tr>
+    </table>
+
+    <div class="footer">
+      <p>Built with Claude Code | <a href="https://github.com/CitizenZM/greenhouse-apply-skill">GitHub</a></p>
+      <p>Last updated: April 18, 2026</p>
+    </div>
+  </div>
+</body>
+</html>
