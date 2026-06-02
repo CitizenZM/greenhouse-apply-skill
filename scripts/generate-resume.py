@@ -121,7 +121,8 @@ def generate_resume(template_path, content_json, output_path):
             run.font.name = 'Calibri'
 
     # Save
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    out_dir = os.path.dirname(os.path.abspath(output_path))
+    os.makedirs(out_dir, exist_ok=True)
     doc.save(output_path)
     print(json.dumps({'success': True, 'output': output_path, 'message': 'Resume generated'}))
 
@@ -200,7 +201,8 @@ def generate_cover_letter(template_path, content_json, output_path):
             run.font.name = 'Calibri'
 
     # Save
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    out_dir = os.path.dirname(os.path.abspath(output_path))
+    os.makedirs(out_dir, exist_ok=True)
     doc.save(output_path)
     print(json.dumps({'success': True, 'output': output_path, 'message': 'Cover letter generated'}))
 

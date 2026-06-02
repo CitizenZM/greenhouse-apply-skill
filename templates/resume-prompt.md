@@ -68,7 +68,7 @@ AVP, [TAILORED TITLE] | 2020 – 2022
 - 4-5 bullets tailored to JD
 - Include: SaaS growth, experimentation, technical partnership, stakeholder influence
 
-**WEWORK LABS | Shenzhen, China**
+**WEWORK LABS | Singapore / Hong Kong**
 Director, [TAILORED TITLE] | 2019 – 2020
 - 2-3 bullets if relevant to JD, otherwise condense
 

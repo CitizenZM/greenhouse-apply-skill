@@ -82,9 +82,9 @@ Python scripts:
 | RACE | `Asian` |
 | VETERAN_STATUS | `I am not a protected veteran` |
 | DISABILITY_STATUS | `No, I do not have a disability and have not had one in the past` |
-| RESUME_DIR | `/Users/barrom/Downloads/resumeandcoverletter/` |
-| RESUME_TEMPLATE | `Barron_Zuo_Resume_Dialpad_HeadOfGrowth.docx` |
-| OBSIDIAN_PATH | `/Users/barrom/Library/Mobile Documents/iCloud~md~obsidian/Documents/ObsidianVault/01-Projects/` |
+| RESUME_DIR | `$HOME/Downloads/resumeandcoverletter/` |
+| RESUME_TEMPLATE | `Barron_Zuo_BASE_CORRECTED_Resume.docx` |
+| OBSIDIAN_PATH | `$HOME/Documents/Obsidian/01-Projects/` |
 | LEDGER_FILE | `Greenhouse-Application-Ledger.md` |
 
 ## DOM Selectors (Cached in SELECTORS_CACHE.json)
@@ -239,7 +239,7 @@ For EACH job application, generate tailored resume and cover letter:
 - All locations must be US or international (non-China)
 
 ### Step 4: Output
-- Save as `.docx` to `RESUME_DIR` (`/Users/barrom/Downloads/resumeandcoverletter/`)
+- Save as `.docx` to `RESUME_DIR` (`$HOME/Downloads/resumeandcoverletter/`)
 
 ## File Output Rules (MANDATORY)
 
@@ -247,8 +247,8 @@ All generated resume and cover letter files MUST be saved as `.docx` to the loca
 
 | File | Naming Convention | Save Path |
 |------|-------------------|-----------|
-| Resume | `Barron_Zuo_{Company}_{JobTitle}_Resume.docx` | `/Users/barrom/Downloads/resumeandcoverletter/` |
-| Cover Letter | `Barron_Zuo_{Company}_{JobTitle}_Cover_Letter.docx` | `/Users/barrom/Downloads/resumeandcoverletter/` |
+| Resume | `Barron_Zuo_{Company}_{JobTitle}_Resume.docx` | `$HOME/Downloads/resumeandcoverletter/` |
+| Cover Letter | `Barron_Zuo_{Company}_{JobTitle}_Cover_Letter.docx` | `$HOME/Downloads/resumeandcoverletter/` |
 
 - **Company**: PascalCase, no spaces (e.g., `Duolingo`, `ZoomInfo`, `SharkNinja`)
 - **JobTitle**: PascalCase, abbreviated if long (e.g., `Growth_Marketing_Lead`, `VP_Marketing`, `Head_Perf_Marketing`)
@@ -258,7 +258,7 @@ All generated resume and cover letter files MUST be saved as `.docx` to the loca
 
 ## Dedup Ledger
 
-File: `/Users/barrom/Library/Mobile Documents/iCloud~md~obsidian/Documents/ObsidianVault/01-Projects/Greenhouse-Application-Ledger.md`
+File: `$HOME/Documents/Obsidian/01-Projects/Greenhouse-Application-Ledger.md`
 Format: `company|job_title|job_id|YYYY-MM-DD|status|resume_file|cover_letter_file`
 **Dedup Key (Primary)**: `job_id` (unique per posting). Fallback check: `company|job_title` if job_id unavailable.
 
@@ -310,7 +310,7 @@ def qa_check(path):
 - [ ] No generic language: no "responsible for", "various", "multiple" without specifics
 
 **Cover letter checks:**
-- [ ] Exactly 4 body paragraphs (hook + 2 experience paragraphs + Crusoe-specific ambition)
+- [ ] Exactly 4 body paragraphs (hook + 2 experience paragraphs + company-specific ambition/vision)
 - [ ] Each paragraph references a specific JD requirement by name
 - [ ] Closes with a clear, confident call to action
 - [ ] No apology language, no self-deprecation, no filler phrases
@@ -438,9 +438,9 @@ Every 5 completed applications:
 3. Record optimization timestamp
 4. Reset optimization note counter
 
-Last optimization: 2026-04-17 (after jobs #6-8: Eve, Revolution Medicines, Obsidian Security)
+Last optimization: 2026-06-02 (bug audit: path fixes, WeWork location, tab lifecycle, cover letter template)
 
-## Optimization Log (Cumulative — 8 Applications)
+## Optimization Log (Cumulative — 18+ Applications)
 
 1. **browser_fill_form requires snapshot refs** — never use it. Use nativeInputValueSetter for text, pressSequentially for selects.
 2. **MyGreenhouse auto-attaches profile resume** — always check and remove before uploading tailored resume.
