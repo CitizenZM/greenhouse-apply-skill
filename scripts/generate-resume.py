@@ -175,21 +175,6 @@ def generate_cover_letter(template_path, content_json, output_path):
             run.font.size = Pt(10.5)
             run.font.name = 'Calibri'
 
-    # If cover_letter_body is present, split it into structured parts
-    if 'cover_letter_body' in content and not content.get('paragraphs'):
-        body = content['cover_letter_body']
-        parts = [p.strip() for p in body.split('\n\n') if p.strip()]
-        # First part is salutation, last part is sign-off, middle are body paragraphs
-        if parts:
-            content['salutation'] = parts[0]
-            if len(parts) > 2:
-                content['paragraphs'] = parts[1:-1]
-                content['sign_off'] = parts[-1]
-            elif len(parts) == 2:
-                content['paragraphs'] = parts[1:]
-            else:
-                content['paragraphs'] = []
-
     # 4. Salutation
     doc.add_paragraph('')
     sal_para = doc.add_paragraph(content.get('salutation', 'Dear Hiring Team,'))

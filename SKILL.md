@@ -1,165 +1,63 @@
 ---
 name: greenhouse-job-application
-description: Greenhouse.io job application automation. Three-phase design — Sonnet for setup + job queue, Sonnet for JD-tailored resume/CL generation + form fill + submit, Haiku for report. Naming convention: Greenhouse Job Application [MonthDDYYYY].
+description: Greenhouse.io job application automation. Optimized model-tiered design — Sonnet for all mechanical work (navigate, fill, upload, submit), Opus only for resume/CL content generation. Fully autonomous, no permission prompts.
 tags: [job-application, greenhouse, automation, playwright, resume, cover-letter]
 ---
 
-# Greenhouse Job Application April152026
-
-## Browser Control — PRIMARY METHOD (MANDATORY)
-
-**Always use `mcp__playwright__*` tools** for all browser automation. Do NOT use `browser-harness` unless Playwright MCP is unavailable.
-
-| Tier | Tool | Setup | Status |
-|------|------|-------|--------|
-| **PRIMARY** | `mcp__playwright__*` MCP tools | Zero — always connected via `npx @playwright/mcp@latest --headless` | ✅ Use this |
-| SECONDARY | `browser-harness` Way 1 | Tick checkbox in chrome://inspect + click Allow popup | Only if Playwright MCP down |
-| TERTIARY | `browser-harness` Way 2 | `chrome --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-debug-barron` + `BU_CDP_URL=http://127.0.0.1:9222` | Last resort |
-
-**Why**: Playwright MCP Chrome runs via `--remote-debugging-pipe` (not port 9222). `browser-harness` scans port 9222 only — finds nothing — fails. Playwright MCP is always-connected and requires zero session setup. File upload uses `browser_run_code_unsafe` with `page.locator().setInputFiles()`.
-
-## PRE-FLIGHT (run before EVERY session — MANDATORY)
-
-```bash
-# Kill any stale playwright-mcp processes from prior sessions (prevents page context drift)
-pkill -f "playwright-mcp" 2>/dev/null; sleep 2; echo "Playwright processes cleared"
-```
-
-Do NOT kill the MCP server that is currently serving this session. Only run this before starting a new Claude Code session, not mid-session.
-
-## CRITICAL BUG FIXES (field-tested 2026-05-29)
-
-### Fix 1: File Upload — NEVER use `browser_file_upload`
-`browser_file_upload` requires a native OS picker dialog to be open. Greenhouse uses a visually-hidden `input[type="file"]` — no dialog ever opens. This tool always fails with "modal state required".
-
-**Correct method — always use `browser_run_code_unsafe` with setInputFiles:**
-```javascript
-// In browser_run_code_unsafe:
-await page.bringToFront();
-await page.locator('#resume').setInputFiles('$HOME/Downloads/resumeandcoverletter/Barron_Zuo_Company_Role_Resume.docx');
-// For cover letter (separate input):
-await page.locator('#cover_letter').setInputFiles('$HOME/Downloads/resumeandcoverletter/Barron_Zuo_Company_Role_Cover_Letter.docx');
-```
-
-### Fix 2: Page context — pin before every `browser_run_code_unsafe`
-The `page` object in `browser_run_code_unsafe` binds to whichever tab Chrome considers active. With multiple tabs open, context drifts.
-
-**Correct pattern — start every `browser_run_code_unsafe` block with:**
-```javascript
-await page.bringToFront();
-await page.waitForLoadState('domcontentloaded');
-// NOW do your work
-```
-
-### Fix 3: Never use `document` or `window` directly in `browser_run_code_unsafe`
-`browser_run_code_unsafe` executes in **Node.js context** — `document` is not defined.
-- ❌ WRONG: `document.querySelector('#first-name')`
-- ✅ CORRECT: `await page.locator('#first-name').fill('Barron')`
-- ✅ CORRECT: `await page.evaluate(() => document.querySelector('#first-name').value)`
-
-### Fix 4: Location field — React autocomplete fails in headless mode
-Google Places autocomplete blocks headless Chrome. Never rely on typing into the location field and waiting for suggestions.
-
-**Correct method — inject via React fiber directly:**
-```javascript
-await page.bringToFront();
-await page.evaluate(() => {
-  const input = document.querySelector('#candidate-location');
-  if (!input) return;
-  const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-  nativeInputValueSetter.call(input, 'San Francisco, CA');
-  input.dispatchEvent(new Event('input', { bubbles: true }));
-  input.dispatchEvent(new Event('change', { bubbles: true }));
-});
-```
-
-### Fix 5: Country/React Select dropdown — use scoped selector
-`[role="option"]` matches 244 phone-country items AND the React Select. Always scope to the React Select container:
-- ❌ WRONG: `page.locator('[role="option"]:has-text("United States")')`
-- ✅ CORRECT: `page.locator('.select__option:has-text("United States")').first()`
-
-### Fix 6: Greenhouse embeds form in cross-origin iframe
-The application form at `boards.greenhouse.io` embeds a `job-boards.greenhouse.io` iframe. `browser_evaluate` runs in the main frame — it cannot see form elements inside the iframe.
-- Use `page.locator()` and `page.fill()` inside `browser_run_code_unsafe` — these are frame-aware.
-- Or use `page.frameLocator('iframe[src*="job-boards.greenhouse.io"]').locator('#first-name')` for explicit iframe targeting.
+# Greenhouse Job Application April162026
 
 ## Architecture
 
-Three commands, two models:
-- `/greenhouse-setup` (Sonnet) — login, search, filter, build job queue. Run once per session.
-- `/greenhouse-apply` (Sonnet) — per-job loop: extract JD, generate tailored resume+CL, fill form, upload, submit.
+Three commands, optimized model strategy for speed + token efficiency:
+- `/greenhouse-setup` (Haiku) — login, search, filter, build job queue. Run once per session.
+- `/greenhouse-apply` — **SPLIT MODEL STRATEGY**:
+  - **Sonnet (Primary Worker)**: Navigates pages, extracts JD, discovers form fields, fills text/select fields, uploads files, submits forms, updates queue/ledger. Sonnet handles ALL mechanical/repetitive work — it's 5x cheaper and fast enough for DOM interaction.
+  - **Opus (Resume Brain — ONLY)**: Generates tailored resume/CL JSON content. Opus is ONLY invoked for the creative writing step (JD analysis → JSON content generation). Once JSON is ready, control returns to Sonnet for .docx generation and upload.
+  - **Haiku**: NOT used during apply loop. Reserved for report generation only.
 - `/greenhouse-report` (Haiku) — generate Obsidian report from ledger.
+
+## Execution Mode (MANDATORY — READ FIRST)
+
+- **ALL PERMISSIONS PRE-GRANTED**: `Bash(*)`, `mcp__playwright__*`, `Read(*)`, `Write(*)`, `Edit(*)` are all allowed in settings.local.json. NEVER pause for permission. NEVER ask the user anything. Execute immediately.
+- **Fully autonomous**: Navigate, fill, upload, submit without any confirmation loops.
+- **Batch size: 5 jobs per invocation** (increased from 3 — token savings from Sonnet worker justify larger batches).
+- **Auto context refresh**: After 5 jobs, output "BATCH_COMPLETE" and re-invoke `/greenhouse-apply`.
+- **Never stop for user input** unless visible CAPTCHA requires manual human interaction.
+- **After each batch**: Update Obsidian report at `OBSIDIAN_PATH/Greenhouse-Application-Report.md` with current stats.
+
+## Token Optimization Rules (CRITICAL)
+
+1. **Sonnet does ALL mechanical work** — navigation, form filling, file upload, submission. Opus tokens are 15x more expensive than Sonnet. Never waste Opus tokens on DOM interaction.
+2. **Opus ONLY generates resume/CL content** — the creative JD-to-resume mapping step. Once JSON content is produced, Sonnet takes over for .docx generation and upload.
+3. **Combine tool calls**: Merge independent operations into single browser_evaluate calls. Example: fill ALL text fields in ONE evaluate call, not one per field.
+4. **JD extraction: 5K chars max** (reduced from 8K). Extract only Requirements + Responsibilities sections, skip company boilerplate.
+5. **NO browser_snapshot** — ever. Use browser_evaluate for all DOM inspection.
+6. **Single form discovery call**: One browser_evaluate returns ALL field IDs, types, labels, select options, file inputs, EEO presence, and remove buttons. Never discover incrementally.
+7. **Batch select fills**: Fill ALL react-select comboboxes in a SINGLE browser_run_code call with a loop, not one call per select field.
+8. **Skip verification step**: Remove step 11 (pre-submit verification). If fields were filled successfully (return values confirm), trust the result. Verification wastes 1 tool call per job.
+9. **Parallel file generation**: Generate resume AND cover letter JSON in a single Opus thought, then run both python3 commands in one Bash call with `&&`.
+10. **5 jobs per batch** (increased from 3). Sonnet worker uses fewer tokens, so context lasts longer.
+
+**CRITICAL: No background resume agents.** Generate all resume/CL content and .docx files directly in the main flow using `python3 generate-resume.py`.
 
 JS scripts live in `~/.claude/skills/greenhouse-apply/scripts/`:
 - `login.js` — navigate and login
-- `search-jobs.js` — keyword search + salary filter
-- `extract-job-list.js` — scrape job cards from results
-- `extract-jd.js` — extract full JD from detail page
+- `pre-login.js` — **[BUNDLED]** search-jobs.js + extract-job-list.js (combined, no repeats)
+- `job-detail.js` — **[BUNDLED]** extract-jd.js only
+- `form-prep.js` — **[BUNDLED]** upload-file.js (parameterized: FILE_TYPE='resume' or 'cover_letter')
 - `fill-application-form.js` — fill all form fields
-- `upload-file.js` — remove existing file + prep input selector
 - `submit-application.js` — submit + verify
 - `next-job-page.js` — pagination
 
 Python scripts:
-- `generate-resume.py` — low-level .docx builder (takes pre-built JSON, writes file)
-- `craft-resume.py` — **AI-powered resume CLI** (JD analysis → tailored JSON → .docx in one command)
-
-## craft-resume CLI (PREFERRED — use this for all new applications)
-
-`craft-resume` is the main resume generation command. It does JD deconstruction, experience remapping, keyword injection, project-level bullet expansion, and .docx output in one shot.
-
-### Usage
-
-```bash
-# From JD URL (most common)
-craft-resume --company Stripe --role "VP Growth Marketing" --jd-url "https://..."
-
-# From JD file
-craft-resume --company Verve --role "VP Marketing" --jd-file /tmp/jd.txt
-
-# Inline JD text
-craft-resume --company Komodo --role "VP Revenue Intelligence" --jd-text "$(pbpaste)"
-
-# With Greenhouse job ID (auto-appends to ledger)
-craft-resume --company Checkr --role "Sr Director Growth" --jd-url "..." --job-id 7940103
-
-# Skip cover letter
-craft-resume --company Acme --role "CMO" --jd-url "..." --no-cover-letter
-
-# Preview last generated resume JSON
-craft-resume --preview
-
-# List recent output files
-craft-resume --list
-
-# Dry run (print JSON without writing .docx)
-craft-resume --company X --role "Y" --jd-text "..." --dry-run
-```
-
-### What craft-resume does per application
-
-1. **Phase 1 — JD Deconstruction**: Identifies North Star metric, extracts keyword matrix by category (tools, metrics, methodology, seniority signals), maps every requirement to experience bank
-2. **Phase 2 — Title Adaptation**: Selects correct Alibaba and Next2Market title variant from experience bank's "Flexible Title Adaptations" based on role type
-3. **Phase 3 — Project-Level Bullet Expansion**: Uses experience bank project names (PicoPilot AI, Alipay B2B Wallet Integration, CRO System — Shopify Plus, etc.) to write specific, mechanism-rich bullets with embedded project context
-4. **Phase 4 — Keyword Injection**: Every JD requirement keyword embedded verbatim in a metric-driven bullet
-5. **Phase 5 — DOCX Output**: Calls `generate-resume.py` to write final .docx to `~/Downloads/resumeandcoverletter/`
-6. **Phase 6 — Ledger Entry**: Auto-appends to `Greenhouse-Application-Ledger.md`
-
-### Files updated by craft-resume
-
-| File | Purpose |
-|---|---|
-| `data/barron-experience-bank.md` | Source of truth for all facts, metrics, project names — UPDATE when new projects/metrics are confirmed |
-| `templates/resume-prompt.md` | System prompt sent to Claude — update to refine generation quality |
-| `scripts/craft-resume.py` | CLI entry point — update for new flags or JD parsing logic |
-| `scripts/generate-resume.py` | Low-level .docx formatter — update for layout/style changes |
+- `generate-resume.py` — template-based .docx generation via python-docx
 
 ## Configuration
 
 | Key | Value |
 |-----|-------|
 | BASE_URL | `https://my.greenhouse.io` |
-| SEARCH_KEYWORDS | `["marketing", "growth"]` |
+| SEARCH_KEYWORDS | `["marketing", "growth", "product marketing", "demand generation", "performance marketing", "partnerships", "brand marketing", "digital marketing", "content strategy"]` |
 | MIN_SALARY | `160000` |
 | FIRST_NAME | `Barron` |
 | LAST_NAME | `Zuo` |
@@ -167,7 +65,7 @@ craft-resume --company X --role "Y" --jd-text "..." --dry-run
 | EMAIL | `xz429@cornell.edu` |
 | PHONE | `+1 9094132840` |
 | LOCATION | `San Francisco` |
-| LINKEDIN | `https://www.linkedin.com/in/barronz` |
+| LINKEDIN | `https://www.linkedin.com/in/barron-z-15226126a/` |
 | WEBSITE | `barronzuo.com` |
 | CURRENT_COMPANY | `Alibaba INC` |
 | AUTHORIZED | `YES` |
@@ -179,35 +77,124 @@ craft-resume --company X --role "Y" --jd-text "..." --dry-run
 | RECEIVE_UPDATES | `YES` |
 | HEAR_ABOUT_US | `LinkedIn` |
 | RECEIVE_COMMUNICATION | `YES` |
-| GENDER | `Man` |
-| GENDER_IDENTITY | `Straight` |
-| RACE | `East Asian` |
-| SEXUAL_ORIENTATION | `Asexual` |
-| TRANSGENDER | `NO` |
-| DISABILITY | `NO` |
-| VETERAN | `NO` |
-| RESUME_DIR | `~/Downloads/resumeandcoverletter/` |
+| GENDER | `Male` |
+| HISPANIC_ETHNICITY | `No` |
+| RACE | `Asian` |
+| VETERAN_STATUS | `I am not a protected veteran` |
+| DISABILITY_STATUS | `No, I do not have a disability and have not had one in the past` |
+| RESUME_DIR | `/Users/barrom/Downloads/resumeandcoverletter/` |
 | RESUME_TEMPLATE | `Barron_Zuo_Resume_Dialpad_HeadOfGrowth.docx` |
-| OBSIDIAN_PATH | `$HOME/Documents/Obsidian/01-Projects/` |
+| OBSIDIAN_PATH | `/Users/barrom/Library/Mobile Documents/iCloud~md~obsidian/Documents/ObsidianVault/01-Projects/` |
 | LEDGER_FILE | `Greenhouse-Application-Ledger.md` |
 
-## DOM Selectors (to be mapped on first run)
+## DOM Selectors (Cached in SELECTORS_CACHE.json)
 
+**First run**: Discover and cache all selectors in `~/.claude/skills/greenhouse-apply/data/SELECTORS_CACHE.json`
+
+**Per-job workflow**: Load cache, skip selector discovery (saves 3-5K tokens per job)
+
+Fallback selectors (if cache miss):
 ```
 LOGIN_EMAIL     = input[type="email"], input[name="email"], input[name="user[email]"]
 LOGIN_PASSWORD  = input[type="password"], input[name="user[password]"]
 LOGIN_SUBMIT    = button[type="submit"], input[type="submit"]
 SEARCH_INPUT    = input[type="search"], input[placeholder*="Search"], input[name="query"]
 JOB_CARDS       = .job-listing, .job-row, [data-testid="job-card"], .job-post
-VIEW_JOB_BTN    = a:has-text("View"), button:has-text("View")
-APPLY_BTN       = a:has-text("Apply"), button:has-text("Apply")
-FORM_INPUTS     = form input, form select, form textarea
+APPLY_BTN       = a[href*="/apply"], button[aria-label*="Apply"], [class*="ApplyJob"]
 FILE_UPLOAD     = input[type="file"]
-FILE_REMOVE     = button[aria-label="Remove"], .remove-file, button.remove, [title="Remove"]
-SUBMIT_BTN      = button[type="submit"]:has-text("Submit"), button:has-text("Submit Application")
-NEXT_PAGE       = [aria-label="Next"], .pagination-next, a:has-text("Next")
-SALARY_FILTER   = [data-filter="salary"], select[name="salary"], input[name*="salary"]
+FILE_REMOVE     = button[aria-label="Remove file"], button[aria-label="Remove"], .remove-file, button.remove, [title="Remove"]
+SUBMIT_BTN      = button[type="submit"], [aria-label*="Submit"]
+NEXT_PAGE       = [aria-label="Next"], [aria-label="Next page"], .pagination-next, [class*="next" i]
 ```
+
+## Form Filling Patterns (Validated Across 8 Applications)
+
+### Pattern 1: Text Fields — nativeInputValueSetter
+```js
+const fill = (id, val) => {
+  const el = document.getElementById(id);
+  if (!el) return false;
+  const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+  setter.call(el, val);
+  el.dispatchEvent(new Event('input', { bubbles: true }));
+  el.dispatchEvent(new Event('change', { bubbles: true }));
+  el.dispatchEvent(new Event('blur', { bubbles: true }));
+  return true;
+};
+```
+**NEVER use `browser_fill_form`** — it requires snapshot refs, not element IDs.
+
+### Pattern 2: React-Select Comboboxes (via browser_run_code)
+```js
+const fillSelect = async (inputId, text, context) => {
+  // context = page (direct) or frame (iframe)
+  const input = context.locator(`#${inputId}`);
+  await input.scrollIntoViewIfNeeded(); // REQUIRED — fields below fold won't open
+  await input.click();
+  await input.fill('');
+  await input.pressSequentially(text, { delay: 50 });
+  await page.waitForTimeout(600);
+  const option = context.locator('[class*="select__option"]').filter({ hasText: text }).first();
+  await option.click({ timeout: 3000 });
+};
+```
+- If option not found after typing: use ArrowDown to reveal ALL options, then match
+- Data Protection options vary per company (e.g. "Acknowledge/Confirm", not "agree")
+- EEO decline options vary: "Decline To Self Identify", "I don't wish to answer", "I do not want to answer"
+
+### Pattern 3: File Upload (with auto-resume removal + parent unhide)
+```js
+// Step 1: Remove auto-attached MyGreenhouse profile resume (if present)
+const removeBtn = context.locator('[aria-label="Remove file"]').first();
+if (await removeBtn.count() > 0) await removeBtn.click();
+
+// Step 2: Unhide ALL file inputs AND their parent containers (5 levels)
+await context.evaluate(() => {
+  document.querySelectorAll('input[type="file"]').forEach(fi => {
+    fi.style.display = 'block';
+    fi.style.visibility = 'visible';
+    fi.style.opacity = '1';
+    fi.style.height = '40px';
+    fi.style.width = '300px';
+    fi.style.position = 'relative';
+    fi.style.zIndex = '9999';
+    let parent = fi.parentElement;
+    for (let i = 0; i < 5 && parent; i++) {
+      parent.style.display = 'block';
+      parent.style.visibility = 'visible';
+      parent.style.opacity = '1';
+      parent.style.overflow = 'visible';
+      parent = parent.parentElement;
+    }
+  });
+});
+
+// Step 3: Upload using first available file input (resume first, then CL)
+await context.locator('input[type="file"]').first().setInputFiles('/path/to/resume.docx');
+// After resume upload, file input is consumed by DOM
+// Re-run unhide for cover_letter, then upload to remaining file input
+```
+**CRITICAL**: Unhiding just the `<input>` is insufficient. Parent containers (up to 5 levels) must also be unhidden. This was discovered on Obsidian Security (Job #8) where `#resume` by ID timed out but `input[type="file"]` with parent unhide worked.
+
+### Pattern 4: Iframe Detection and Handling
+```js
+// Check for Greenhouse iframe embed
+const grnhseApp = document.getElementById('grnhse_app');
+const grnhseIframe = document.getElementById('grnhse_iframe');
+const hasGrnhse = typeof window.Grnhse !== 'undefined';
+
+// If grnhse_app exists but empty → invoke manual load
+if (hasGrnhse && grnhseApp && !grnhseIframe) {
+  Grnhse.Iframe.load(jobId);
+}
+
+// ALL form interactions must use frameLocator for iframe forms
+const context = grnhseIframe ? page.frameLocator('#grnhse_iframe') : page;
+```
+Three form types encountered:
+1. **Direct Greenhouse page** (job-boards.greenhouse.io) — use `page` directly
+2. **Company site with loaded iframe** — use `page.frameLocator('#grnhse_iframe')`
+3. **Company site with lazy iframe** — call `Grnhse.Iframe.load(jobId)` first, then frameLocator
 
 ## Resume Template Structure
 
@@ -225,104 +212,11 @@ Sections in order:
    - Repeat for each role
 6. EDUCATION (Heading 1) + bullets (List Bullet)
 
-## Resume Generation Instructions (CRITICAL — UPDATED 2026-06-01)
+## Resume Generation Instructions (CRITICAL)
 
-### VALIDATED METHOD (use this for all applications going forward)
+**Model**: Always use Sonnet for resume and cover letter drafting and format layout design.
 
-**Step 1 — Read JD fully, run Phase 1–4 analysis inline (per resume-prompt.md)**
-**Step 2 — Build JSON content block matching the full resume-prompt.md spec**
-**Step 3 — Call `generate-resume.py` with the JSON to produce .docx**
-**Step 4 — Verify .docx word count and format before upload (see QA checklist below)**
-
-```bash
-# Generate resume
-python3 ~/.claude/skills/greenhouse-apply/scripts/generate-resume.py \
-  --type resume \
-  --template "$HOME/Downloads/resumeandcoverletter/Barron_Zuo_BASE_CORRECTED_Resume.docx" \
-  --content '<json>' \
-  --output "$HOME/Downloads/resumeandcoverletter/Barron_Zuo_{Company}_{Role}_Resume.docx"
-
-# Generate cover letter
-python3 ~/.claude/skills/greenhouse-apply/scripts/generate-resume.py \
-  --type cover_letter \
-  --template "$HOME/Downloads/resumeandcoverletter/Barron_Zuo_BASE_CORRECTED_Resume.docx" \
-  --content '<json>' \
-  --output "$HOME/Downloads/resumeandcoverletter/Barron_Zuo_{Company}_{Role}_Cover_Letter.docx"
-```
-
-### QA Checklist — Run Before Every Upload (MANDATORY)
-
-Extract text from the generated .docx and verify:
-
-```python
-import zipfile
-from xml.etree import ElementTree as ET
-def extract_text(path):
-    with zipfile.ZipFile(path) as z:
-        tree = ET.parse(z.open('word/document.xml'))
-    texts = []
-    for p in tree.getroot().iter('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}p'):
-        t = ''.join(r.text or '' for r in p.iter('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}t'))
-        if t.strip(): texts.append(t)
-    return texts
-```
-
-**Format checks (ALL must pass before upload):**
-- [ ] WeWork location = "Singapore / Hong Kong" — NEVER Shenzhen or mainland China
-- [ ] All 5 companies present: Alibaba, Next2Market, WeWork, Indiegogo, GSV
-- [ ] Alibaba: 7–8 bullets, each 2–3 sentences
-- [ ] Next2Market: 5–6 bullets, each 2–3 sentences
-- [ ] WeWork: exactly 3 bullets (advisory tone)
-- [ ] Indiegogo: 2–3 bullets (execution tone)
-- [ ] GSV: 2–3 bullets (analytical tone)
-- [ ] Executive summary: 5–6 sentences, 120+ words
-- [ ] Core competencies: exactly 4 rows × 2 columns
-- [ ] No negative framing — all bullets positive outcome-focused
-- [ ] No invented metrics — all figures from experience-bank.md
-- [ ] Word count: verify paragraphs ≥ 45 (proxy for 2-page density)
-
-**Tone checks:**
-- [ ] Zero negative expressions ("struggled", "difficult", "failed", "limited")
-- [ ] Every bullet ends with a positive outcome or metric
-- [ ] No hedging language ("tried to", "helped with", "attempted")
-
-**ALWAYS use `craft-resume` CLI** — never generate resume content inline in Claude context.
-
-```bash
-# Step 1: Generate resume + cover letter
-craft-resume \
-  --company "CompanyName" \
-  --role "Job Title" \
-  --jd-url "https://job-board-url" \
-  --job-id 1234567890
-
-# Step 2: Verify files exist
-ls -lh ~/Downloads/resumeandcoverletter/Barron_Zuo_CompanyName_*
-
-# Step 3: Upload in application form (resume first, then cover letter)
-```
-
-**Why craft-resume instead of inline generation:**
-- Reads full experience bank with project-level context (PicoPilot AI, CRO System, Alipay B2B Wallet, etc.)
-- Adapts Alibaba/Next2Market titles per role type automatically — Alibaba ALWAYS "Head of ...", never "VP of ..."
-- Injects JD keywords verbatim into metric-driven bullets
-- Validates output JSON before writing .docx
-- Auto-appends to ledger
-- Enforces career progression arc: earlier roles (WeWork, Indiegogo, GSV) are calibrated to appropriate junior seniority — never inflate to compete with Alibaba/Next2Market scope
-
-**Career Progression Rules (enforced by prompt + experience bank):**
-
-| Role | Seniority | Bullets | Forbidden |
-|------|-----------|---------|-----------|
-| Alibaba | Head/VP — org builder, board reporting | 6–7 full depth | N/A |
-| Next2Market | AVP/Director — portfolio P&L, C-suite advisory | 5–6 | N/A |
-| WeWork | Director — consulting, advisory | 3 | Revenue scaling claims, org-building |
-| Indiegogo | Director (execution) — GTM programs | 2–3 | Board reporting, enterprise P&L |
-| GSV | Senior Manager — analytical, investment | 2–3 | Budget authority, team-building |
-
-**Show resume before submitting** — always display full resume content to user for approval before proceeding to form upload and submission.
-
-For EACH job application (legacy inline method — use craft-resume instead):
+For EACH job application, generate tailored resume and cover letter:
 
 ### Step 1: Deep JD Analysis
 - Extract ALL requirements, highlighted capabilities, required experience, tech stack, leadership style, North Star metrics
@@ -345,7 +239,7 @@ For EACH job application (legacy inline method — use craft-resume instead):
 - All locations must be US or international (non-China)
 
 ### Step 4: Output
-- Save as `.docx` to `RESUME_DIR` (`$HOME/Downloads/resumeandcoverletter/`)
+- Save as `.docx` to `RESUME_DIR` (`/Users/barrom/Downloads/resumeandcoverletter/`)
 
 ## File Output Rules (MANDATORY)
 
@@ -353,8 +247,8 @@ All generated resume and cover letter files MUST be saved as `.docx` to the loca
 
 | File | Naming Convention | Save Path |
 |------|-------------------|-----------|
-| Resume | `Barron_Zuo_{Company}_{JobTitle}_Resume.docx` | `$HOME/Downloads/resumeandcoverletter/` |
-| Cover Letter | `Barron_Zuo_{Company}_{JobTitle}_Cover_Letter.docx` | `$HOME/Downloads/resumeandcoverletter/` |
+| Resume | `Barron_Zuo_{Company}_{JobTitle}_Resume.docx` | `/Users/barrom/Downloads/resumeandcoverletter/` |
+| Cover Letter | `Barron_Zuo_{Company}_{JobTitle}_Cover_Letter.docx` | `/Users/barrom/Downloads/resumeandcoverletter/` |
 
 - **Company**: PascalCase, no spaces (e.g., `Duolingo`, `ZoomInfo`, `SharkNinja`)
 - **JobTitle**: PascalCase, abbreviated if long (e.g., `Growth_Marketing_Lead`, `VP_Marketing`, `Head_Perf_Marketing`)
@@ -364,8 +258,9 @@ All generated resume and cover letter files MUST be saved as `.docx` to the loca
 
 ## Dedup Ledger
 
-File: `$HOME/Documents/Obsidian/01-Projects/Greenhouse-Application-Ledger.md`
+File: `/Users/barrom/Library/Mobile Documents/iCloud~md~obsidian/Documents/ObsidianVault/01-Projects/Greenhouse-Application-Ledger.md`
 Format: `company|job_title|job_id|YYYY-MM-DD|status|resume_file|cover_letter_file`
+**Dedup Key (Primary)**: `job_id` (unique per posting). Fallback check: `company|job_title` if job_id unavailable.
 
 Read before applying. Append after each submission.
 
@@ -375,96 +270,183 @@ Read before applying. Append after each submission.
 2. **Salary gate**: Only apply to jobs with $160,000+ salary
 3. **Dedup**: Never apply to same job twice — check ledger
 4. **Resume quality**: Every bullet must have quantified impact and mirror JD keywords
+5. **Max 2 applications per company**: Count existing submissions for the same company in the ledger. If already 2+ submitted for that company, SKIP the job. Pick the highest-level/highest-salary roles first. This prevents over-applying to one company and spreading applications across more employers.
 
-## Token Rules
+## Resume & Cover Letter QA Checklist (MANDATORY — run before every upload, updated 2026-06-01)
 
-1. NEVER `browser_snapshot` except during first setup run for selector mapping
-2. Use `browser_evaluate` for all DOM work
-3. Read JS files from scripts/ on-demand — do NOT load all upfront
-4. After each job: forget JD text and resume content, only retain ledger state
-5. **CONTEXT REFRESH (MANDATORY)**: After every 2 job applications, STOP and tell the user to start a fresh `/greenhouse-apply` session. This prevents context bloat from accumulated JD text, resume content, and form interaction history. Output: "Context refresh needed. Run `/greenhouse-apply` to continue with next batch."
-6. Process max 2 jobs per `/greenhouse-apply` invocation, then refresh
-
-## Execution Mode (MANDATORY)
-
-- **Fully autonomous**: Do NOT ask for permission at any step. All permissions are pre-granted.
-- **No confirmation loops**: Execute every step (navigate, fill, upload, submit) without pausing.
-- **Auto-recovery with Opus**: When stuck, blocked, or encountering an error that fails after 2 retries at Sonnet level, automatically switch to Opus model to diagnose and fix the issue, then switch back to Sonnet and continue the workflow.
-- **Never stop for user input** unless CAPTCHA (hCaptcha/reCAPTCHA visual challenge) requires manual human interaction.
-- **Security codes: FULLY AUTOMATIC** — Greenhouse sends 8-character codes to xz429@cornell.edu. Read them from Mail app autonomously. NEVER ask the user.
-
-## Security Code Auto-Retrieval (MANDATORY)
-
-When the Greenhouse security code screen appears (`security-input-0` through `security-input-7`), run this AppleScript immediately — no user prompt:
-
-```bash
-osascript << 'SCRIPT'
-tell application "Mail"
-  set theInbox to mailbox "INBOX" of account "xz429@cornell.edu"
-  check for new mail in theInbox
-  delay 2
-  set msgs to (messages 1 through 5 of theInbox)
-  repeat with m in msgs
-    set f to sender of m
-    set s to subject of m
-    if f contains "greenhouse" then
-      return content of m
-    end if
-  end repeat
-  return "No code found"
-end tell
-SCRIPT
-```
-
-Parse the 8-character code (appears after "Copy and paste this code:"). Then:
-
-1. **Clear existing inputs** — native setter to empty all 8 fields, dispatch `input` event
-2. **Click `security-input-0`** to focus
-3. **`pressSequentially`** the full 8-char code (auto-advances per char)
-4. **Submit** immediately — `button[type="submit"]` click while not disabled
-5. If "Incorrect" appears — re-run the AppleScript (new code was sent), clear fields, enter new code, resubmit
-
-**Key behaviors:**
-- Wake Mail first if needed: `osascript -e 'tell application "Mail" to get name of every account'` with a short bg timeout
-- Account name is exactly `"xz429@cornell.edu"` 
-- Run with `timeout 20000` to avoid hanging
-- Do NOT interact with other form fields after entering the security code — it resets React state
-- The Autofill button correctly sets phone/country in React state — use it before uploading files
-
-## Cost-saving LLM mode (optional, opt-in)
-
-For bulk runs (>5 jobs), use the `free-openrouter` adapter to avoid burning Anthropic credits on resume + cover-letter generation. Sonnet-quality output verified 2026-05-14 on Trinity Large Thinking (262K ctx, ~8s/call).
+Verified against the Crusoe Sr. Director application as the validated baseline. Extract text and check ALL items before upload:
 
 ```python
-import sys
-sys.path.insert(0, '$HOME/.claude/skills/free-openrouter/adapters')
-from greenhouse_adapter import generate_resume, generate_cover_letter
-
-resume = generate_resume(jd_text=JD, company=COMPANY, role_title=ROLE)
-cl = generate_cover_letter(jd_text=JD, company=COMPANY, role_title=ROLE,
-                           key_metrics=resume.get('phase1_analysis'))
+import zipfile
+from xml.etree import ElementTree as ET
+def qa_check(path):
+    with zipfile.ZipFile(path) as z:
+        tree = ET.parse(z.open('word/document.xml'))
+    lines = []
+    for p in tree.getroot().iter('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}p'):
+        t = ''.join(r.text or '' for r in p.iter('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}t'))
+        if t.strip(): lines.append(t)
+    return lines
 ```
 
-- **Per-job cost:** $0.00 (vs ~$0.06 Sonnet 4.6) — saves ~$1.80/mo at 5 jobs/day, ~$36/mo at 20 jobs/day
-- **Daily ceiling:** 500 jobs/day (1,000 free reqs ÷ 2/job)
-- **Throughput:** ~225 jobs/hour at 16s avg latency
-- **Quality:** validated to produce JSON matching the same schema, with JD keywords embedded, real metrics from experience bank
-- **Fallback:** if free models 429 the entire chain, adapter raises `GreenhouseAdapterError` — orchestrator catches and falls back to native Sonnet
+**Structure checks (ALL must pass):**
+- [ ] WeWork location = "Singapore / Hong Kong" — NEVER Shenzhen or mainland China city
+- [ ] All 5 companies present: Alibaba, Next2Market, WeWork, Indiegogo, GSV
+- [ ] Alibaba: 7–8 bullets, each 2–3 sentences (~450–500 words total for section)
+- [ ] Next2Market: 5–6 bullets, each 2–3 sentences (~300–350 words total)
+- [ ] WeWork: exactly 3 bullets (advisory tone: "advised", "consulted", "designed systems for")
+- [ ] Indiegogo: 2–3 bullets (execution tone: "led", "managed", "partnered with CEO")
+- [ ] GSV: 2–3 bullets (analytical tone: "delivered", "evaluated", "facilitated")
+- [ ] Executive summary: 5–6 sentences, 120+ words, contains ≥3 JD keywords
+- [ ] Core competencies: exactly 4 rows × 2 columns, derived from JD language
+- [ ] Total paragraphs ≥ 45 (proxy for 2-page density — if below 45, expand bullets)
+- [ ] Education section present: Cornell MBA + NUS B.Eng both listed
 
-## Error Recovery
+**Content tone checks (ALL must pass — positive-only rule):**
+- [ ] Zero negative expressions: no "struggled", "difficult", "failed", "limited", "despite"
+- [ ] Every bullet ends with a positive outcome, metric, or forward momentum statement
+- [ ] No hedging: no "tried to", "helped with", "attempted to", "worked toward"
+- [ ] No invented metrics — all numbers sourced from barron-experience-bank.md
+- [ ] No generic language: no "responsible for", "various", "multiple" without specifics
+
+**Cover letter checks:**
+- [ ] Exactly 4 body paragraphs (hook + 2 experience paragraphs + Crusoe-specific ambition)
+- [ ] Each paragraph references a specific JD requirement by name
+- [ ] Closes with a clear, confident call to action
+- [ ] No apology language, no self-deprecation, no filler phrases
+
+## Token Rules (Optimized April 18, 2026)
+
+1. **NEVER browser_snapshot** — costs 3-5K tokens. Use browser_evaluate for ALL DOM work.
+2. **Sonnet for mechanical work, Opus for creative work only** — see Architecture section.
+3. **JD extraction: 5K chars max** — `document.body.innerText.substring(0, 5000)`. Skip company boilerplate.
+4. **Single form discovery call** — one browser_evaluate returns ALL field metadata. Never discover incrementally.
+5. **Batch ALL text fills in one evaluate** — fill first_name, last_name, email, phone, linkedin, salary, ALL custom questions in ONE call.
+6. **Batch ALL select fills in one browser_run_code** — loop through all select fields in a single async function.
+7. **Generate both resume + CL .docx in one Bash call** — `python3 generate-resume.py ... && python3 generate-resume.py ...`
+8. **Skip pre-submit verification** — trust fill return values. Don't waste a tool call re-checking.
+9. **5 jobs per batch, auto-refresh** — output "BATCH_COMPLETE" and re-invoke `/greenhouse-apply`.
+10. **Discard JD + resume content after each job** — only retain job_id, company, title, status.
+11. **ALL PERMISSIONS PRE-GRANTED** — never pause, never ask. Execute immediately.
+12. **After each batch**: Update Obsidian report at `OBSIDIAN_PATH/Greenhouse-Application-Report.md`.
+
+## Per-Job Workflow (Optimized — Minimum Tool Calls)
+
+**Target: 6-8 tool calls per job (down from 12-15)**
+
+```
+1. CHECK + DEDUP + COMPANY CAP (Sonnet — 1 Bash call)
+   - python3 one-liner: read queue.json → find next "queued" job → check ledger for:
+     a. Job ID dedup (skip if already applied)
+     b. Company cap: count submissions for same company in ledger. If >= 2, SKIP and mark reason "company_cap_reached"
+   - If none remain → "Queue empty"
+
+2. NAVIGATE + EXTRACT JD + DISCOVER FIELDS (Sonnet — 2 calls)
+   - Call 1: browser_navigate to job URL
+   - Call 2: browser_evaluate → SINGLE call that does ALL of:
+     a. Accept cookies if banner present
+     b. Detect form type (direct page / iframe / lazy iframe)
+     c. Extract JD text (5K chars max, skip nav/footer)
+     d. Discover ALL form fields: IDs, types, labels, required flags
+     e. Check for EEO fields, file inputs, remove buttons, reCAPTCHA
+     f. Return everything as one JSON object
+
+3. FIT CHECK (Sonnet — 0 calls, just analyze step 2 output)
+   - If dealbreaker found → mark "skipped" in queue, move to next job
+   - No tool call needed — analyze the JD text from step 2
+
+4. FILL ALL TEXT FIELDS (Sonnet — 1 browser_evaluate call)
+   - ONE call fills ALL text fields: first_name, last_name, email, phone, linkedin, website, salary, ALL custom question_* fields
+   - Return success/failure map
+
+5. FILL ALL SELECT FIELDS (Sonnet — 1 browser_run_code call)
+   - ONE async function that loops through ALL select/combobox fields:
+     country, authorization, sponsorship, relocation, EEO fields, custom selects
+   - scrollIntoViewIfNeeded + pressSequentially + option click for each
+   - Return results map
+
+6. GENERATE RESUME + CL (Opus — content generation + 1 Bash call)
+   - Opus analyzes JD → produces resume JSON + CL JSON
+   - ONE Bash call: write both JSONs to /tmp AND run both generate-resume.py commands
+   - `echo '<resume_json>' > /tmp/r.json && echo '<cl_json>' > /tmp/cl.json && cd scripts/ && python3 generate-resume.py --type resume ... && python3 generate-resume.py --type cover_letter ...`
+
+7. UPLOAD + SUBMIT (Sonnet — 1 browser_run_code call)
+   - ONE async function that does ALL of:
+     a. Remove auto-attached resume if present
+     b. Unhide file inputs + 8 levels of parents
+     c. Upload resume via first input[type="file"]
+     d. Wait 1s, re-unhide, upload CL via next input[type="file"] (if available)
+     e. Click submit button
+     f. Wait 4s, check for confirmation URL/text
+   - Return: { uploaded: true, submitted: true, confirmation: "..." }
+
+8. RECORD (Sonnet — 1 Bash call)
+   - ONE python3 one-liner: update queue.json status + append to ledger + update Obsidian report
+```
+
+**TOTAL: 6-8 tool calls per job (was 12-15). Saves ~40% token overhead.**
+
+## Model Switching Protocol
+
+| Step | Model | Why |
+|------|-------|-----|
+| 1. Queue check | Sonnet | Mechanical — read JSON |
+| 2. Navigate + extract | Sonnet | DOM interaction |
+| 3. Fit check | Sonnet | Text analysis (simple) |
+| 4. Fill text fields | Sonnet | DOM interaction |
+| 5. Fill select fields | Sonnet | DOM interaction |
+| 6. Generate resume/CL | **Opus** | Creative writing — JD analysis + tailored content |
+| 7. Upload + submit | Sonnet | DOM interaction |
+| 8. Record | Sonnet | File I/O |
+
+**Opus is used for exactly 1 step per job.** Everything else is Sonnet.
+When running as Opus supervisor, steps 1-5 and 7-8 should be executed with minimal reasoning — just run the tool calls. Save deep thinking for step 6 only.
+
+## Error Recovery (Updated After 8 Applications)
 
 | Error | Action |
 |-------|--------|
 | Login fails | Retry once, then auto-switch to Opus to debug |
 | 0 search results | Try alternate keyword, report if still 0 |
-| JD extraction empty | Fallback browser_snapshot once, if still empty switch to Opus |
+| JD extraction empty | Try `document.body.innerText` directly. If iframe, extract from frameLocator body |
 | Form field not found | Try alternate selectors, log to unknowns, proceed |
-| File upload fails | Retry with alternate selector, if fails switch to Opus |
-| Submit validation error | Read error, fix fields, retry once, if fails switch to Opus |
+| File upload `#resume` times out | Unhide ALL `input[type="file"]` + 5 levels of parent containers, then use `.first()` selector |
+| File input consumed after upload | Expected behavior — Greenhouse removes input from DOM. Re-run unhide for next upload |
+| Auto-attached MyGreenhouse resume | Check for `[aria-label="Remove file"]` before uploading. Click to remove, then upload tailored version |
+| React-select option not found | Don't assume option text. Use ArrowDown to reveal all options first, then match actual text |
+| EEO dropdown won't open | `scrollIntoViewIfNeeded()` REQUIRED before clicking — fields are below fold |
+| Submit validation error | Read error, fix fields, retry once |
 | python-docx missing | `pip3 install python-docx`, retry |
-| CAPTCHA/rate limit | STOP, flag for manual intervention (only exception) |
-| browser-harness fails (port 9222) | Switch to mcp__playwright__* — this is the permanent primary method |
-| Playwright MCP unavailable | Use browser-harness Way 2: launch Chrome with --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-debug-barron, set BU_CDP_URL=http://127.0.0.1:9222 |
-| Browser locked/stale | Kill MCP Chrome process, relaunch, continue |
-| Dropdown not found | Try browser_run_code with Playwright API, if fails switch to Opus |
+| Visible CAPTCHA | STOP, flag for manual intervention (only exception). Invisible reCAPTCHA auto-solves |
+| Iframe not loading | Check for `Grnhse` global → call `Grnhse.Iframe.load(jobId)`. If no Grnhse global, iframe already loaded |
+| Cookie banner blocking | Accept via `text="Accept All Cookies"` click before form interaction |
+| Background agent permission-blocked | Generate resume/CL directly in main flow — never rely on background agents for file I/O |
 | Any 3+ consecutive failures | Auto-switch to Opus for deep diagnosis before continuing |
+
+## Supervisor Optimization Cycle
+
+Every 5 completed applications:
+1. Review all optimization notes in supervisor-log.md
+2. Apply learnings to this SKILL.md (form patterns, error handling, new field types)
+3. Record optimization timestamp
+4. Reset optimization note counter
+
+Last optimization: 2026-04-17 (after jobs #6-8: Eve, Revolution Medicines, Obsidian Security)
+
+## Optimization Log (Cumulative — 8 Applications)
+
+1. **browser_fill_form requires snapshot refs** — never use it. Use nativeInputValueSetter for text, pressSequentially for selects.
+2. **MyGreenhouse auto-attaches profile resume** — always check and remove before uploading tailored resume.
+3. **Country field is react-select** — requires pressSequentially + option click, not evaluate-based value setting.
+4. **File input disappears after upload** — Greenhouse removes from DOM. Normal behavior.
+5. **Some forms lack cover letter upload** — check for #cover_letter input before attempting CL upload.
+6. **Data Protection options vary per company** — don't hardcode "agree". Discover options with ArrowDown first.
+7. **EEO fields need scrollIntoView** — veteran_status and disability_status are below fold. Must scroll before interaction.
+8. **Country select shows phone prefix** — "+1" for United States is expected (phone code format).
+9. **Lazy iframe loading** — `Grnhse.Iframe.load(jobId)` required when grnhse_app div is empty.
+10. **Iframe forms require frameLocator** — all interactions must go through `page.frameLocator('#grnhse_iframe')`.
+11. **Location confirmation = dealbreaker** — skip if candidate isn't local to required office.
+12. **Background Sonnet agents lack permissions** — always generate .docx files in main Opus flow. Never delegate file I/O to background agents.
+13. **Parent container unhide required for file upload** — unhiding just the `<input>` is insufficient. Must unhide 5 levels of parent elements for setInputFiles to work reliably.
+14. **Invisible reCAPTCHA auto-solves** — no manual intervention needed. Only visible CAPTCHA requires user action.
+15. **Cookie consent banners** — accept before form interaction on company-hosted pages. Direct Greenhouse pages don't have cookie banners.
