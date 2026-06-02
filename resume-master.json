@@ -1,0 +1,90 @@
+{
+  "_comment": "MASTER RESUME BASE — all dates, titles, locations are REAL. Edit summaries/bullets per role but NEVER change company names, dates, or education.",
+
+  "name": "BARRON ZUO",
+  "contact": "San Francisco, CA | +1 909-413-2840 | xz429@cornell.edu | linkedin.com/in/barronz | barronzuo.com",
+
+  "education": [
+    "Cornell University, Johnson Graduate School of Management — MBA, Digital Technology Focus",
+    "National University of Singapore (NUS) — B.Eng Industrial System Engineering (Full Scholarship)"
+  ],
+
+  "experience_skeleton": [
+    {
+      "company": "Alibaba Group (AliExpress US / Alipay) | Pasadena, CA / Remote",
+      "role": "Head of Category Management & Growth Strategy (US SMB & AI Expansion) | 2022 – Present",
+      "bullets": []
+    },
+    {
+      "company": "Next2Market Consulting & Accelerator | Sunnyvale, CA",
+      "role": "AVP, Regional Head of Operations (Principal Growth & Demand Gen Lead) | 2020 – 2022",
+      "bullets": []
+    },
+    {
+      "company": "WeWork Labs | Shenzhen, China",
+      "role": "Director, Digital Transformation & Growth Strategy | 2019 – 2020",
+      "bullets": []
+    },
+    {
+      "company": "Indiegogo Inc. | San Jose, CA",
+      "role": "Director, Strategic Programs & GTM Strategy | 2018 – 2019",
+      "bullets": []
+    },
+    {
+      "company": "GSV Global Tech / UGL Consulting | Global",
+      "role": "Senior Investment Manager / Management Consultant | 2010 – 2016",
+      "bullets": []
+    }
+  ],
+
+  "real_experience_facts": {
+    "alibaba": {
+      "period": "2022 – Present",
+      "location": "Pasadena, CA / Remote",
+      "real_metrics": [
+        "$180M ARR achieved within 24 months (PicoPilot AI / US SMB expansion)",
+        "$12M+ annual performance budget (Meta, TikTok, Google, Bing, OOH)",
+        "25% payment-related churn reduction (Alipay B2B wallet integration)",
+        "2x growth of US-based Growth Marketing org (10+ marketing pods)",
+        "GEO strategy: ChatGPT, Perplexity high-intent traffic capture",
+        "Self-serve viral loops: 25% organic growth, 5M+ new users onboarded"
+      ]
+    },
+    "next2market": {
+      "period": "2020 – 2022",
+      "location": "Sunnyvale, CA",
+      "real_metrics": [
+        "Scaled North American operations $50M to $200M+ ARR (Samsung, Anker, Urevo clients)",
+        "350% GMV growth year one for 50+ B2B and DTC brand portfolio",
+        "18% conversion lift via CRO on Shopify Plus",
+        "22% full-funnel conversion improvement via A/B testing",
+        "$7M+ monthly performance budget managed"
+      ]
+    },
+    "wework": {
+      "period": "2019 – 2020",
+      "location": "Shenzhen, China",
+      "real_metrics": [
+        "Advised 18+ high-growth startups on demand gen and pipeline scaling",
+        "30% MQL-to-SQL conversion improvement via lead scoring + CRM automation",
+        "Consulted Starbucks and Shiseido on O2O digital transformation"
+      ]
+    },
+    "indiegogo": {
+      "period": "2018 – 2019",
+      "location": "San Jose, CA",
+      "real_metrics": [
+        "44% increase in ad-tech pipeline via AI recommendation engines",
+        "Managed performance budgets across SEO, Social, Email"
+      ]
+    },
+    "gsv": {
+      "period": "2010 – 2016",
+      "location": "Global",
+      "real_metrics": [
+        "$200M in savings via financial optimization models",
+        "67% success rate managing global accelerator programs"
+      ]
+    }
+  }
+}
