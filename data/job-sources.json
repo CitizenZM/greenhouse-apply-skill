@@ -1,0 +1,311 @@
+{
+  "meta": {
+    "last_updated": "2026-06-02",
+    "profile": "Senior Marketing / Growth / GTM / Partnerships leader, SF Bay Area, $160k+ base, B2B SaaS / AI / fintech focus",
+    "search_keywords": ["VP Marketing", "Head of Growth", "Director Growth Marketing", "Director Product Marketing", "VP Demand Generation", "Director Performance Marketing", "VP GTM", "Head of Partnerships", "VP Brand", "Director Digital Marketing", "CMO", "Head of Content Strategy", "VP Revenue Marketing", "Director Organic Growth", "Sr Director Marketing"]
+  },
+  "tiers": {
+    "tier1_highest_volume": [
+      {
+        "name": "LinkedIn Jobs",
+        "search_url": "https://www.linkedin.com/jobs/search/?keywords={keyword}&location=San+Francisco+Bay+Area&f_TPR=r604800&f_SB2=6&sortBy=DD",
+        "ats_types": ["greenhouse", "ashby", "lever", "workday", "jobvite"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 2000,
+        "notes": "Largest single source. Use salary filter f_SB2=6 (>$160k). Sort by date (sortBy=DD). Scrape job IDs, resolve to ATS URLs."
+      },
+      {
+        "name": "Greenhouse Job Board (direct)",
+        "search_url": "https://boards.greenhouse.io/search?q={keyword}",
+        "ats_types": ["greenhouse"],
+        "api_available": false,
+        "automation": "direct",
+        "monthly_senior_roles": 800,
+        "notes": "Direct Greenhouse board search. Most reliable source — no redirect needed. Already integrated."
+      },
+      {
+        "name": "Ashby Job Board (direct)",
+        "search_url": "https://jobs.ashbyhq.com/search?q={keyword}",
+        "ats_types": ["ashby"],
+        "api_available": false,
+        "automation": "direct",
+        "monthly_senior_roles": 400,
+        "notes": "Direct Ashby search. Already integrated."
+      },
+      {
+        "name": "Lever Job Board (direct)",
+        "search_url": "https://jobs.lever.co/search?q={keyword}",
+        "ats_types": ["lever"],
+        "api_available": false,
+        "automation": "direct",
+        "monthly_senior_roles": 300,
+        "notes": "Direct Lever search. Already integrated."
+      }
+    ],
+    "tier2_high_signal": [
+      {
+        "name": "Built In SF",
+        "search_url": "https://www.builtinsf.com/jobs?search={keyword}&emp=large_company,midsize_company&remote=true&seniorityFilters=DIRECTOR,VP,C_SUITE",
+        "ats_types": ["greenhouse", "ashby", "lever", "workday"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 300,
+        "notes": "Curated SF+remote tech. Seniority filter critical — most roles are IC. Use built-in salary filter when available."
+      },
+      {
+        "name": "Wellfound (AngelList)",
+        "search_url": "https://wellfound.com/jobs?role=marketing&jobType=full-time&salary=160000",
+        "ats_types": ["greenhouse", "ashby", "lever", "native"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 200,
+        "notes": "Strong for Series A-C startups. Already have wellfound-apply skill. Salary filter available."
+      },
+      {
+        "name": "Y Combinator Jobs",
+        "search_url": "https://www.ycombinator.com/jobs?q={keyword}&role=marketing",
+        "ats_types": ["greenhouse", "ashby", "lever", "workboard"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 150,
+        "notes": "YC portfolio companies. High quality signal. Many use Ashby. Filter for 'Senior' and above."
+      },
+      {
+        "name": "Work at a Startup (HN)",
+        "search_url": "https://www.workatastartup.com/jobs?q={keyword}&role=marketing&exp=4",
+        "ats_types": ["greenhouse", "ashby", "lever", "native"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 100,
+        "notes": "HN/YC community board. Already have workatastartup skill. Use exp=4 (director+)."
+      },
+      {
+        "name": "ExecThread",
+        "search_url": "https://www.execthread.com/jobs?q={keyword}&level=vp,director",
+        "ats_types": ["greenhouse", "ashby", "lever"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 200,
+        "notes": "Executive-only referral network. Invite-required for posting but free to search. High match quality for VP+."
+      },
+      {
+        "name": "Lenny's Newsletter Jobs",
+        "search_url": "https://www.lennysjobs.com/jobs?q={keyword}",
+        "ats_types": ["greenhouse", "ashby", "lever"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 80,
+        "notes": "Product/growth/marketing focused. Smaller volume but very high quality. Most roles are product growth or marketing leadership."
+      }
+    ],
+    "tier3_specialist": [
+      {
+        "name": "Crunchbase Jobs",
+        "search_url": "https://www.crunchbase.com/discover/jobs?q={keyword}&facet%5B%5D=job_category%3AMarketing&facet%5B%5D=job_seniority%3ASenior%2C%20Director%2C%20VP%2C%20C-Level",
+        "ats_types": ["greenhouse", "ashby", "lever", "workday"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 300,
+        "notes": "Funded startup focus. Good for Series B+ companies. Cross-reference funding stage with company page."
+      },
+      {
+        "name": "Glassdoor Jobs",
+        "search_url": "https://www.glassdoor.com/Job/jobs.htm?sc.keyword={keyword}&locId=1147401&locT=M&minSalary=160000&seniorityType=director,vp,senior",
+        "ats_types": ["greenhouse", "ashby", "lever", "workday"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 400,
+        "notes": "Large volume but high noise. Salary filter and seniority filter essential."
+      },
+      {
+        "name": "Indeed",
+        "search_url": "https://www.indeed.com/jobs?q={keyword}&l=San+Francisco%2C+CA&sc=0kf%3Aattr(DSQF7)%3B&salary=%24160%2C000%2B&explvl=senior_level",
+        "ats_types": ["greenhouse", "ashby", "lever", "workday", "indeed_native"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 600,
+        "notes": "High volume, mixed quality. Filter: salary >$160k, senior level. Many repost from ATS — dedup by company+title."
+      },
+      {
+        "name": "Remote OK",
+        "search_url": "https://remoteok.com/remote-{keyword}-jobs?min_salary=160000",
+        "ats_types": ["greenhouse", "ashby", "lever", "native"],
+        "api_available": true,
+        "api_url": "https://remoteok.com/api",
+        "automation": "api",
+        "monthly_senior_roles": 100,
+        "notes": "Strong for fully remote roles. Has public JSON API. Filter by salary and seniority in API response."
+      },
+      {
+        "name": "The Muse",
+        "search_url": "https://www.themuse.com/search?q={keyword}&filter=Marketing&level=Senior+Level,Director+and+Above",
+        "ats_types": ["greenhouse", "lever", "workday"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 150,
+        "notes": "Company culture + job listings. Good for filtering by company values. Seniority filter available."
+      },
+      {
+        "name": "Dice",
+        "search_url": "https://www.dice.com/jobs?q={keyword}&location=San+Francisco%2C+CA&radius=30&l=en&sp=1&skill=Marketing&ctype=1",
+        "ats_types": ["greenhouse", "workday", "taleo"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 80,
+        "notes": "Primarily tech roles. Useful for growth/marketing-tech hybrid roles at established tech companies."
+      }
+    ],
+    "tier4_niche_high_quality": [
+      {
+        "name": "HN Who's Hiring (monthly thread)",
+        "search_url": "https://hn.algolia.com/?dateRange=pastMonth&q=marketing+OR+growth+OR+%22head+of%22+OR+%22VP%22&query=who%27s+hiring&type=comment",
+        "ats_types": ["various"],
+        "api_available": true,
+        "api_url": "https://hn.algolia.com/api/v1/search?query=who%27s+hiring&tags=ask_hn",
+        "automation": "api",
+        "monthly_senior_roles": 50,
+        "notes": "HN monthly 'Who's Hiring' thread via Algolia API. Scrape comments, grep for marketing/growth/VP/director. Small but very high signal — often early-stage or stealth companies."
+      },
+      {
+        "name": "Pallet Jobs",
+        "search_url": "https://pallet.xyz/list/jobs?q={keyword}",
+        "ats_types": ["greenhouse", "ashby", "lever"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 60,
+        "notes": "Creator/newsletter-curated job boards. Several marketing-focused pallets with senior roles."
+      },
+      {
+        "name": "Marketing Hire",
+        "search_url": "https://marketinghire.com/jobs?q={keyword}&level=director,vp,c-suite",
+        "ats_types": ["greenhouse", "ashby", "lever"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 40,
+        "notes": "Marketing-only job board. Smaller but highly filtered — every role is marketing."
+      },
+      {
+        "name": "Jobgether",
+        "search_url": "https://jobgether.com/offer?search={keyword}&workStyle=remote&minSalary=160000&level=director,vp",
+        "ats_types": ["various"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 80,
+        "notes": "Remote-first jobs. Good salary filter. Aggregates from multiple sources."
+      },
+      {
+        "name": "Toptal Jobs",
+        "search_url": "https://www.toptal.com/talent/apply?role=marketing",
+        "ats_types": ["native"],
+        "api_available": false,
+        "automation": "skip",
+        "monthly_senior_roles": 20,
+        "notes": "Freelance/contract. Skip for FTE search."
+      },
+      {
+        "name": "Himalayas",
+        "search_url": "https://himalayas.app/jobs/marketing?experience=director,vp&salaryMin=160000",
+        "ats_types": ["greenhouse", "ashby", "lever"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 60,
+        "notes": "Remote-first, good filtering. Emerging board with clean job data."
+      },
+      {
+        "name": "Arc.dev",
+        "search_url": "https://arc.dev/remote-jobs/marketing?level=director",
+        "ats_types": ["native", "greenhouse"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 30,
+        "notes": "Mostly engineering but has marketing/growth roles. Worth occasional check."
+      }
+    ],
+    "tier5_aggregators": [
+      {
+        "name": "Otta",
+        "search_url": "https://app.otta.com/jobs/search?functions=Marketing&seniority=5,6&salary_floor=160000",
+        "ats_types": ["greenhouse", "ashby", "lever"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 200,
+        "notes": "Good seniority filters (5=director, 6=VP+). Strong for EU-originated companies with US offices."
+      },
+      {
+        "name": "Joblist",
+        "search_url": "https://joblist.app/search?q={keyword}&l=San+Francisco&salary=160000",
+        "ats_types": ["various"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 150,
+        "notes": "Aggregator. Dedup against primary sources."
+      },
+      {
+        "name": "Simplyhired",
+        "search_url": "https://www.simplyhired.com/search?q={keyword}&l=san+francisco&fdb=160000",
+        "ats_types": ["various"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 200,
+        "notes": "Aggregator. Lower noise than Indeed but same dedup required."
+      },
+      {
+        "name": "ZipRecruiter",
+        "search_url": "https://www.ziprecruiter.com/jobs-search?search={keyword}&location=San+Francisco%2C+CA&radius=25&days=7&salary_min=160000",
+        "ats_types": ["various"],
+        "api_available": false,
+        "automation": "browser",
+        "monthly_senior_roles": 250,
+        "notes": "Large volume. Salary filter + 7-day recency essential to reduce noise."
+      }
+    ],
+    "tier6_direct_company_careers": {
+      "notes": "Top 30 AI/SaaS companies — check career pages directly weekly. Most use Greenhouse or Ashby so job IDs are stable.",
+      "companies": [
+        {"name": "Figma", "careers_url": "https://boards.greenhouse.io/figma", "ats": "greenhouse"},
+        {"name": "Notion", "careers_url": "https://www.notion.so/careers", "ats": "ashby"},
+        {"name": "Linear", "careers_url": "https://linear.app/careers", "ats": "ashby"},
+        {"name": "Vercel", "careers_url": "https://vercel.com/careers", "ats": "greenhouse"},
+        {"name": "Stripe", "careers_url": "https://stripe.com/jobs", "ats": "greenhouse"},
+        {"name": "Brex", "careers_url": "https://boards.greenhouse.io/brex", "ats": "greenhouse"},
+        {"name": "Rippling", "careers_url": "https://www.rippling.com/careers", "ats": "greenhouse"},
+        {"name": "Scale AI", "careers_url": "https://scale.com/careers", "ats": "greenhouse"},
+        {"name": "Anthropic", "careers_url": "https://boards.greenhouse.io/anthropic", "ats": "greenhouse"},
+        {"name": "OpenAI", "careers_url": "https://openai.com/careers", "ats": "greenhouse"},
+        {"name": "Cohere", "careers_url": "https://jobs.lever.co/cohere", "ats": "lever"},
+        {"name": "Mistral AI", "careers_url": "https://jobs.lever.co/mistral", "ats": "lever"},
+        {"name": "Perplexity", "careers_url": "https://boards.greenhouse.io/perplexityai", "ats": "greenhouse"},
+        {"name": "Wiz", "careers_url": "https://boards.greenhouse.io/wiz", "ats": "greenhouse"},
+        {"name": "Databricks", "careers_url": "https://boards.greenhouse.io/databricks", "ats": "greenhouse"},
+        {"name": "Snowflake", "careers_url": "https://careers.snowflake.com", "ats": "workday"},
+        {"name": "Datadog", "careers_url": "https://boards.greenhouse.io/datadog", "ats": "greenhouse"},
+        {"name": "HashiCorp", "careers_url": "https://boards.greenhouse.io/hashicorp", "ats": "greenhouse"},
+        {"name": "Retool", "careers_url": "https://retool.com/careers", "ats": "ashby"},
+        {"name": "Airtable", "careers_url": "https://airtable.com/careers", "ats": "greenhouse"},
+        {"name": "Miro", "careers_url": "https://miro.com/careers", "ats": "greenhouse"},
+        {"name": "Loom", "careers_url": "https://boards.greenhouse.io/loom", "ats": "greenhouse"},
+        {"name": "Carta", "careers_url": "https://boards.greenhouse.io/carta", "ats": "greenhouse"},
+        {"name": "Plaid", "careers_url": "https://plaid.com/careers", "ats": "greenhouse"},
+        {"name": "Gusto", "careers_url": "https://boards.greenhouse.io/gusto", "ats": "greenhouse"},
+        {"name": "Checkr", "careers_url": "https://boards.greenhouse.io/checkr", "ats": "greenhouse"},
+        {"name": "Amplitude", "careers_url": "https://boards.greenhouse.io/amplitude", "ats": "greenhouse"},
+        {"name": "Mixpanel", "careers_url": "https://boards.greenhouse.io/mixpanel", "ats": "greenhouse"},
+        {"name": "Segment", "careers_url": "https://boards.greenhouse.io/twilio", "ats": "greenhouse"},
+        {"name": "Intercom", "careers_url": "https://boards.greenhouse.io/intercom", "ats": "greenhouse"}
+      ]
+    }
+  },
+  "search_strategy": {
+    "weekly_rotation": [
+      "Run tier1 sources (LinkedIn, direct Greenhouse/Ashby/Lever) every session",
+      "Run tier2 sources (Built In SF, Wellfound, YC, ExecThread, Lenny's) every 3 days",
+      "Run tier3 specialist boards weekly",
+      "Run HN Who's Hiring API on first Monday of each month",
+      "Scan tier6 direct company career pages weekly (automate via HTTP batch)"
+    ],
+    "dedup_strategy": "Primary key: (company_name + job_title). Secondary: ATS job_id. Normalize company names (strip Inc/LLC/Corp). Cache seen job IDs in ~/.claude/skills/greenhouse-apply/data/seen-job-ids.json",
+    "salary_gate": "Skip any listing where max_salary < 160000 OR no salary shown AND company stage is seed/pre-seed. Request salary info if Greenhouse form has salary field.",
+    "seniority_gate": "Only apply to: Director, Senior Director, VP, SVP, EVP, Head of, CMO, CGO. Skip: Manager, Senior Manager, Lead, Principal (unless title contains 'Group' or equivalent)."
+  }
+}

@@ -29,6 +29,16 @@ For EACH bullet point:
 - Emphasize measurable impact (GMV, ROAS, CTR, conversion, ARR, retention)
 - Upgrade language to results-driven and strategic
 
+**Bullet differentiation enforcement (MANDATORY):**
+- At least 3 of the 6 Alibaba bullets MUST be substantively different from prior applications — different activity, different outcome metric, or different mechanism
+- No bullet may appear verbatim across two applications. WeWork, Indiegogo, and GSV bullets must be rewritten per JD, not copied from a base template
+- Each bullet must contain at least ONE of: (a) a trade-off made or decision rationale, (b) a specific tool/method chosen over alternatives, or (c) a failure state that was reversed with a specific outcome
+
+**Anti-pattern enforcement (NEVER do these):**
+- Never write "Orchestrated", "Catalyzed", "Engineered", "Spearheaded", "Architected" — these are AI-flagging terms. Use specific verbs grounded in the actual action: "Rebuilt", "Cut", "Launched", "Doubled", "Reduced", "Signed", "Negotiated", "Shipped", "Eliminated"
+- Never open a bullet with the same verb as another bullet in the same section
+- Never end a bullet with a round number that could apply to any role (e.g., "30% increase in engagement"). Every metric must be specific to a named product, channel, or time period
+
 ## Step 4: Relevance Enhancement
 If a requirement is missing:
 - Reframe existing experience to be relevant
@@ -83,9 +93,9 @@ Director, [TAILORED TITLE] | 2018 – 2019
 
 ## Writing Style
 - Concise, high-impact, recruiter-friendly
-- Power verbs: Orchestrated, Catalyzed, Engineered, Spearheaded, Architected, Championed
-- Action verb + measurable result in every bullet
-- Strategic + execution balance
+- Specific action verbs grounded in the actual work: Rebuilt, Cut, Launched, Doubled, Reduced, Signed, Negotiated, Shipped, Eliminated, Closed, Grew, Converted, Mapped, Restructured, Piloted, Consolidated — NOT generic AI-flagging verbs (no Orchestrated, Catalyzed, Engineered, Spearheaded, Architected)
+- Action verb + mechanism or decision + measurable result in every bullet
+- Strategic + execution balance: show both the "what" and the "why it was the right call"
 - No fluff, no generic phrasing
 - Professional, sharp, tailored to the job
 
