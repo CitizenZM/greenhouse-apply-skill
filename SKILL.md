@@ -329,6 +329,7 @@ def qa_check(path):
 10. **Discard JD + resume content after each job** — only retain job_id, company, title, status.
 11. **ALL PERMISSIONS PRE-GRANTED** — never pause, never ask. Execute immediately.
 12. **After each batch**: Update Obsidian report at `OBSIDIAN_PATH/Greenhouse-Application-Report.md`.
+13. **Tab lifecycle — always close**: Capture `tid = new_tab(url)`. After submission (or skip/error), call `close_tab(tid)`. One tab opened = one tab closed. Never leave orphan tabs.
 
 ## Per-Job Workflow (Optimized — Minimum Tool Calls)
 
@@ -379,6 +380,11 @@ def qa_check(path):
      e. Click submit button
      f. Wait 4s, check for confirmation URL/text
    - Return: { uploaded: true, submitted: true, confirmation: "..." }
+   - **CLOSE TAB**: After confirming submission (or skip/error), always close the tab:
+     ```python
+     close_tab(tid)   # tid = return value of new_tab() from step 2
+     ```
+     This prevents tab accumulation across jobs. One tab opened → one tab closed per job, no exceptions.
 
 8. RECORD (Sonnet — 1 Bash call)
    - ONE python3 one-liner: update queue.json status + append to ledger + update Obsidian report
@@ -422,6 +428,7 @@ When running as Opus supervisor, steps 1-5 and 7-8 should be executed with minim
 | Cookie banner blocking | Accept via `text="Accept All Cookies"` click before form interaction |
 | Background agent permission-blocked | Generate resume/CL directly in main flow — never rely on background agents for file I/O |
 | Any 3+ consecutive failures | Auto-switch to Opus for deep diagnosis before continuing |
+| Tab left open after job | Always call `close_tab(tid)` — even on skip or error. The `tid` is the return value of `new_tab()`. |
 
 ## Supervisor Optimization Cycle
 
