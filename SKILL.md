@@ -22,7 +22,7 @@ Three commands, optimized model strategy for speed + token efficiency:
 - **Fully autonomous**: Navigate, fill, upload, submit without any confirmation loops.
 - **Batch size: 5 jobs per invocation** (increased from 3 — token savings from Sonnet worker justify larger batches).
 - **Auto context refresh**: After 5 jobs, output "BATCH_COMPLETE" and re-invoke `/greenhouse-apply`.
-- **Never stop for user input** unless visible CAPTCHA requires manual human interaction.
+- **Never stop for user input** unless visible CAPTCHA requires manual human interaction, OR the application requires an email-verification code to complete (Greenhouse emails a code to the applicant that must be typed back in) — in that case, log the job as an error (`error:email-verification-code-required-manual-review-needed`) and move to the next job. Do not attempt to read the applicant's email to retrieve this code; it is a deliberate human-verification step, not an incidental obstacle.
 - **After each batch**: Update Obsidian report at `OBSIDIAN_PATH/Greenhouse-Application-Report.md` with current stats.
 
 ## Token Optimization Rules (CRITICAL)
@@ -437,7 +437,8 @@ When running as Opus supervisor, steps 1-5 and 7-8 should be executed with minim
 | EEO dropdown won't open | `scrollIntoViewIfNeeded()` REQUIRED before clicking — fields are below fold |
 | Submit validation error | Read error, fix fields, retry once |
 | python-docx missing | `pip3 install python-docx`, retry |
-| Visible CAPTCHA | STOP, flag for manual intervention (only exception). Invisible reCAPTCHA auto-solves |
+| Visible CAPTCHA | STOP, flag for manual intervention (only exception) |
+| Email verification code required to complete submission | STOP. Log `error:email-verification-code-required-manual-review-needed` and move on. Do NOT read the applicant's email/mailbox to fetch the code — this is a deliberate human-verification step (added 2026-07-21 after a sub-agent correctly refused an earlier attempt to automate this) |
 | Iframe not loading | Check for `Grnhse` global → call `Grnhse.Iframe.load(jobId)`. If no Grnhse global, iframe already loaded |
 | Cookie banner blocking | Accept via `text="Accept All Cookies"` click before form interaction |
 | Background agent permission-blocked | Generate resume/CL directly in main flow — never rely on background agents for file I/O |
@@ -469,7 +470,7 @@ Last optimization: 2026-06-02 (resume quality: bullet differentiation + AI verb 
 11. **Location confirmation = dealbreaker** — skip if candidate isn't local to required office.
 12. **Background Sonnet agents lack permissions** — always generate .docx files in main Opus flow. Never delegate file I/O to background agents.
 13. **Parent container unhide required for file upload** — unhiding just the `<input>` is insufficient. Must unhide 5 levels of parent elements for setInputFiles to work reliably.
-14. **Invisible reCAPTCHA auto-solves** — no manual intervention needed. Only visible CAPTCHA requires user action.
+14. **Invisible reCAPTCHA runs automatically during a normal UI-driven submit** — no manual intervention needed for it. This means clicking the real submit button and letting the page's own JS handle it, NOT extracting the site key and calling `grecaptcha.enterprise.execute()` yourself to mint a token outside the rendered form — that's a bypass of the protection, not a use of it, and is not allowed (see Submission Method below). Only visible CAPTCHA requires user action.
 15. **Cookie consent banners** — accept before form interaction on company-hosted pages. Direct Greenhouse pages don't have cookie banners.
 16. **Blank cover letter bug** — HUMAN Security and Jump PMM were submitted with cover letters containing only header + sign-off (22 words). Root cause: generation returned empty `paragraphs` array. Fix: `cl_word_count_gate()` blocks upload if body < 300 words. Always check count BEFORE setInputFiles.
 17. **AI-detectable verb patterns** — "Orchestrated/Catalyzed/Engineered/Spearheaded/Architected" appear in every AI-generated resume and are flagged by ATS screeners. Replaced with specific action verbs grounded in actual work. See resume-prompt.md for banned list.
