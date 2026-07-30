@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-07-19",
+    "last_updated": "2026-07-29",
     "profile": "Senior Marketing / Growth / GTM / Partnerships leader, SF Bay Area, $160k+ base, B2B SaaS / AI / fintech focus",
     "search_keywords": [
       "VP Marketing",
@@ -377,7 +377,7 @@
       }
     ],
     "tier6_direct_company_careers": {
-      "notes": "Verified 2026-07-19 via live API calls (no login required). Greenhouse/Lever have real public JSON APIs; Ashby uses an unofficial but working public endpoint. Cross-company search pages for all three ATSes are DEAD (see tier1 notes) \u2014 this per-company list is the only reliable no-login path. job_count_verified is total open roles at verification time (not filtered to marketing/senior) \u2014 apply seniority_gate + search_keywords filter when querying each api_url. Expanded round 2 (2026-07-19): +28 companies (Braze, Fivetran, Klaviyo, Harvey, Sierra, 1Password, Supabase, Outreach, Attentive, Tailscale, Salesloft, and more). Round 3 (2026-07-19): +32 companies (Zscaler, Adyen, Block, Chime, SoFi, LaunchDarkly, Betterment, PagerDuty, Persona, PostHog, Sardine, and more fintech/security/devtools).",
+      "notes": "Verified 2026-07-19 via live API calls (no login required). Greenhouse/Lever have real public JSON APIs; Ashby uses an unofficial but working public endpoint. Cross-company search pages for all three ATSes are DEAD (see tier1 notes) \u2014 this per-company list is the only reliable no-login path. job_count_verified is total open roles at verification time (not filtered to marketing/senior) \u2014 apply seniority_gate + search_keywords filter when querying each api_url. Expanded round 2 (2026-07-19): +28 companies (Braze, Fivetran, Klaviyo, Harvey, Sierra, 1Password, Supabase, Outreach, Attentive, Tailscale, Salesloft, and more). Round 3 (2026-07-19): +32 companies (Zscaler, Adyen, Block, Chime, SoFi, LaunchDarkly, Betterment, PagerDuty, Persona, PostHog, Sardine, and more fintech/security/devtools). Expanded round 3 (2026-07-29): +48 companies verified live via Greenhouse/Ashby/Lever/SmartRecruiters public APIs, 164 total tracked.",
       "companies": [
         {
           "name": "databricks",
@@ -1190,6 +1190,342 @@
           "api_url": "https://api.ashbyhq.com/posting-api/job-board/orca",
           "job_count_verified": 1,
           "verified": "2026-07-19"
+        },
+        {
+          "name": "gopuff",
+          "ats": "lever",
+          "api_url": "https://api.lever.co/v0/postings/gopuff?mode=json",
+          "job_count_verified": 813,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "mongodb",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/mongodb/jobs",
+          "job_count_verified": 398,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "verkada",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/verkada/jobs",
+          "job_count_verified": 273,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "elastic",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/elastic/jobs",
+          "job_count_verified": 222,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "lyft",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/lyft/jobs",
+          "job_count_verified": 161,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "workato",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/workato/jobs",
+          "job_count_verified": 157,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "flexport",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/flexport/jobs",
+          "job_count_verified": 151,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "decagon",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/decagon",
+          "job_count_verified": 115,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "justworks",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/justworks/jobs",
+          "job_count_verified": 94,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "cribl",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/cribl/jobs",
+          "job_count_verified": 68,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "baseten",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/baseten",
+          "job_count_verified": 64,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "suno",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/suno",
+          "job_count_verified": 61,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "pandadoc",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/pandadoc/jobs",
+          "job_count_verified": 55,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "qualtrics",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/qualtrics/jobs",
+          "job_count_verified": 52,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "fireworksai",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/fireworksai",
+          "job_count_verified": 49,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "fireworks",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/fireworks",
+          "job_count_verified": 49,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "abridge",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/abridge",
+          "job_count_verified": 44,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "discord",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/discord/jobs",
+          "job_count_verified": 43,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "pendo",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/pendo/jobs",
+          "job_count_verified": 41,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "speak",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/speak",
+          "job_count_verified": 41,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "everlaw",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/everlaw/jobs",
+          "job_count_verified": 33,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "cockroachlabs",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/cockroachlabs/jobs",
+          "job_count_verified": 32,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "fal-ai",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/fal-ai",
+          "job_count_verified": 31,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "turing",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/turing/jobs",
+          "job_count_verified": 28,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "contentful",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/contentful/jobs",
+          "job_count_verified": 27,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "customerio",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/customerio/jobs",
+          "job_count_verified": 25,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "physicalintelligence",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/physicalintelligence",
+          "job_count_verified": 24,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "iterable",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/iterable/jobs",
+          "job_count_verified": 23,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "dust",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/dust",
+          "job_count_verified": 21,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "axiom",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/axiom/jobs",
+          "job_count_verified": 18,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "boulevard",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/boulevard/jobs",
+          "job_count_verified": 15,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "osmo",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/osmo",
+          "job_count_verified": 15,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "stackline",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/stackline/jobs",
+          "job_count_verified": 14,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "udemy",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/udemy/jobs",
+          "job_count_verified": 12,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "perpay",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/perpay/jobs",
+          "job_count_verified": 12,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "typeform",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/typeform/jobs",
+          "job_count_verified": 11,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "descript",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/descript/jobs",
+          "job_count_verified": 10,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "weave",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/weave/jobs",
+          "job_count_verified": 10,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "pika",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/pika",
+          "job_count_verified": 10,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "synack",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/synack/jobs",
+          "job_count_verified": 8,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "circleci",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/circleci/jobs",
+          "job_count_verified": 7,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "lob",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/lob/jobs",
+          "job_count_verified": 7,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "postscript",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/postscript/jobs",
+          "job_count_verified": 6,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "route",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/route/jobs",
+          "job_count_verified": 6,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "skyflow",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/skyflow",
+          "job_count_verified": 6,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "current",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/current/jobs",
+          "job_count_verified": 3,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "Visa",
+          "ats": "smartrecruiters",
+          "api_url": "https://api.smartrecruiters.com/v1/companies/Visa/postings",
+          "job_count_verified": 2,
+          "verified": "2026-07-29"
+        },
+        {
+          "name": "vellum",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/vellum",
+          "job_count_verified": 1,
+          "verified": "2026-07-29"
         }
       ]
     }

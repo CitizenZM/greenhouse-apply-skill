@@ -70,10 +70,10 @@ def generate_resume(template_path, content_json, output_path):
         run.font.size = Pt(10)
         run.font.name = 'Calibri'
 
-    # 4. Core Competencies (table)
-    doc.add_heading('CORE COMPETENCIES', level=1)
+    # 4. Core Competencies (table) — omitted entirely if not provided
     competencies = content.get('competencies', [])
     if competencies:
+        doc.add_heading('CORE COMPETENCIES', level=1)
         table = doc.add_table(rows=len(competencies), cols=2)
         table.autofit = True
         for i, row_data in enumerate(competencies):
