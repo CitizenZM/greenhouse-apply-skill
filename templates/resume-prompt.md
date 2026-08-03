@@ -81,6 +81,8 @@ Apply the "Career Progression Rules" section of `barron-experience-bank.md` exac
 - Indiegogo = execution-led language ("led integration," "managed budgets," "partnered with CEO") — never claim board reporting or C-suite ownership beyond "partnered with CEO"
 - GSV = foundational analytical/advisory language ("delivered," "evaluated," "facilitated," "advised") — never claim "built an org," "managed $XM budget," or "led a team of X" for this period
 
+**ANACHRONISM RULE (hard constraint, applies to GSV/UGL 2010–2016 and WeWork 2019–2020):** Never name a specific tool, platform, or product in a bullet unless it demonstrably existed and was in relevant use during that bullet's actual time period. This applies even when trying to hit a JD's named-tool keyword for ATS scoring — do NOT attach a modern tool/brand name (e.g. "Clay," "ChatGPT," "Notion AI," or any other post-2018 product) to a pre-2018 bullet. Use generic, period-neutral process language instead (e.g. "a structured enrichment and scoring rubric," not "a Clay-style enrichment workflow"). A named anachronistic tool is a fabricated, falsifiable claim — not a style choice — and must never appear regardless of ATS score pressure. If in doubt whether a tool/product existed in a given year, default to generic language rather than guessing.
+
 ## Step 7 — Output Structure
 
 ### Header
@@ -148,6 +150,7 @@ Before returning JSON, verify and silently correct if any fail:
 5. Is the Executive Summary 4-5 sentences and does it name the target company specifically?
 6. Are there zero banned verbs (Orchestrated/Catalyzed/Engineered/Spearheaded/Architected)?
 7. Does content fill at least 1 full page, targeting 2?
+8. Do the GSV (2010–2016) and WeWork (2019–2020) bullets name zero tools/products/platforms that postdate their period? Check every named tool/brand against its real-world release date — if any bullet was reworded to hit a JD keyword, re-verify it didn't smuggle in an anachronistic tool name in the process.
 
 ## Output Format
 Return JSON:

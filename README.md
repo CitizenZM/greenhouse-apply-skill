@@ -56,14 +56,37 @@ Every requirement in the target JD is logged as a row: `{requirement, priority, 
 ### 4. Gap handling and invented-content disclosure
 When a `must-have` JD requirement has no honest match in the experience bank, the pipeline first tries to reframe an adjacent real project. If that's insufficient, it is authorized (by explicit candidate direction, 2026-07-30) to construct a plausible new sub-project or reassign a real metric to a new causal mechanism — but **every such addition must be logged** in an `invented_content_flagged_for_candidate_review` array, with the exact claim, why it required invention, and what the candidate needs to be able to defend if asked about it in an interview. Nothing fabricated ships silently.
 
+**Anachronism constraint (added 2026-08-03):** reframing must never attach a real but *temporally impossible* tool/product name to a pre-2018 bullet (e.g. naming "Clay" — a modern GTM enrichment tool — in a 2010–2016 GSV bullet). This is a fabricated, falsifiable claim, not a stylistic reframe, and is now a hard rule in `resume-prompt.md`/`cover-letter-prompt.md` plus a mechanical check in `generate-resume.py`'s validation gate (see Content-validation gate below).
+
 ### 5. ATS pre-flight verification
-`scripts/ats_preflight.py` (in `claude-config`) extracts keywords from the JD's actual requirements section — not its culture-copy, benefits, or legal-disclosure boilerplate — and scores the generated resume against them. Fixed 2026-07-29 after a real bug was found: boilerplate phrases (location lists, "recruitment process," culture taglines) were drowning out genuine one-time requirement phrases in frequency-based extraction, producing false "rewrite everything" signals on long JDs. Gate: 65% minimum to submit, 75%+ is "top of stack."
+`scripts/ats_preflight.py` (in `claude-config`) extracts keywords from the JD's actual requirements section — not its culture-copy, benefits, or legal-disclosure boilerplate — and scores the generated resume against them. Fixed 2026-07-29 after a real bug was found: boilerplate phrases (location lists, "recruitment process," culture taglines) were drowning out genuine one-time requirement phrases in frequency-based extraction, producing false "rewrite everything" signals on long JDs. Gate: 65% minimum to submit, 75%+ is "top of stack." Fixed again 2026-08-03: HTML entities (`&amp;`, `&lt;`, `&rsquo;`, etc.) in a saved JD were only partially unescaped (`&nbsp;` only), so encoded entities diluted real keyword matches and produced false-low scores (20–30% on JDs that should have scored 70%+) until manually re-cleaned — now runs `html.unescape()` on the full entity set automatically.
+
+### 6. Content-validation gate (`generate-resume.py`)
+Every generated `.docx` is read back and checked before it's allowed to exist — a failure deletes the file and exits non-zero rather than letting a broken document reach a browser tab:
+- **Length + structure minimums**: resume ≥2000 chars with all 5 companies present; cover letter ≥1200 chars with a salutation and sign-off.
+- **Substantive-body-paragraph count** (added 2026-08-03): requires ≥3 real paragraphs over 100 characters between the salutation and sign-off. Added after a cover letter shipped to a real employer (Pinterest, 2026-07-31) with a greeting immediately followed by the sign-off — zero body content, but a normal-looking file size, since `.docx` boilerplate/styling dominates byte count regardless of actual text. Byte size is not a usable integrity signal; only extracted text length is.
+- **Duplicate-sign-off detector** (added 2026-08-03): flags "Sincerely" appearing inside a body paragraph, which duplicates the template's own separate sign-off field. Five letters shipped this way before the check existed.
+- **Anachronism detector** (added 2026-08-03): scans bullets under a pre-2018 section header (GSV/UGL 2010–2016, WeWork 2019–2020) for a denylist of well-known post-2018 tools/products (Clay, ChatGPT, Copilot, etc.) and flags any match. Deliberately paragraph/section-scoped, not a whole-document keyword search — an earlier draft of this check used a raw character window and false-flagged tools mentioned in an unrelated, present-day paragraph elsewhere in the same document. Verified against the full corpus of ~290 real generated documents from the 2026-07-30/08-02 application run with zero false positives.
 
 ## Known limitations
 
 - `SKILL.md` in this repo is stale (see note above) — do not edit it expecting it to take effect; edit `claude-config/skills/job-greenhouse-apply/SKILL.md` instead.
 - `data/seen-job-ids.json` (a dedup cache referenced by `source-jobs.py`) does not currently exist in this repo — it was present in an older backup (23 IDs, since superseded by 5x company-list growth) and was not restored, since the application ledgers are the authoritative dedup source. It will regenerate on first run of `source-jobs.py`.
 - The ATS pre-flight scorer's keyword extraction is tuned for English JDs; bilingual/Chinese JDs are checked via manual requirement-coverage review instead (see the 2026-07-30 NA Growth & Integrated Marketing example).
+- The anachronism detector's tool denylist (`ANACHRONISTIC_TOOLS` in `generate-resume.py`) is a backstop, not exhaustive — it catches the exact failure class that already shipped once, but relies on the prompt-level hard rule as the primary defense. Extend the list when a new modern tool name shows up in a JD that might tempt a pre-2018 misattribution.
+
+## Changelog
+
+### 2026-08-03 — Content-validation gate hardening
+Root-caused and fixed 3 defect classes found via manual/QA review of the 2026-07-30 through 2026-08-02 application run (41 applications across Greenhouse/Ashby/Lever):
+
+| Fix | File | What it catches |
+|---|---|---|
+| Substantive-body-paragraph count | `scripts/generate-resume.py` | Blank/scaffold cover letters (shipped once, live, to Pinterest) |
+| Duplicate-sign-off detector | `scripts/generate-resume.py` | LLM writing its own "Sincerely" inside the body, doubling the template's sign-off (shipped on ≥2 already-submitted letters) |
+| Anachronism detector + prompt rule | `scripts/generate-resume.py`, `templates/resume-prompt.md`, `templates/cover-letter-prompt.md` | Modern tool/product names attributed to pre-2018 experience (shipped once, live, to Render — a "Clay-style" claim on a 2010–2016 bullet) |
+
+All three are mechanical checks added on top of, not instead of, the corresponding prompt-level instructions — the goal is to catch it even when the generation step itself fails to follow the rule. See `claude-config`'s README/CLAUDE.md changelog for the companion `ats_preflight.py` and orchestration-level fixes (pre-dispatch dedup, sequential-only Chrome dispatch, stale ego-lite guidance) made in the same pass.
 
 ## Related repos
 

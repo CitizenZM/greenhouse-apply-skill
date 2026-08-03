@@ -58,6 +58,7 @@ This paragraph is what separates a full cover letter from a thin one. Use it to 
 - Draw on WeWork Labs (advisory range — Starbucks, Shiseido, TCL; 18+ startups advised) AND/OR GSV Global Tech / UGL Consulting (analytical foundation — $200M+ in savings delivered, 500+ startups evaluated at 67% success rate)
 - Frame this as the foundation underneath the growth-marketing career: "This growth marketing track record is built on a foundation of [analytical rigor / cross-border strategy / enterprise advisory] from earlier roles advising..."
 - This paragraph must reference at least one fact from **before 2018** — never let the cover letter's effective work history start at Alibaba
+- **ANACHRONISM RULE (hard constraint):** GSV/UGL work is 2010-2016; WeWork is 2019-2020. Never name a specific tool, platform, or product in this paragraph unless it demonstrably existed and was in relevant use during that exact period. If you want to echo a JD's modern tool/platform keyword (e.g. "Clay," "ChatGPT," a specific AI/SaaS product), do NOT attach that brand name to a pre-2018 bullet — use generic, period-neutral process language instead (e.g. "a structured enrichment and scoring rubric," not "a Clay-style enrichment workflow"). A named anachronistic tool is not an aggressive reframe, it is a fabricated, falsifiable claim — treat it as a hard block, not a style choice.
 
 ### Body Paragraph 4 (Unique Value / Cultural Fit) — 2-3 sentences
 - Address any unique JD requirement not yet covered: specific tech stack, leadership style, industry knowledge, or a stated company value
@@ -68,7 +69,7 @@ This paragraph is what separates a full cover letter from a thin one. Use it to 
 - Express specific enthusiasm for the role and company (not generic "I'm excited")
 - Mention availability (2 weeks notice)
 - End with a direct, confident call to action — not a passive "I look forward to hearing from you"
-- Sign off: "Sincerely, Barron Zuo"
+- **Do NOT write "Sincerely," "Barron Zuo," or any sign-off text inside this paragraph or anywhere in the `paragraphs` array.** The sign-off is a separate, dedicated field (`sign_off`) that the document builder appends automatically. A body paragraph that ends with its own "Sincerely, / Barron Zuo" causes the sign-off to render TWICE in the final document — this has actually happened and shipped to a real employer. The last body paragraph must end on the call-to-action sentence itself, nothing after it.
 
 ## Content Minimum
 The finished letter must run **5 substantive paragraphs plus header/date/salutation/signoff**, filling a genuinely full page — not a letter that technically satisfies "4-5 paragraphs" by making each one 2 sentences. If Paragraph 3 (Depth & Range) is thin, that is a failed output — go back to the experience bank and pull more specific detail from WeWork or GSV rather than shipping a short letter.
@@ -92,6 +93,9 @@ The finished letter must run **5 substantive paragraphs plus header/date/salutat
 3. Does every metric cited also appear in the paired resume (no invented numbers)?
 4. Are there zero generic platitudes from the banned list?
 5. Does the opening paragraph reference something specific to the company, not a generic mission paraphrase?
+6. Does NO body paragraph contain "Sincerely" or "Barron Zuo" as a sign-off — is the sign-off ONLY in the dedicated `sign_off` field?
+7. Does the pre-2018 (WeWork/GSV) paragraph name zero tools/products/platforms that postdate that period? If it echoes a JD keyword, is it phrased generically rather than as a specific modern brand name?
+8. Read every paragraph's actual character count — is EVERY body paragraph individually non-empty with real sentences (not just a scaffold of header/date/salutation/signoff with nothing in between)? A cover letter with zero body-paragraph content has shipped to a real employer before — treat an empty or near-empty `paragraphs` array entry as a hard failure, not an edge case to shrug off.
 
 ## Output Format
 Return JSON:
