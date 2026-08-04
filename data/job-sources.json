@@ -377,7 +377,7 @@
       }
     ],
     "tier6_direct_company_careers": {
-      "notes": "Verified 2026-07-19 via live API calls (no login required). Greenhouse/Lever have real public JSON APIs; Ashby uses an unofficial but working public endpoint. Cross-company search pages for all three ATSes are DEAD (see tier1 notes) \u2014 this per-company list is the only reliable no-login path. job_count_verified is total open roles at verification time (not filtered to marketing/senior) \u2014 apply seniority_gate + search_keywords filter when querying each api_url. Expanded round 2 (2026-07-19): +28 companies (Braze, Fivetran, Klaviyo, Harvey, Sierra, 1Password, Supabase, Outreach, Attentive, Tailscale, Salesloft, and more). Round 3 (2026-07-19): +32 companies (Zscaler, Adyen, Block, Chime, SoFi, LaunchDarkly, Betterment, PagerDuty, Persona, PostHog, Sardine, and more fintech/security/devtools). Expanded round 3 (2026-07-29): +48 companies verified live via Greenhouse/Ashby/Lever/SmartRecruiters public APIs, 164 total tracked. Round 4 (2026-08-03) \u2014 ATS TYPE gap research: verified 2 new working per-company API patterns (workable, recruitee) beyond the existing greenhouse/ashby/lever/smartrecruiters, plus documented (not yet company-populated) workday and personio patterns. See ats_type_reference below before adding a company on one of these types \u2014 the endpoint shape differs per ATS and a wrong guess silently 404s rather than warning. Round 5 (2026-08-03): +187 companies verified live via Greenhouse/Ashby/Lever/SmartRecruiters public APIs (all independently re-verified for non-empty job data before merging), 351 total tracked. Sourced from B2B SaaS/AI-infra/fintech/devtools sectors specifically to grow the pool of companies likely to have Director+/VP/Head-of marketing-leadership openings, after a 30-day scan against the prior 164-company list surfaced only 5 relevant candidates. Workable slugs could not be verified this round \u2014 Cloudflare challenged/429'd every request; revisit via a real browser session (ego-browser/Claude-in-Chrome) if Workable coverage is wanted later. A few companies (dataiku, found, hackerrank, hootsuite, newrelic, seekout, sisense, beamery, gainsight, paradox, socure, appen, mindtickle) appear twice under two different ATS types \u2014 confirmed via each board's own company-name metadata to be the same real company running boards on both platforms, not duplicates; kept both since the scan dedupes by job_id, not by company. Round 6 (2026-08-03): +353 companies verified live via Greenhouse/Ashby/Lever/SmartRecruiters public APIs, 704 total tracked. Cast a wider sector net (e-commerce/retail-tech, HR-tech, vertical SaaS, martech, cybersecurity, RevTech, general Series C+/public B2B SaaS) to grow beyond the AI-infra/fintech focus of round 5. Independently re-verified every entry (non-empty job data; SmartRecruiters entries additionally required a posting released within the last 365 days after discovering dead boards \u2014 e.g. buildium/dribbble/fiverr/servicetitan/criteriacorp/mytime \u2014 still return totalFound>0 years after their last real posting). Dropped 3 wrong-identity slug collisions found via company-name spot-check: 'sterling' resolves to Sterling Brands (a branding agency, not the intended company \u2014 same false match already caught and excluded in round 5, recurred in this independent pass), 'insider' resolves to Business Insider (media company), 'remote' resolves to General Assembly Remote Jobs (not the fintech 'Remote'). Lesson: single-word/generic company-name slugs need identity verification via the API's own company-name field every time, even if a similar-sounding company was verified correctly before \u2014 the collision risk doesn't go away.",
+      "notes": "Verified 2026-07-19 via live API calls (no login required). Greenhouse/Lever have real public JSON APIs; Ashby uses an unofficial but working public endpoint. Cross-company search pages for all three ATSes are DEAD (see tier1 notes) \u2014 this per-company list is the only reliable no-login path. job_count_verified is total open roles at verification time (not filtered to marketing/senior) \u2014 apply seniority_gate + search_keywords filter when querying each api_url. Expanded round 2 (2026-07-19): +28 companies (Braze, Fivetran, Klaviyo, Harvey, Sierra, 1Password, Supabase, Outreach, Attentive, Tailscale, Salesloft, and more). Round 3 (2026-07-19): +32 companies (Zscaler, Adyen, Block, Chime, SoFi, LaunchDarkly, Betterment, PagerDuty, Persona, PostHog, Sardine, and more fintech/security/devtools). Expanded round 3 (2026-07-29): +48 companies verified live via Greenhouse/Ashby/Lever/SmartRecruiters public APIs, 164 total tracked. Round 4 (2026-08-03) \u2014 ATS TYPE gap research: verified 2 new working per-company API patterns (workable, recruitee) beyond the existing greenhouse/ashby/lever/smartrecruiters, plus documented (not yet company-populated) workday and personio patterns. See ats_type_reference below before adding a company on one of these types \u2014 the endpoint shape differs per ATS and a wrong guess silently 404s rather than warning. Round 5 (2026-08-03): +187 companies verified live via Greenhouse/Ashby/Lever/SmartRecruiters public APIs (all independently re-verified for non-empty job data before merging), 351 total tracked. Sourced from B2B SaaS/AI-infra/fintech/devtools sectors specifically to grow the pool of companies likely to have Director+/VP/Head-of marketing-leadership openings, after a 30-day scan against the prior 164-company list surfaced only 5 relevant candidates. Workable slugs could not be verified this round \u2014 Cloudflare challenged/429'd every request; revisit via a real browser session (ego-browser/Claude-in-Chrome) if Workable coverage is wanted later. A few companies (dataiku, found, hackerrank, hootsuite, newrelic, seekout, sisense, beamery, gainsight, paradox, socure, appen, mindtickle) appear twice under two different ATS types \u2014 confirmed via each board's own company-name metadata to be the same real company running boards on both platforms, not duplicates; kept both since the scan dedupes by job_id, not by company. Round 6 (2026-08-03): +353 companies verified live via Greenhouse/Ashby/Lever/SmartRecruiters public APIs, 704 total tracked. Cast a wider sector net (e-commerce/retail-tech, HR-tech, vertical SaaS, martech, cybersecurity, RevTech, general Series C+/public B2B SaaS) to grow beyond the AI-infra/fintech focus of round 5. Independently re-verified every entry (non-empty job data; SmartRecruiters entries additionally required a posting released within the last 365 days after discovering dead boards \u2014 e.g. buildium/dribbble/fiverr/servicetitan/criteriacorp/mytime \u2014 still return totalFound>0 years after their last real posting). Dropped 3 wrong-identity slug collisions found via company-name spot-check: 'sterling' resolves to Sterling Brands (a branding agency, not the intended company \u2014 same false match already caught and excluded in round 5, recurred in this independent pass), 'insider' resolves to Business Insider (media company), 'remote' resolves to General Assembly Remote Jobs (not the fintech 'Remote'). Lesson: single-word/generic company-name slugs need identity verification via the API's own company-name field every time, even if a similar-sounding company was verified correctly before \u2014 the collision risk doesn't go away. Round 7 (2026-08-03): +61 companies sourced from top VC firms' portfolio job boards (Thrive Capital, Redpoint, Craft Ventures, Khosla, Menlo, Scale VP, Sapphire, Emergence Capital, Founders Fund) rather than general-knowledge slug-guessing \u2014 company names extracted from live portfolio job board content, then each independently verified against Greenhouse/Ashby/Lever/SmartRecruiters APIs (same recency check applied to SmartRecruiters hits as prior rounds). 765 total tracked.",
       "ats_type_reference": {
         "note": "Every cross-company aggregator/marketing-specific community job board was checked in the 2026-08-03 gap research (Ladders, RevGenius, Superpath, GrowthHackers, Demand Curve, Product Marketing Alliance, CMO Alliance, Fishbowl, MarketerHire) and found dead, paywalled, bot-blocked, wrong-seniority, or too thin on inventory to be registry-worthy \u2014 the real gap in this registry is Workday-based large enterprises under-represented in the company list below, not aggregators. Do not re-research these without new evidence they've changed.",
         "greenhouse": "GET https://boards-api.greenhouse.io/v1/boards/{slug}/jobs \u2014 date field: job.first_published",
@@ -5316,6 +5316,433 @@
           "ats": "greenhouse",
           "api_url": "https://boards-api.greenhouse.io/v1/boards/zuora/jobs",
           "job_count_verified": 40,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "ambrook",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/ambrook",
+          "job_count_verified": 12,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "owner",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/owner",
+          "job_count_verified": 49,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "livekit",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/livekit",
+          "job_count_verified": 29,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "homebound",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/homebound",
+          "job_count_verified": 8,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "traderepublic",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/traderepublic/jobs",
+          "job_count_verified": 1,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "pairteam",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/pairteam/jobs",
+          "job_count_verified": 43,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "omnea",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/omnea",
+          "job_count_verified": 43,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "offchainlabs",
+          "ats": "lever",
+          "api_url": "https://api.lever.co/v0/postings/offchainlabs?mode=json",
+          "job_count_verified": 13,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "comfy-org",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/comfy-org",
+          "job_count_verified": 13,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "gradient",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/gradient",
+          "job_count_verified": 5,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "gradient-labs",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/gradient-labs",
+          "job_count_verified": 9,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "zania",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/zania",
+          "job_count_verified": 10,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "demandbase",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/demandbase",
+          "job_count_verified": 12,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "neon",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/neon",
+          "job_count_verified": 6,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "esper",
+          "ats": "lever",
+          "api_url": "https://api.lever.co/v0/postings/esper?mode=json",
+          "job_count_verified": 4,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "h1",
+          "ats": "lever",
+          "api_url": "https://api.lever.co/v0/postings/h1?mode=json",
+          "job_count_verified": 26,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "falconx",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/falconx/jobs",
+          "job_count_verified": 12,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "mirantis",
+          "ats": "smartrecruiters",
+          "api_url": "https://api.smartrecruiters.com/v1/companies/mirantis/postings",
+          "job_count_verified": 54,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "adaptive",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/adaptive",
+          "job_count_verified": 14,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "adaption",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/adaption",
+          "job_count_verified": 13,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "biocatch",
+          "ats": "lever",
+          "api_url": "https://api.lever.co/v0/postings/biocatch?mode=json",
+          "job_count_verified": 13,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "jumpcloud",
+          "ats": "lever",
+          "api_url": "https://api.lever.co/v0/postings/jumpcloud?mode=json",
+          "job_count_verified": 17,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "horizon3ai",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/horizon3ai",
+          "job_count_verified": 96,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "bland",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/bland",
+          "job_count_verified": 13,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "cline",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/cline/jobs",
+          "job_count_verified": 3,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "arceeai",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/arceeai/jobs",
+          "job_count_verified": 2,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "doximity",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/doximity/jobs",
+          "job_count_verified": 7,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "civitaslearning",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/civitaslearning/jobs",
+          "job_count_verified": 2,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "federato",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/federato/jobs",
+          "job_count_verified": 7,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "dronedeploy",
+          "ats": "lever",
+          "api_url": "https://api.lever.co/v0/postings/dronedeploy?mode=json",
+          "job_count_verified": 11,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "forma",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/forma",
+          "job_count_verified": 3,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "genspark",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/genspark",
+          "job_count_verified": 7,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "g2",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/g2",
+          "job_count_verified": 31,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "hanover-park",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/hanover-park",
+          "job_count_verified": 10,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "himarley",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/himarley/jobs",
+          "job_count_verified": 15,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "rowspace",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/rowspace",
+          "job_count_verified": 17,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "mechanicalorchard",
+          "ats": "lever",
+          "api_url": "https://api.lever.co/v0/postings/mechanicalorchard?mode=json",
+          "job_count_verified": 6,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "textio",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/textio/jobs",
+          "job_count_verified": 1,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "upkeep",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/upkeep/jobs",
+          "job_count_verified": 6,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "unify",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/unify",
+          "job_count_verified": 6,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "totalexpert",
+          "ats": "lever",
+          "api_url": "https://api.lever.co/v0/postings/totalexpert?mode=json",
+          "job_count_verified": 3,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "fin",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/fin",
+          "job_count_verified": 8,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "cognition",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/cognition",
+          "job_count_verified": 80,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "nubank",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/nubank",
+          "job_count_verified": 103,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "togetherai",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/togetherai/jobs",
+          "job_count_verified": 56,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "polymarket",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/polymarket",
+          "job_count_verified": 68,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "legora",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/legora",
+          "job_count_verified": 273,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "deepmind",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/deepmind/jobs",
+          "job_count_verified": 10,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "buildops",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/buildops/jobs",
+          "job_count_verified": 31,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "until",
+          "ats": "lever",
+          "api_url": "https://api.lever.co/v0/postings/until?mode=json",
+          "job_count_verified": 21,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "monaco",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/monaco",
+          "job_count_verified": 12,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "netic",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/netic",
+          "job_count_verified": 27,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "aven",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/aven",
+          "job_count_verified": 7,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "cedar",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/cedar",
+          "job_count_verified": 3,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "openevidence",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/openevidence",
+          "job_count_verified": 11,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "spotify",
+          "ats": "lever",
+          "api_url": "https://api.lever.co/v0/postings/spotify?mode=json",
+          "job_count_verified": 102,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "wealthsimple",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/wealthsimple",
+          "job_count_verified": 38,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "veeva",
+          "ats": "lever",
+          "api_url": "https://api.lever.co/v0/postings/veeva?mode=json",
+          "job_count_verified": 783,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "serval",
+          "ats": "ashby",
+          "api_url": "https://api.ashbyhq.com/posting-api/job-board/serval",
+          "job_count_verified": 41,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "kalshi",
+          "ats": "greenhouse",
+          "api_url": "https://boards-api.greenhouse.io/v1/boards/kalshi/jobs",
+          "job_count_verified": 27,
+          "verified": "2026-08-03"
+        },
+        {
+          "name": "pigment",
+          "ats": "lever",
+          "api_url": "https://api.lever.co/v0/postings/pigment?mode=json",
+          "job_count_verified": 97,
           "verified": "2026-08-03"
         }
       ]
