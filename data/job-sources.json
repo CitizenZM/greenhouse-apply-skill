@@ -3709,13 +3709,6 @@
           "verified": "2026-08-03"
         },
         {
-          "name": "glossgenius",
-          "ats": "ashby",
-          "api_url": "https://api.ashbyhq.com/posting-api/job-board/glossgenius",
-          "job_count_verified": 25,
-          "verified": "2026-08-03"
-        },
-        {
           "name": "glossier",
           "ats": "greenhouse",
           "api_url": "https://boards-api.greenhouse.io/v1/boards/glossier/jobs",
@@ -6597,13 +6590,6 @@
           "ats": "ashby",
           "api_url": "https://api.ashbyhq.com/posting-api/job-board/standardbots",
           "job_count_verified": 33,
-          "verified": "2026-08-03"
-        },
-        {
-          "name": "thinkingmachines",
-          "ats": "greenhouse",
-          "api_url": "https://boards-api.greenhouse.io/v1/boards/thinkingmachines/jobs",
-          "job_count_verified": 36,
           "verified": "2026-08-03"
         },
         {
