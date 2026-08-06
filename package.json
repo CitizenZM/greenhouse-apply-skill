@@ -1,0 +1,9 @@
+{
+  "name": "greenhouse-apply-skill",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Job application automation scripts (resume/CL generation, JD scraping, form-fill)",
+  "dependencies": {
+    "playwright": "^1.62.1"
+  }
+}
