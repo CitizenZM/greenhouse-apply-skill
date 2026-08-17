@@ -17,10 +17,14 @@ greenhouse-apply-skill/
 ├── data/
 │   ├── barron-experience-bank.md   canonical source of truth — companies, dates, metrics, projects
 │   ├── job-sources.json            164 verified company job-board APIs across 4 ATS platforms
-│   └── answer-bank.md              standard application-form Q&A (EEOC, identity, standard fields)
+│   ├── answer-bank.md              standard application-form Q&A (EEOC, identity, standard fields)
+│   ├── fde-technical-positioning.md   conditional overlay for FDE/Solutions/Implementation/Field/Deployment/Customer Engineer titles — reframes real experience through a technical lens without inventing a CS/SWE background
+│   ├── fde_queue.json              203-row sourced queue: FDE/Solutions/Implementation/Field/Deployment/Customer Engineer roles across Greenhouse/Ashby/Lever, scraped 2026-08-10
+│   └── fde_gh_status.json          per-row application status for the FDE queue (queued / company-cap-skip)
 ├── templates/
-│   ├── resume-prompt.md            v4 — JD-requirement mapping, content minimums, invention-disclosure protocol
-│   └── cover-letter-prompt.md      v2 — 5-paragraph structure incl. mandatory pre-2018 depth paragraph
+│   ├── resume-prompt.md            v4 — JD-requirement mapping, content minimums, invention-disclosure protocol, conditional FDE-overlay hook
+│   ├── cover-letter-prompt.md      v2 — 5-paragraph structure incl. mandatory pre-2018 depth paragraph
+│   └── blank-base-template.docx    empty styled .docx used as the very first template in a resume-generation chain (no prior generated resume to clone formatting from)
 ├── scripts/
 │   ├── generate-resume.py          renders a JSON content payload into a formatted .docx (resume or cover letter)
 │   ├── craft-resume.py             AI-assisted resume/CL drafting helper
@@ -76,6 +80,21 @@ Every generated `.docx` is read back and checked before it's allowed to exist �
 - The anachronism detector's tool denylist (`ANACHRONISTIC_TOOLS` in `generate-resume.py`) is a backstop, not exhaustive — it catches the exact failure class that already shipped once, but relies on the prompt-level hard rule as the primary defense. Extend the list when a new modern tool name shows up in a JD that might tempt a pre-2018 misattribution.
 
 ## Changelog
+
+### 2026-08-16 — Greenhouse job application upgrade Aug 16: FDE/Solutions Engineer positioning overlay
+
+Added a durable, reusable positioning layer so the existing resume-generation pipeline can produce credible Forward Deployed Engineer / Solutions Engineer / Implementation Engineer / Field Engineer / Deployment Engineer / Customer Engineer applications without touching the immutable base facts file (`data/barron-experience-bank.md`) and without ever fabricating a CS degree or SWE title the candidate doesn't have.
+
+| Change | File | What it does |
+|---|---|---|
+| FDE technical-positioning overlay (new) | `data/fde-technical-positioning.md` | Reframes real Alibaba/Next2Market/WeWork Labs/Indiegogo/GSV experience through a technical/systems lens for FDE-style audiences: names the real technical surface area (PicoPilot AI build, multi-system attribution pipeline, agentic automation, SQL, Alipay API integration, WeWork Labs as a direct embedded-customer analog), sets hard boundaries on what may never be claimed (CS degree, SWE title, unfounded programming-language fluency), gives per-company FDE title adaptations, a keyword-mapping table, Executive Summary/Cover Letter patterns, and a 5-point FDE-specific self-check addendum run in addition to the base Step 8 checklist. |
+| Conditional overlay hook | `templates/resume-prompt.md` | New line under `## Input`: if the target role title or JD text matches FDE/Solutions/Implementation/Field/Deployment/Customer Engineer, the generator also reads the overlay file in full and applies its title adaptations and patterns *on top of*, not instead of, the base experience bank. Non-FDE roles are unaffected — the overlay never fires for them. |
+| FDE application queue (new, data) | `data/fde_queue.json`, `data/fde_gh_status.json` | 203-row sourced queue of FDE/Solutions/Implementation/Field/Deployment/Customer Engineer roles across Greenhouse, Ashby, and Lever (public ATS API scan, 2026-08-10), tiered `Tier 1 - Forward Deployed` / `Tier 2 - Adjacent`, with per-row status tracking (65 queued, 13 company-cap-skip at time of commit). |
+| Blank base template (new) | `templates/blank-base-template.docx` | Empty styled `.docx` used as the seed template the very first time a resume is generated in a fresh session, before any prior generated resume exists to clone formatting from. |
+
+**Validated in production**: the overlay was exercised across ~15 real submitted applications this run (Aircall, Authenticx, AHEAD, Hightouch, Fin/Intercom, Labelbox, Addepar, Abridge, Column, Persona, Varick Agents, Figma, Clera, Cresta, Mesh, and others), plus a much larger triage pass (~370+ candidate roles read and screened end-to-end against a consistent location/salary/coding-bar/seniority rubric) to separate genuinely viable roles from Tier-1 "Forward Deployed Engineer" titles that turn out to require a real production-software-engineering background the candidate doesn't have. Every skip is logged with a specific reason (not just "skipped") in the application ledgers in `claude-obsidian-vault`.
+
+**What the overlay deliberately does not do**: it does not lower the bar on the anachronism detector, the content-validation gate, or the ATS pre-flight scorer described below — those checks run unchanged on FDE-overlay output. It also does not touch `data/barron-experience-bank.md`; every fact, date, and metric an FDE resume uses still traces back to that single canonical file.
 
 ### 2026-08-03 — Content-validation gate hardening
 Root-caused and fixed 3 defect classes found via manual/QA review of the 2026-07-30 through 2026-08-02 application run (41 applications across Greenhouse/Ashby/Lever):
