@@ -1,4 +1,4 @@
-# Cover Letter Generation Prompt v2
+# Cover Letter Generation Prompt v3
 
 You are an expert career strategist crafting a compelling, tailored, content-rich cover letter. The previous version of this prompt produced letters that were technically correct but thin — 4 short paragraphs that undersold a 15+ year career. This version targets a genuinely full page, not a minimal one.
 
@@ -8,10 +8,30 @@ You are an expert career strategist crafting a compelling, tailored, content-ric
 - **Target Role**: {role_title}
 - **Key Resume Metrics**: {key_metrics}
 - **Experience Bank**: `~/Projects/greenhouse-apply-skill/data/barron-experience-bank.md`
+- **Role Classification**: Classify the target role using the same procedure as resume generation (see `templates/resume-prompt.md` Step "Role Classification"). Load the corresponding strategy file from `data/role-strategies/` for role-specific coverletter guidance.
 
 ## Step 1 — Match to the same JD requirement table used for the resume
 
 Reuse the JD requirement table from the resume generation pass (or rebuild it if generating the cover letter standalone). The cover letter's job is to hit the 2-3 **highest-priority** requirements with maximum specificity — it does not need to cover everything the resume covers, but what it does cover must go deeper than the resume bullets, with narrative context the resume doesn't have room for.
+
+## Step 2 — Role Classification (MANDATORY)
+
+Before drafting, classify the target role using the same 7-step procedure as resume generation:
+
+1. Check FDE markers first
+2. Check Marketing markers
+3. Check Growth markers
+4. Check Sales/RevOps markers
+5. Check Operations markers
+6. Handle hybrid/multi-match cases
+7. Default to General if no clear match
+
+Based on the classification, load the corresponding strategy file from `data/role-strategies/` and follow its coverletter strategy section. Each strategy file provides:
+- Opening hook template (how to start the letter for this role type)
+- Body paragraph emphasis guidance (which company/project to feature in each paragraph)
+- Depth & Range paragraph guidance (how to frame WeWork/GSV for this role type)
+- Unique value paragraph guidance (what additional angle to add)
+- Closing guidance (how to end with role-specific confidence)
 
 ## Structure — 5 body paragraphs, not 3-4
 
@@ -40,6 +60,14 @@ Dear {company} Leadership Team,
 - Connect it directly to a specific piece of Barron's experience, named concretely (not "my background in growth")
 - State the role being applied for explicitly
 - Close the paragraph with a one-sentence thesis for why this candidate fits this specific role (not a generic "I believe I would be a great fit")
+
+**Role-specific hook guidance**: Use the opening hook template from the loaded strategy file. Each role type has a different hook angle:
+- **Growth**: Lead with end-to-end funnel ownership + specific activation/retention story
+- **Marketing**: Lead with product positioning/narrative story + GEO competitive intelligence (if relevant)
+- **Sales/RevOps**: Lead with pipeline optimization/forecasting story + specific MQL→SQL or sales cycle improvement
+- **Operations**: Lead with system integration/data pipeline story + specific automation or governance achievement
+- **FDE**: Lead with WeWork Labs embedded-customer story — the most direct FDE analog
+- **General**: Lead with the JD's most distinctive requirement + the most relevant Barron experience
 
 ### Body Paragraph 1 (Primary Match) — 4-5 sentences
 - Map the MOST relevant experience to the role's #1 JD requirement, drawn from Alibaba
@@ -88,6 +116,7 @@ The finished letter must run **5 substantive paragraphs plus header/date/salutat
 - Professional spacing
 
 ## Self-Check Before Output (mandatory)
+
 1. Does the letter include at least one specific fact from before 2018 (WeWork or GSV)?
 2. Are there 5 body paragraphs, each 3+ sentences (not 4 paragraphs of 2 sentences each)?
 3. Does every metric cited also appear in the paired resume (no invented numbers)?
@@ -97,8 +126,21 @@ The finished letter must run **5 substantive paragraphs plus header/date/salutat
 7. Does the pre-2018 (WeWork/GSV) paragraph name zero tools/products/platforms that postdate that period? If it echoes a JD keyword, is it phrased generically rather than as a specific modern brand name?
 8. Read every paragraph's actual character count — is EVERY body paragraph individually non-empty with real sentences (not just a scaffold of header/date/salutation/signoff with nothing in between)? A cover letter with zero body-paragraph content has shipped to a real employer before — treat an empty or near-empty `paragraphs` array entry as a hard failure, not an edge case to shrug off.
 
+## Role-Specific Self-Check Addendum (run in ADDITION to base self-check)
+
+After completing the base self-check, run the role-specific addendum from the loaded strategy file:
+
+- **FDE**: Hook leads with WeWork Labs embedded-customer story? Body 1 features PicoPilot AI as technical build (not marketing)? Body 2 features Alibaba system integration (attribution stack, Alipay API)? No CS/SWE claims anywhere?
+- **Marketing**: Hook references company's specific product/market position? Body 1 features product positioning/narrative? Body 2 features GTM strategy or competitive intelligence? Summary avoids generic "I'm excited"?
+- **Growth**: Hook references company's specific growth challenge/product? Body 1 features end-to-end funnel ownership? Body 2 features PLG/experimentation/budget governance? Summary shows full-funnel ownership?
+- **Sales/RevOps**: Hook references company's specific revenue/sales challenge? Body 1 features pipeline optimization/forecasting? Body 2 features lead scoring/CRM? Summary shows revenue operations ownership?
+- **Operations**: Hook references company's specific operations/systems challenge? Body 1 features system integration/data pipeline? Body 2 features automation/process optimization/budget governance? Summary shows operational systems ownership?
+- **General**: Hook references JD's most distinctive requirement? Body 1 and 2 map to top 2 JD requirements? All paragraphs non-empty with real sentences?
+
 ## Output Format
+
 Return JSON:
+
 ```json
 {
   "header": "BARRON ZUO\nSan Francisco, CA | +1 909-413-2840 | xz429@cornell.edu",
@@ -114,10 +156,15 @@ Return JSON:
     "Closing paragraph (2-3 sentences)..."
   ],
   "sign_off": "Sincerely,\n\nBarron Zuo",
+  "role_classification": {
+    "primary_role": "growth|marketing|sales|operations|fde|general",
+    "hook_strategy_used": "growth_hook|marketing_narrative|sales_results|operations_systems|fde_embed|general"
+  },
   "self_check": {
     "pre_2018_fact_included": true,
     "paragraph_count": 6,
-    "banned_platitudes_used": []
+    "banned_platitudes_used": [],
+    "role_specific_checks_passed": true
   }
 }
 ```
