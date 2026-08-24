@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "Job application automation scripts (resume/CL generation, JD scraping, form-fill)",
   "dependencies": {
+    "firecrawl": "^4.35.0",
     "playwright": "^1.62.1"
   }
 }
