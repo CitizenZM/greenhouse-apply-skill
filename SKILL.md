@@ -475,3 +475,86 @@ Last optimization: 2026-06-02 (resume quality: bullet differentiation + AI verb 
 16. **Blank cover letter bug** — HUMAN Security and Jump PMM were submitted with cover letters containing only header + sign-off (22 words). Root cause: generation returned empty `paragraphs` array. Fix: `cl_word_count_gate()` blocks upload if body < 300 words. Always check count BEFORE setInputFiles.
 17. **AI-detectable verb patterns** — "Orchestrated/Catalyzed/Engineered/Spearheaded/Architected" appear in every AI-generated resume and are flagged by ATS screeners. Replaced with specific action verbs grounded in actual work. See resume-prompt.md for banned list.
 18. **Bullet recycling** — WeWork Starbucks bullet appeared verbatim across all 5 sampled applications. Each application must produce ≥3 substantively different Alibaba bullets vs prior run. Enforced via differentiation constraint in resume-prompt.md.
+
+## TCL Price Monitoring (Added 2026-08-24)
+
+> **用途**: 从 Amazon 抓取 TCL 电视 24 个 SKU 的实际销售价格，输出 CSV/JSON 报告并导出 Word。
+
+### 执行路径
+```
+# Playwright 爬虫（Node.js + Chromium headless）
+cd /Users/xiaozuo/Projects/greenhouse-apply-skill
+node tcl_price_crawl_v6.js       # 推荐：v6 策略，准确提取实际销售价
+node tcl_price_crawl_v7.js       # v7 策略，候选更全但评论误抓风险
+
+# 生成 Word 报告（基于最新的 CSV）
+python3 gen_tcl_report.py        # 输出 ~/Downloads/TCL_价格监控报告_YYYY-MM-DD.docx
+```
+
+### 输入数据
+- `/tmp/tcl_price_monitor_products.json` — 24 个产品/SKU + 对应 Amazon + Best Buy URL（已含 DCT 定价基准）
+- 脚本会读取这个文件，按 URL 逐个抓取
+
+### v6 价格提取策略（推荐，已验证准确）
+
+**核心理念**：Amazon 页面里实际销售价和 MSRP/列表价混在一起，必须区分。
+
+**三层提取：**
+1. **特定价格元素**（优先级最高）：`.a-price .a-offscreen`、`#priceblock_ourprice`、`#priceblock_dealprice`、`#corePrice_feature_div .a-price .a-offscreen` 等 —— 这些元素通常直接显示当前销售价
+2. **文本扫描兜底**：扫描所有 `span/div/p/td/li/h1/h2/h3` 元素中的 `$` 价格，收集全部候选
+3. **智能筛选**：
+   - 标记价格类型：`sale_price`（上下文含"you save"/"on sale"/"ourprice"）、`list_or_compare_price`（含"list price"/"MSRP"/"compare at"）、`condition_price`（含"used"/"refurbished"）、`from_price`（含"from"）
+   - 优先选择 `sale_price` 类型且不偏离 DCT 太远的价格
+   - 如果没有明确销售价标记，排除列表价，从剩下候选中选最接近 DCT 的
+   - 兜底：取所有候选中最低的
+
+### v7 问题教训（已验证，必须避免）
+
+**v7 在候选收集上更全面，但引入了评论误抓问题：**
+- 用户评论里的句子如 "I got it on sale for $400" / "I love this TV..." 被误识别为价格候选
+- 结果：98QM8K 抓到 $400.00（实际 $3,999.99）、85A300W 抓到 $30.00（实际 $1,997.99）
+
+**必须加入的排除逻辑：**
+1. 排除 Amazon 评论容器内的价格：`#cm_cr-review_list`、`.review-feedback-form`、`#rev-rec-row`、`#askQuestion` 等
+2. 文本特征过滤：含有 "Verified Purchase"、"Today is day..."、"I love..."、"I got it..."、"I honestly can't say" 的块中的价格排除
+3. 排除 bundle/套装价：含有 "add these items to your cart"、"Total price"、"See all buying options" 上下文的价格标记为非单品销售价
+
+### Best Buy 封锁（已知限制）
+
+**现象**：Best Buy 产品页面对 headless Chromium 的 HTTP2 连接返回 `ERR_HTTP2_PROTOCOL_ERROR`，无法抓取。
+
+**已知解决方案（二选一）：**
+1. **注册 BESTBUY_API_KEY** → 使用 [Best Buy Products API](https://developer.bestbuy.com/) 官方接口替代网页抓取
+2. **搜索页面 scrape** → 用 Best Buy 搜索结果页面（而非直接产品页面）来获取价格，封锁策略可能较宽松
+
+**当前策略**：标记为 "🚫 封锁" 并记录错误信息，不阻塞整个报告生成。
+
+### 输出格式
+
+**CSV**（`~/Downloads/tcl_price_reports/tcl_prices_YYYY-MM-DDTHH-MM-SS.csv`）：
+- 字段：Product, DCT_Pricing, Lowest_Market_Price, Price_Difference, URL, Platform, Check_Date, Remark, Fetched_At, Status, Price_Text, Price_Value, HTTP_Status, Page_Title, Error
+
+**JSON**（同路径 `.json`）：完整结果，含 price_debug 调试信息
+
+**Word**（`~/Downloads/TCL_价格监控报告_YYYY-MM-DD.docx`）：由 `gen_tcl_report.py` 从最新 CSV 生成，含表格 Summary + Best Buy 附录
+
+### 脚本演进历史
+
+| 版本 | 日期 | 状态 | 备注 |
+|------|------|------|------|
+| v4 | 8/24 | ❌ | 提取逻辑错误：选了最高价格（MSRP）而非销售价 |
+| v5 | 8/24 | ❌ | JS 作用域错误：`parsePrice` 在 `page.evaluate()` 中未定义 |
+| v6 | 8/24 | ✅ | 正确提取策略，20/20 Amazon 成功，结果准确 |
+| v7 | 8/24 | ⚠️ | 跑通但评论误抓：部分 SKU 抓到用户评论里的历史购买价（$30, $400） |
+
+### 问题排查
+
+| 问题 | 排查方法 |
+|------|----------|
+| Amazon 重定向到首页 | 检查 userAgent + referer，添加 `--disable-blink-features=AutomationControlled` |
+| 价格抓取为 MSRP | 检查是否走了文本扫描最高值逻辑而非 `.a-offscreen` 元素优先策略 |
+| 评论误抓价格 | 检查是否排除了 `#cm_cr-review_list` 等评论容器的价格 |
+| Best Buy 失败 | 确认是否需要 BESTBUY_API_KEY 或切换到搜索页面 scrape |
+| Playwright 浏览器未安装 | `npx playwright install chromium` 或检查 node_modules 中 playwright 指向的浏览器 |
+
+
