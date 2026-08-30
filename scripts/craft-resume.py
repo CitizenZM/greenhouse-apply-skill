@@ -34,12 +34,12 @@ from datetime import date
 from pathlib import Path
 
 # Paths
-SKILL_DIR = Path.home() / ".claude/skills/greenhouse-apply"
+SKILL_DIR = Path.home() / "Projects/greenhouse-apply-skill"
 EXPERIENCE_BANK = SKILL_DIR / "data/barron-experience-bank.md"
 RESUME_PROMPT = SKILL_DIR / "templates/resume-prompt.md"
 COVER_LETTER_PROMPT = SKILL_DIR / "templates/cover-letter-prompt.md"
 GENERATE_SCRIPT = SKILL_DIR / "scripts/generate-resume.py"
-TEMPLATE_DOCX = Path.home() / "Documents/Claude/claude-workflow-sync/resume-templates/Barron_Zuo_Resume_Dialpad_HeadOfGrowth.docx"
+TEMPLATE_DOCX = SKILL_DIR / "templates/blank-base-template.docx"
 OUTPUT_DIR = Path.home() / "Downloads/resumeandcoverletter"
 LEDGER = Path.home() / "Documents/Obsidian/01-Projects/Greenhouse-Application-Ledger.md"
 CACHE_FILE = Path("/tmp/craft-resume-last.json")
