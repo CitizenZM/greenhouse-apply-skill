@@ -1,5 +1,5 @@
 ---
-name: greenhouse-job-application
+name: job-greenhouse-application
 description: Greenhouse.io job application automation. Optimized model-tiered design — Sonnet for all mechanical work (navigate, fill, upload, submit), Opus only for resume/CL content generation. Fully autonomous, no permission prompts.
 tags: [job-application, greenhouse, automation, playwright, resume, cover-letter]
 ---
